@@ -1,0 +1,4 @@
+baseURL = "https://deislabs.io/"
+languageCode = "en-us"
+title = "Deis Labs"
+theme = "basics"

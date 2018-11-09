@@ -1,0 +1,83 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: auto;
+    max-width: 50em;
+}
+
+#page-title {
+    text-align: center;
+}
+
+#page-title h1 a {
+    color: black;
+    font-size: 2.7rem;
+}
+
+.post a {
+    color: black;
+}
+
+#author-name h6 a {
+  color: black;
+  font-weight: normal;
+  font-size: small;
+}
+
+#page-title a:hover, .post a:hover {
+    text-decoration: underline;
+}
+
+.date-time-title {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.blog-post-content {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.posts_listing li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4  {
+  font-size: 1.2rem;
+}
+
+h5  {
+  font-size: 1rem;
+}
+
+h6  {
+  font-size: 0.8rem;
+}
+
+code {
+  font-family: 'Ubuntu Mono', monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+pre {
+  overflow-x: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid lighten(#111, 90);
+  background-color: #efefef
+}
+
+footer  {
+  text-align: center;
+}
