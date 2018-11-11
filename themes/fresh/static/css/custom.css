@@ -1,4 +1,8 @@
 /* This makes the pretty formatting when listing blog posts */
+.content-wrapper ul.dates {
+  list-style-type: none;
+}
+
 ul.dates li {
 		position: relative;
 		padding: 1.3em 0 1.3em 6.75em;
