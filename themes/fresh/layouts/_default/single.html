@@ -1,0 +1,18 @@
+{{ define "content"}}
+<section class="section section-feature-grey is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h1 class="title section-title">{{ .Title }}</h1>
+      {{ if .Description }}
+      <div class="subtitle is-muted">
+        {{ .Description }}
+      </div>
+      {{ end }}
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+{{ end }}

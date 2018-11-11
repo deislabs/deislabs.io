@@ -1,5 +1,6 @@
 ---
 title: "Introducing Deis Labs"
+description: "We are back and cooking up some new projects!"
 date: 2018-11-08 00:00:00 +0000 UTC
 draft: false
 ---
@@ -15,5 +16,3 @@ Over the past year and a half, we have been busy continuing that same mission; b
 * [and more...](https://github.com/deislabs/)
 
 We're excited for some upcoming releases - watch this space!
-
-[@deislabs](https://twitter.com/deislabs)

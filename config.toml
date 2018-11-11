@@ -1,4 +1,194 @@
 baseURL = "https://deislabs.io/"
 languageCode = "en-us"
 title = "Deis Labs"
-theme = "basics"
+theme = "fresh"
+
+disableHugoGeneratorInject = true
+
+[params]
+
+  [params.font]
+  name = "Open Sans"
+  sizes = [
+    400.0,
+    600.0
+  ]
+
+  [params.hero]
+  title = "cloud native developer experience"
+  subtitle = "Development on the leading edge of the adoption curve can be rocky. Deis Labs is here to help make you more productive."
+  buttontext = "Get started"
+  buttonlink = "#"
+  image = "illustrations/worker.svg"
+  clientlogos = [
+    "helm.png",
+    "draft.png",
+    "brigade.png"#,
+    #"duffle.png",
+    #"porter.png"
+  ]
+
+  [params.navbarlogo]
+    link = "/"
+    image = "logo-with-text.png"
+
+  [params.section1]
+  title = "Developer Focus"
+  subtitle = "Bridging the gap between shiny tech and a great developer experience"
+
+    [[params.section1.tiles]]
+    title = "Helm"
+    icon = "mouse-globe"
+    text = "Package management for Kubernetes applications"
+    url = "https://helm.sh"
+    buttonText = "Get started"
+
+    [[params.section1.tiles]]
+    title = "Draft"
+    icon = "laptop-cloud"
+    text = "Streamlined Kubernetes application development"
+    url = "https://draft.sh"
+    buttonText = "Get Started"
+
+    [[params.section1.tiles]]
+    title = "Brigade"
+    icon = "plug-cloud"
+    text = "Event-driven pipelines for Kubernetes deployments"
+    url = "https://brigade.sh"
+    buttonText = "Get Started"
+
+  [params.section2]
+  title = "You're here because you want the best"
+  subtitle = "And we know it"
+
+    [[params.section2.features]]
+    title = "Powerful and unified interface"
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
+    icon = "laptop-globe"
+
+    [[params.section2.features]]
+    title = "Cross-device synchronisation"
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
+    icon = "doc-sync"
+
+    [[params.section2.features]]
+    title = "Nomad system"
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
+    icon = "mobile-feed"
+
+  [params.section3]
+  title = "One platform"
+  subtitle = "To rule them all"
+  image = "illustrations/mockups/app-mockup.png"
+  buttonText = "Get started"
+  buttonLink = "#"
+
+  [params.section4]
+  title = "Our Clients love us!"
+  subtitle = "Lorem ipsum sit dolor amet is a dummy text used by typography industry"
+
+    [[params.section4.clients]]
+    name = "Irma Walters"
+    quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
+    job = "Accountant"
+    img = 1.0
+
+    [[params.section4.clients]]
+    name = "John Bradley"
+    quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
+    job = "Financial Analyst"
+    img = 2.0
+
+    [[params.section4.clients]]
+    name = "Gary Blackman"
+    quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
+    job = "HR Manager"
+    img = 3.0
+
+  [params.footer]
+  logo = "deislabs.png"
+  bulmalogo = false
+
+    [[params.footer.socialmedia]]
+    link = "https://github.com/deislabs"
+    icon = "github"
+
+    [[params.footer.socialmedia]]
+    link = "https://twitter.com/deislabs"
+    icon = "twitter"
+
+    [[params.footer.product]]
+    text = "Discover features"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Why choose our product?"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Compare features"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Our roadmap"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Request features"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "Get started"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "User guides"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "Admin guide"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "Developers"
+    link = "/"
+
+    [[params.footer.blogroll]]
+    text = "Latest news"
+    link = "/"
+
+    [[params.footer.blogroll]]
+    text = "Tech articles"
+    link = "/"
+
+    [[params.footer.blogroll]]
+    text = "Video blog"
+    link = "/"
+
+  [[params.navbar]]
+  title = "About"
+  url = "/about"
+
+  [[params.navbar]]
+  title = "Blog"
+  url = "/posts"
+
+  [[params.navbar]]
+  title = "Projects"
+
+    [[params.navbar.sublinks]]
+    title = "Helm"
+    url = "https://helm.sh"
+
+    [[params.navbar.sublinks]]
+    title = "Draft"
+    url = "https://draft.sh"
+
+    [[params.navbar.sublinks]]
+    title = "Brigade"
+    url = "https://brigade.sh"
+
+  #[[params.navbar]]
+  #title = "Contribute"
+  #url = "/contribute"
+  #button = true
