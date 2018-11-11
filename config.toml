@@ -188,7 +188,7 @@ disableHugoGeneratorInject = true
     title = "Brigade"
     url = "https://brigade.sh"
 
-  [[params.navbar]]
-  title = "Contribute"
-  url = "/contribute"
-  button = true
+  #[[params.navbar]]
+  #title = "Contribute"
+  #url = "/contribute"
+  #button = true
