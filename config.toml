@@ -106,24 +106,12 @@ disableHugoGeneratorInject = true
   bulmalogo = true
 
     [[params.footer.socialmedia]]
-    link = "https://github.com/lucperkins/github-fresh"
+    link = "https://github.com/deislabs"
     icon = "github"
 
     [[params.footer.socialmedia]]
-    link = "https://dribbble.com/#"
-    icon = "dribbble"
-
-    [[params.footer.socialmedia]]
-    link = "https://facebook.com/#"
-    icon = "facebook"
-
-    [[params.footer.socialmedia]]
-    link = "https://twitter.com/lucperkins"
+    link = "https://twitter.com/deislabs"
     icon = "twitter"
-
-    [[params.footer.socialmedia]]
-    link = "https://bitbucket.org/#"
-    icon = "bitbucket"
 
     [[params.footer.product]]
     text = "Discover features"
