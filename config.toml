@@ -15,7 +15,7 @@ disableHugoGeneratorInject = true
   ]
 
   [params.hero]
-  title = "Deis Labs"
+  title = "cloud native developer experience"
   subtitle = "Development on the leading edge of the adoption curve can be rocky. Deis Labs is here to help make you more productive."
   buttontext = "Get started"
   buttonlink = "#"
@@ -27,6 +27,10 @@ disableHugoGeneratorInject = true
     #"duffle.png",
     #"porter.png"
   ]
+
+  [params.navbarlogo]
+    link = "/"
+    image = "logo-with-text.png"
 
   [params.section1]
   title = "Developer Focus"
@@ -102,8 +106,8 @@ disableHugoGeneratorInject = true
     img = 3.0
 
   [params.footer]
-  logo = "fresh-white-alt.svg"
-  bulmalogo = true
+  logo = "deislabs.png"
+  bulmalogo = false
 
     [[params.footer.socialmedia]]
     link = "https://github.com/deislabs"

@@ -72,3 +72,11 @@ ul.dates li {
   margin-left: 3em;
   list-style-type: disc;
 }
+
+/* This customizes our footer styling */
+footer.footer-dark .footer-logo img {
+  height: 80px; }
+
+.hero .title {
+  font-size: 2.7rem;
+}

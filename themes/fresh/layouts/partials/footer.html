@@ -11,6 +11,13 @@
           <img src="{{ printf "/images/logos/%s" $logo | relURL }}">
         </div>
       </div>
+
+      <!-- Dirty hack because I am having trouble getting quicklinks to work -->
+      <div class="column"></div>
+      <div class="column"></div>
+      <div class="column"></div>
+      <!-- end dirty hack -->
+
       {{- range $quickLinks }}
         <div class="column">
           <div class="footer-column">
