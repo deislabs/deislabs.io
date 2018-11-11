@@ -1,4 +1,259 @@
 baseURL = "https://deislabs.io/"
 languageCode = "en-us"
 title = "Deis Labs"
-theme = "basics"
+theme = "fresh"
+
+[params]
+
+  [params.font]
+  name = "Open Sans"
+  sizes = [
+    400.0,
+    600.0
+  ]
+
+  [params.hero]
+  title = "Manage. Deploy."
+  subtitle = "Lorem ipsum sit dolor amet is dummy text used by the typography industry"
+  buttontext = "Get started"
+  buttonlink = "#"
+  image = "illustrations/worker.svg"
+  clientlogos = [
+    "systek",
+    "tribe",
+    "kromo",
+    "infinite",
+    "gutwork"
+  ]
+
+  [params.sidebar]
+  logo = "fresh-square"
+
+    [[params.sidebar.sections]]
+    title = "User"
+    icon = "user"
+
+      [[params.sidebar.sections.links]]
+      text = "Profile"
+      url = "/"
+
+      [[params.sidebar.sections.links]]
+      text = "Account"
+      url = "/"
+
+      [[params.sidebar.sections.links]]
+      text = "Settings"
+      url = "/"
+
+    [[params.sidebar.sections]]
+    title = "Messages"
+    icon = "envelope"
+
+      [[params.sidebar.sections.links]]
+      text = "Inbox"
+      url = "/"
+
+      [[params.sidebar.sections.links]]
+      text = "Compose"
+      url = "/"
+
+    [[params.sidebar.sections]]
+    title = "Images"
+    icon = "image"
+
+      [[params.sidebar.sections.links]]
+      text = "Library"
+      url = "/"
+
+      [[params.sidebar.sections.links]]
+      text = "Upload"
+      url = "/"
+
+    [[params.sidebar.sections]]
+    title = "Settings"
+    icon = "cog"
+
+      [[params.sidebar.sections.links]]
+      text = "User settings"
+      url = "/"
+
+      [[params.sidebar.sections.links]]
+      text = "App settings"
+      url = "/"
+
+  [params.section1]
+  title = "Great power comes"
+  subtitle = "with great responsibility"
+
+    [[params.section1.tiles]]
+    title = "App builder"
+    icon = "mouse-globe"
+    text = "This is some explanatory text that is on two rows"
+    url = "/"
+    buttonText = "Free trial"
+
+    [[params.section1.tiles]]
+    title = "Cloud integration"
+    icon = "laptop-cloud"
+    text = "This is some explanatory text that is on two rows"
+    url = "/"
+    buttonText = "Get started"
+
+    [[params.section1.tiles]]
+    title = "Add-ons & plugins"
+    icon = "plug-cloud"
+    text = "This is some explanatory text that is on two rows"
+    url = "/"
+    buttonText = "Get started"
+
+  [params.section2]
+  title = "You're here because you want the best"
+  subtitle = "And we know it"
+
+    [[params.section2.features]]
+    title = "Powerful and unified interface"
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
+    icon = "laptop-globe"
+
+    [[params.section2.features]]
+    title = "Cross-device synchronisation"
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
+    icon = "doc-sync"
+
+    [[params.section2.features]]
+    title = "Nomad system"
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
+    icon = "mobile-feed"
+
+  [params.section3]
+  title = "One platform"
+  subtitle = "To rule them all"
+  image = "illustrations/mockups/app-mockup.png"
+  buttonText = "Get started"
+  buttonLink = "#"
+
+  [params.section4]
+  title = "Our Clients love us!"
+  subtitle = "Lorem ipsum sit dolor amet is a dummy text used by typography industry"
+
+    [[params.section4.clients]]
+    name = "Irma Walters"
+    quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
+    job = "Accountant"
+    img = 1.0
+
+    [[params.section4.clients]]
+    name = "John Bradley"
+    quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
+    job = "Financial Analyst"
+    img = 2.0
+
+    [[params.section4.clients]]
+    name = "Gary Blackman"
+    quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
+    job = "HR Manager"
+    img = 3.0
+
+  [params.footer]
+  logo = "fresh-white-alt.svg"
+  bulmalogo = true
+
+    [[params.footer.socialmedia]]
+    link = "https://github.com/lucperkins/github-fresh"
+    icon = "github"
+
+    [[params.footer.socialmedia]]
+    link = "https://dribbble.com/#"
+    icon = "dribbble"
+
+    [[params.footer.socialmedia]]
+    link = "https://facebook.com/#"
+    icon = "facebook"
+
+    [[params.footer.socialmedia]]
+    link = "https://twitter.com/lucperkins"
+    icon = "twitter"
+
+    [[params.footer.socialmedia]]
+    link = "https://bitbucket.org/#"
+    icon = "bitbucket"
+
+    [[params.footer.product]]
+    text = "Discover features"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Why choose our product?"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Compare features"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Our roadmap"
+    link = "/"
+
+    [[params.footer.product]]
+    text = "Request features"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "Get started"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "User guides"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "Admin guide"
+    link = "/"
+
+    [[params.footer.docs]]
+    text = "Developers"
+    link = "/"
+
+    [[params.footer.blogroll]]
+    text = "Latest news"
+    link = "/"
+
+    [[params.footer.blogroll]]
+    text = "Tech articles"
+    link = "/"
+
+    [[params.footer.blogroll]]
+    text = "Video blog"
+    link = "/"
+
+  [[params.navbar]]
+  title = "Features"
+  url = "/"
+
+  [[params.navbar]]
+  title = "Pricing"
+  url = "/"
+
+  [[params.navbar]]
+  title = "Dropdown"
+
+    [[params.navbar.sublinks]]
+    title = "Dropdown item"
+    url = "/"
+
+    [[params.navbar.sublinks]]
+    title = "Dropdown item"
+    url = "/"
+
+    [[params.navbar.sublinks]]
+    title = "Dropdown item"
+    url = "/"
+
+  [[params.navbar]]
+  title = "Log in"
+  url = "/"
+
+  [[params.navbar]]
+  title = "Sign up"
+  url = "/"
+  button = true
