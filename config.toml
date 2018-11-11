@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "Deis Labs"
 theme = "fresh"
 
+disableHugoGeneratorInject = true
+
 [params]
 
   [params.font]
@@ -25,61 +27,6 @@ theme = "fresh"
     #"duffle.png",
     #"porter.png"
   ]
-
-  [params.sidebar]
-  logo = "fresh-square"
-
-    [[params.sidebar.sections]]
-    title = "User"
-    icon = "user"
-
-      [[params.sidebar.sections.links]]
-      text = "Profile"
-      url = "/"
-
-      [[params.sidebar.sections.links]]
-      text = "Account"
-      url = "/"
-
-      [[params.sidebar.sections.links]]
-      text = "Settings"
-      url = "/"
-
-    [[params.sidebar.sections]]
-    title = "Messages"
-    icon = "envelope"
-
-      [[params.sidebar.sections.links]]
-      text = "Inbox"
-      url = "/"
-
-      [[params.sidebar.sections.links]]
-      text = "Compose"
-      url = "/"
-
-    [[params.sidebar.sections]]
-    title = "Images"
-    icon = "image"
-
-      [[params.sidebar.sections.links]]
-      text = "Library"
-      url = "/"
-
-      [[params.sidebar.sections.links]]
-      text = "Upload"
-      url = "/"
-
-    [[params.sidebar.sections]]
-    title = "Settings"
-    icon = "cog"
-
-      [[params.sidebar.sections.links]]
-      text = "User settings"
-      url = "/"
-
-      [[params.sidebar.sections.links]]
-      text = "App settings"
-      url = "/"
 
   [params.section1]
   title = "Developer Focus"
