@@ -178,6 +178,10 @@ disableHugoGeneratorInject = true
   url = "/about"
 
   [[params.navbar]]
+  title = "Blog"
+  url = "/posts"
+
+  [[params.navbar]]
   title = "Projects"
 
     [[params.navbar.sublinks]]
