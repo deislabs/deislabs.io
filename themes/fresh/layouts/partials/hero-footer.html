@@ -6,8 +6,8 @@
       <ul>
         {{- range $clientLogos }}
         <li>
-          <a>
-            <img class="partner-logo" src="{{ printf "/images/logos/clients/%s" . | relURL }}">
+          <a href="https://{{ . }}.sh">
+            <img class="partner-logo" src="{{ printf "/images/logos/clients/%s.png" . | relURL }}">
           </a>
         </li>
         {{- end }}

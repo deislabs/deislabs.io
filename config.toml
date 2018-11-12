@@ -21,9 +21,9 @@ disableHugoGeneratorInject = true
   buttonlink = "#"
   image = "illustrations/worker.svg"
   clientlogos = [
-    "helm.png",
-    "draft.png",
-    "brigade.png"#,
+    "helm",
+    "draft",
+    "brigade"#,
     #"duffle.png",
     #"porter.png"
   ]
