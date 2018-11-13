@@ -38,21 +38,21 @@ disableHugoGeneratorInject = true
 
     [[params.section1.tiles]]
     title = "Helm"
-    icon = "mouse-globe"
+    icon = "helm"
     text = "Package management for Kubernetes applications"
     url = "https://helm.sh"
     buttonText = "Get started"
 
     [[params.section1.tiles]]
     title = "Draft"
-    icon = "laptop-cloud"
+    icon = "draft"
     text = "Streamlined Kubernetes application development"
     url = "https://draft.sh"
     buttonText = "Get Started"
 
     [[params.section1.tiles]]
     title = "Brigade"
-    icon = "plug-cloud"
+    icon = "brigade"
     text = "Event-driven pipelines for Kubernetes deployments"
     url = "https://brigade.sh"
     buttonText = "Get Started"
