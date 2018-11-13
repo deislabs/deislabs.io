@@ -73,14 +73,30 @@ ul.dates li {
 
 /* This adds back styling for our regular post content that is getting lost by our default (homepage) styles */
 .content-wrapper ul {
-  margin-left: 3em;
+
+}
+.content-wrapper li {
+  margin: 0 1.5em;
+}
+.content-wrapper p {
+  margin: 0 0 1.5em 0;
+}
+
+.content-wrapper ul{
   list-style-type: disc;
+  margin: 0 1.5em 1.5em 1.5em;
+}
+
+.content-wrapper ol {
+	list-style-type: decimal;
+  margin: 0 1.5em 1.5em 1.5em;
 }
 
 /* This customizes our footer styling */
 footer.footer-dark .footer-logo img {
   height: 80px; }
 
+/* Tweak hero size so that I can be more wordy without funky line wrapping */
 .hero .title {
   font-size: 2.7rem;
 }
