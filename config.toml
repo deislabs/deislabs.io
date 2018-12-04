@@ -23,9 +23,10 @@ disableHugoGeneratorInject = true
   clientlogos = [
     "helm",
     "draft",
-    "brigade"#,
-    #"duffle.png",
-    #"porter.png"
+    "brigade",
+    "cnab",
+    "duffle"#,
+    #"porter"
   ]
 
   [params.navbarlogo]
@@ -55,6 +56,20 @@ disableHugoGeneratorInject = true
     icon = "brigade"
     text = "Event-driven pipelines for Kubernetes deployments"
     url = "https://brigade.sh"
+    buttonText = "Get Started"
+
+    [[params.section1.tiles]]
+    title = "CNAB"
+    icon = "cnab"
+    text = "A spec for packaging distributed apps"
+    url = "https://cnab.io"
+    buttonText = "Get Started"
+
+    [[params.section1.tiles]]
+    title = "Duffle"
+    icon = "duffle"
+    text = "Install and manage distributed app bundles"
+    url = "https://duffle.sh"
     buttonText = "Get Started"
 
   # [params.section2]
