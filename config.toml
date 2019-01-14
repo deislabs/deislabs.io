@@ -203,6 +203,14 @@ disableHugoGeneratorInject = true
     title = "Brigade"
     url = "https://brigade.sh"
 
+    [[params.navbar.sublinks]]
+    title = "CNAB"
+    url = "https://cnab.io"
+
+    [[params.navbar.sublinks]]
+    title = "Duffle"
+    url = "https://duffle.sh"
+
   #[[params.navbar]]
   #title = "Contribute"
   #url = "/contribute"
