@@ -25,8 +25,8 @@ disableHugoGeneratorInject = true
     "draft",
     "brigade",
     "cnab",
-    "duffle"#,
-    #"porter"
+    "duffle",
+    "porter"
   ]
 
   [params.navbarlogo]
@@ -70,6 +70,13 @@ disableHugoGeneratorInject = true
     icon = "duffle"
     text = "Install and manage distributed app bundles"
     url = "https://duffle.sh"
+    buttonText = "Get Started"
+
+    [[params.section1.tiles]]
+    title = "Porter"
+    icon = "porter"
+    text = "Porter makes authoring CNAB bundles easier"
+    url = "https://porter.sh"
     buttonText = "Get Started"
 
   # [params.section2]
@@ -210,6 +217,10 @@ disableHugoGeneratorInject = true
     [[params.navbar.sublinks]]
     title = "Duffle"
     url = "https://duffle.sh"
+
+    [[params.navbar.sublinks]]
+    title = "Porter"
+    url = "https://porter.sh"
 
   #[[params.navbar]]
   #title = "Contribute"
