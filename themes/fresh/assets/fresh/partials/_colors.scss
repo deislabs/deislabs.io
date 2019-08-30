@@ -2,29 +2,36 @@
 Color variables
 ========================================================================== */
 
+$blue: #00B3E8;
+$red: #FF0056;
+$green: #00BE40;
+
+$charcoal: #4A4A4A;
+$cream: #F6FDF7;
+
 $white: #fff;
-$smoke-white: #fcfcfc;
-$grey-white: #f2f2f2;
+$smoke-white: $cream;
+$grey-white: $cream;
 
-$primary: #4FC1EA;
-$secondary: #F39200;
-$accent: #00efb7;
+$primary: $blue;
+$secondary: $green;
+$accent: $red;
 
-$fade-grey: #ededed;
-$light-grey: #EFF4F7;
-$title-grey: #A9ABAC;
-$blue-grey: #444F60;
-$muted-grey: #999;
-$light-blue-grey: #98a9c3;
-$medium-grey: #66676b;
-$basaltic-grey: #878787;
-$purple: #7F00FF;
-$mint: #11FFBD;
-$bloody: #FC354C;
-$pinky: #ff00cc;
-$frost: #004e92;
-$placeholder: #cecece;
-$dark-grey: #344258;
-$border-grey: #ccc;
-$muted-grey: #999;
-$section-grey: #fbfbfb;
+$fade-grey: $cream;
+$light-grey: darken($cream, 7.5%);
+$title-grey: darken($cream, 15%);
+$blue-grey: lighten($charcoal, 5%);
+$muted-grey: lighten($charcoal, 33.33%);
+$light-blue-grey: lighten($charcoal, 33.33%);
+$medium-grey: lighten($charcoal, 12.5%);
+$basaltic-grey: darken($cream, 25%);
+$purple: $blue;
+$mint: $green;
+$bloody: $red;
+$pinky: $red;
+$frost: $blue;
+$placeholder: darken($cream, 12.5%);
+$dark-grey: $charcoal;
+$border-grey: darken($cream, 12.5%);
+$muted-grey: darken($cream, 7.5%);
+$section-grey: $cream;

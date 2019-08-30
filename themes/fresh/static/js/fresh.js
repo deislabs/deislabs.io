@@ -88,6 +88,17 @@ $(document).ready(function(){
         });
     }
 
+    // Deislabs footer logo when scrolled to the bottom
+    var pxShow = 600;
+    var scrollSpeed = 500;
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $(".footer .shapes").addClass('bottom');
+        } else {
+            $(".footer .shapes").removeClass('bottom');
+        }
+    });
+
     // Back to Top button behaviour
     var pxShow = 600;
     var scrollSpeed = 500;

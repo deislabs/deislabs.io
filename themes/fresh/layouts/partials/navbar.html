@@ -6,7 +6,10 @@
     <div class="navbar-brand">
       {{- if $navbarLogo}}
       <a class="navbar-item" href="{{ $navbarLogo.link }}">
-        <img src="{{ printf "/images/%s" $navbarLogo.image | relURL }}" alt="Deis Labs">
+          <em class="stripe stripe-blue"></em>
+          <em class="stripe stripe-red"></em>
+          <em class="stripe stripe-green"></em>
+          <img src="{{ printf "/images/%s" $navbarLogo.image | relURL }}" alt="Deis Labs">
       </a>
       {{- end}}
 

@@ -8,14 +8,14 @@ disableHugoGeneratorInject = true
 [params]
 
   [params.font]
-  name = "Open Sans"
+  name = "Nunito Sans"
   sizes = [
     400.0,
-    600.0
+    800.0
   ]
 
   [params.hero]
-  title = "cloud native developer experience"
+  title = "Cloud Native Developer Experience"
   subtitle = "Development on the leading edge of the adoption curve can be rocky. Deis Labs is here to help make you more productive."
   buttontext = "Get started"
   buttonlink = "#"
@@ -31,7 +31,7 @@ disableHugoGeneratorInject = true
 
   [params.navbarlogo]
     link = "/"
-    image = "logo-with-text.png"
+    image = "deislabs.svg"
 
   [params.section1]
   title = "Developer Focus"

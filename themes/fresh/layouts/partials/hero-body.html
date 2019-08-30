@@ -7,20 +7,11 @@
 <div class="hero-body">
   <div class="container">
     <div class="columns is-vcentered">
-      <div class="column is-5 is-offset-1 landing-caption">
-        <h1 class="title is-1 is-bold is-spaced">
-          {{ $title }}
-        </h1>
-        {{ with $subtitle }}
-        <h2 class="subtitle is-5 is-muted">
-          {{ . }}
-        </h2>
-        {{ end }}
-      </div>
-      <div class="column is-5 is-offset-1">
-        <figure class="image is-4by3">
-          <img src="{{ printf "/images/%s" $image | relURL }}" alt="Description">
-        </figure>
+      <div class="column is-10 is-offset-1 landing-caption">
+        <img class="hero-text" src="images/hero-text-clip.svg">
+        <img class="hero-shape hero-shape-1" src="images/deislabs-ci.svg">
+        <img class="hero-shape hero-shape-2" src="images/deislabs-sq.svg">
+        <img class="hero-shape hero-shape-3"src="images/deislabs-tr.svg">
       </div>
     </div>
   </div>
