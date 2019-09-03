@@ -215,6 +215,15 @@ body {
   background-color: white !important;
 }
 
+.content-blog,
+.content-single {
+  width: 86vw;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 80vh;
+}
+
 .content-wrapper {
   position: relative;
 
@@ -283,14 +292,14 @@ body {
   blockquote {
     line-height: 1.8;
     border-left: 7px solid white;
-    font-size: 1.2rem !important;
+    font-size: 1.2rem;
     background: desaturate(darken($cream, 5%), 50%);
     padding: 1rem 1.5rem;
     margin-bottom: 1.75em;
 
     p {
       margin: 0.5rem 0;
-      font-size: 1.2rem !important;
+      font-size: 1.2rem;
     }
   }
 
@@ -303,10 +312,6 @@ body {
 }
 
 .content-single {
-  min-height: 80vh;
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
   
   p:first-of-type {
     font-size: 1.333rem;
@@ -331,11 +336,6 @@ body {
 }
 
 .content-blog {
-  min-height: 80vh;
-  width: 86vw;
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
   
   p:first-of-type {
     font-size: 1.333rem;
@@ -349,8 +349,6 @@ body {
 
   a {
     color: $charcoal;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 }
 

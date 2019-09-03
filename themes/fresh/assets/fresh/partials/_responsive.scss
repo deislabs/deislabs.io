@@ -47,6 +47,18 @@ Responsive Styles
 
 @media only screen and (max-width : 1024px) {
 
+    body {
+        font-size: 17px !important;
+    }
+
+    .navbar-brand a.navbar-item {
+        margin-left: 7.5vw !important;
+    }
+
+    .navbar.is-fresh .navbar-brand img {
+        max-width: 30vw;
+    }
+    
     .hero {
         min-height: 480px !important;
 
@@ -69,6 +81,56 @@ Responsive Styles
 
         &.bottom {
             bottom: 0.35rem !important;
+        }
+    }
+
+    .title-wrapper {
+        width: 78vw !important;
+
+        .subtitle {
+            time {
+                font-size: 0.825rem !important;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .content-blog,
+    .content-single {
+        width: 78vw !important;
+    }
+
+    .title-blog h1.title {
+        font-size: 1.825rem !important;
+        line-height: 1.35;
+        margin-bottom: 2rem !important;
+    }
+    
+    .content-wrapper {
+
+        h1 {
+            font-size: 1.6rem !important;
+        }
+
+        h2 {
+            font-size: 1.333rem !important;
+        }
+
+        h3, h4 {
+            font-size: 1.125rem !important;
+        }
+
+        ul, ol, p, li, blockquote, blockquote p {
+            font-size: 1rem !important;
+        }
+
+        code, pre, code pre {
+            font-size: 0.875rem !important;
+            line-height: 1.5;
+        }
+
+        p {
+            text-align: justify;
         }
     }
 
