@@ -62,7 +62,7 @@ disableHugoGeneratorInject = true
     title = "CNAB"
     icon = "cnab"
     text = "A spec for packaging distributed apps"
-    url = "https://cnab.io"
+    url = "/cnab/"
     buttonText = "Get Started"
 
     [[params.section1.tiles]]
@@ -212,7 +212,7 @@ disableHugoGeneratorInject = true
 
     [[params.navbar.sublinks]]
     title = "CNAB"
-    url = "https://cnab.io"
+    url = "/cnab/"
 
     [[params.navbar.sublinks]]
     title = "Duffle"
