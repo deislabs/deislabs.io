@@ -6962,8 +6962,12 @@ Responsive Styles
 @media only screen and (max-width: 1024px) {
   .hero {
     min-height: 480px !important; }
-  .hero .landing-caption .hero-shape {
-    display: none !important; }
+    .hero .hero-shape {
+      display: none !important; }
+    .hero .is-hidden-tablet img.hero-text {
+      width: 70%;
+      margin-left: 3.75rem;
+      max-width: 320px; }
   .deislabs .shapes {
     position: relative !important;
     bottom: 0.35rem !important; }
@@ -7424,6 +7428,20 @@ body {
   color: #4A4A4A;
   font-size: 1rem;
   font-weight: normal; }
+
+ul.dates .date {
+  background-color: #4A4A4A !important; }
+
+ul.dates .date:after {
+  border-left-color: #4A4A4A !important; }
+
+ul.dates li h3 a {
+  color: #4A4A4A;
+  font-size: 1.5rem; }
+
+ul.dates li p {
+  color: #4A4A4A;
+  font-size: 0.925rem; }
 
 .footer {
   padding: 0;

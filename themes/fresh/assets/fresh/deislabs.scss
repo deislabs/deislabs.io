@@ -384,13 +384,37 @@ body {
 }
 
 .feature-card {
-  
   .card-text {
     p {
       color: $charcoal;
       font-size: 1rem;
       font-weight: normal;
     }
+  }
+}
+
+ul.dates {
+
+  .date {
+    background-color: $charcoal !important;
+  }
+  .date:after {
+    border-left-color: $charcoal !important;
+  }
+  
+  li {
+    h3 {
+      a {
+        color: $charcoal;
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      color: $charcoal;
+      font-size: 0.925rem;
+    }
+
   }
 }
 

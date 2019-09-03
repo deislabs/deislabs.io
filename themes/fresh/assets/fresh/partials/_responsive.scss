@@ -49,9 +49,18 @@ Responsive Styles
 
     .hero {
         min-height: 480px !important;
-    }
-    .hero .landing-caption .hero-shape {
-        display: none !important;
+
+        .hero-shape {
+            display: none !important;
+        }
+
+        .is-hidden-tablet {
+            img.hero-text {
+                width: 70%;
+                margin-left: 3.75rem;
+                max-width: 320px;
+            }
+        }
     }
 
     .deislabs .shapes {
