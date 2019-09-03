@@ -6193,7 +6193,10 @@ Navbar
     box-shadow: none !important; }
   .navbar.is-fresh .navbar-burger {
     width: 4rem;
-    height: 4rem; }
+    height: 4rem;
+    position: absolute;
+    right: 3.5rem;
+    top: 1.5rem; }
   .navbar.is-fresh .navbar-brand {
     min-height: 4rem; }
     .navbar.is-fresh .navbar-brand img {
@@ -6952,7 +6955,24 @@ Responsive Styles
   .pushed-image {
     margin-top: 0 !important; }
   .testimonial {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .hero .landing-caption .hero-shape {
+    display: none !important; } }
+
+@media only screen and (max-width: 1024px) {
+  .hero {
+    min-height: 480px !important; }
+  .hero .landing-caption .hero-shape {
+    display: none !important; }
+  .deislabs .shapes {
+    position: relative !important;
+    bottom: 0.35rem !important; }
+    .deislabs .shapes.bottom {
+      bottom: 0.35rem !important; }
+  .footer {
+    min-height: 5.5rem; }
+  .footer-logo p {
+    display: none !important; } }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .landing-caption {
@@ -7130,7 +7150,8 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 19px;
   line-height: 1.727;
-  color: #4A4A4A; }
+  color: #4A4A4A;
+  min-height: 101vh; }
 
 .viewporter {
   position: fixed;
@@ -7145,6 +7166,9 @@ body {
 
 .section.section-feature-grey {
   background: transparent; }
+
+.is-fullheight {
+  min-height: 90vh; }
 
 .navbar,
 #navbar-clone {
@@ -7251,7 +7275,7 @@ body {
   margin-left: auto;
   margin-right: auto; }
   .content-single p:first-child {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1.7; }
   .content-single p, .content-single ul, .content-single ol, .content-single li, .content-single blockquote {
     font-size: 1.5rem;
@@ -7267,11 +7291,12 @@ body {
 
 .content-blog {
   min-height: 80vh;
+  width: 86vw;
   max-width: 720px;
   margin-left: auto;
   margin-right: auto; }
   .content-blog p:first-child {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1.7; }
   .content-blog p, .content-blog ul, .content-blog ol, .content-blog li, .content-blog blockquote {
     font-size: 1.5rem;

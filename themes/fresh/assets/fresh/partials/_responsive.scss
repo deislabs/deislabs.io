@@ -39,7 +39,39 @@ Responsive Styles
     .testimonial {
         margin: 0 auto;
     }
+
+    .hero .landing-caption .hero-shape {
+        display: none !important;
+    }
 }
+
+@media only screen and (max-width : 1024px) {
+
+    .hero {
+        min-height: 480px !important;
+    }
+    .hero .landing-caption .hero-shape {
+        display: none !important;
+    }
+
+    .deislabs .shapes {
+        position: relative !important;
+        bottom: 0.35rem !important;
+
+        &.bottom {
+            bottom: 0.35rem !important;
+        }
+    }
+
+    .footer {
+        min-height: 5.5rem;
+
+    }
+
+    .footer-logo p {
+        display: none !important;
+    }
+} 
 
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
