@@ -223,12 +223,48 @@ body {
     color: $charcoal;
   }
 
+  h1, h2, h3, h4 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 3.333rem;
+    line-height: 1.2;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 1.2em
+  }
+
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: 2.5em;
+    margin-bottom: 1.2em
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 0.825em
+  }
+
   a {
     background: rgba(255,255,255,0.333);
+    color: darken($blue, 10%) !important;
     @include transition;
 
     &:hover {
       background: rgba(255,255,255,1);
+      color: darken($blue, 25%) !important;
     }
   }
 
@@ -244,22 +280,42 @@ body {
     display: block;
   }
 
+  blockquote {
+    line-height: 1.8;
+    border-left: 7px solid white;
+    font-size: 1.2rem !important;
+    background: desaturate(darken($cream, 5%), 50%);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.75em;
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 1.2rem !important;
+    }
+  }
+
+  code,
+  pre {
+    color: black;
+    background-color: lighten($charcoal, 62.5%);
+  }
+
 }
 
 .content-single {
   min-height: 80vh;
-  max-width: 720px;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
   
-  p:first-child {
-    font-size: 1.5rem;
+  p:first-of-type {
+    font-size: 1.333rem;
     line-height: 1.7;
   }
 
   p, ul, ol, li, blockquote {
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    line-height: 1.636;
   }
 }
 
@@ -268,7 +324,7 @@ body {
   
   h1.title {
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 3.333rem;
     font-family: 'Nunito Sans';
     margin-bottom: 3.5rem;
   }
@@ -277,18 +333,18 @@ body {
 .content-blog {
   min-height: 80vh;
   width: 86vw;
-  max-width: 720px;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
   
-  p:first-child {
-    font-size: 1.5rem;
+  p:first-of-type {
+    font-size: 1.333rem;
     line-height: 1.7;
   }
 
   p, ul, ol, li, blockquote {
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    line-height: 1.636;
   }
 
   a {
@@ -305,7 +361,7 @@ body {
 
   .title {
     font-family: 'Nunito Sans';
-    font-size: 4rem !important;
+    font-size: 3.333rem !important;
     padding-right: 30%;
   }
 
