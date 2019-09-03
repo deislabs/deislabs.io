@@ -1,0 +1,605 @@
+// Deis Labs Colors
+
+$blue: #00B3E8;
+$red: #FF0056;
+$green: #00BE40;
+
+$charcoal: #4A4A4A;
+$cream: #F6FDF7;
+
+
+// Deis Labs Mixins
+@mixin transition($property:all, $duration:0.3s, $easing:ease-in-out) {
+  transition: $property $duration $easing;
+}
+
+@mixin border-radius($radius1:3px, $radius2:3px) {
+  -webkit-border-radius: $radius1 $radius2 $radius1 $radius2;
+  -moz-border-radius: $radius1 $radius2 $radius1 $radius2;
+  border-radius: $radius1 $radius2 $radius1 $radius2;
+}
+
+@mixin box-shadow($xlength:0, $ylength:2px, $size:0, $color:rgba(30,30,30,0.25)) {
+  -webkit-box-shadow: $xlength $ylength $size $color;
+  -moz-box-shadow: $xlength $ylength $size $color;
+  box-shadow: $xlength $ylength $size $color;
+}
+
+@mixin keyframe ($animation_name) {
+  @-webkit-keyframes $animation_name {
+    @content;
+  }
+  @-moz-keyframes $animation_name {
+    @content;
+  }
+  @-o-keyframes $animation_name {
+    @content;
+  }
+  @keyframes $animation_name {
+    @content;
+  }
+}
+
+@mixin animation ($delay, $duration, $animation) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: forwards;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: forwards;
+}
+
+
+// Deis Labs Theme Styles
+
+html {
+  position: relative;
+  background: $cream;
+  background: linear-gradient(180deg, rgba(246,253,247,1) 0%, rgba(239,239,242,1) 100%);
+  background-attachment: fixed;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 19px;
+  line-height: 1.727;
+  color: $charcoal;
+  min-height: 101vh;
+}
+
+.viewporter {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  border: 1.5rem solid white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -20;
+}
+
+// Sections
+.section.section-feature-grey {
+  background: transparent;
+}
+
+.is-fullheight {
+  min-height: 90vh;
+}
+
+// top
+.navbar,
+#navbar-clone {
+  background: transparent;
+  box-shadow: none;
+  padding-top: 2rem;
+
+  .container {
+    max-width: 100vw !important;
+  }
+
+  a.navbar-item {
+    font-weight: 600 !important;
+  }
+
+  .navbar-menu {
+    margin: 0 2.5rem 0 0 !important;
+  }
+}
+
+#navbar-clone {
+  // maintain the white border around the viewport whilst scrolling, and ensure the background gradient aligns with the overall page background
+  background: 
+    url(../images/tile-white.png),
+    url(../images/tile-white.png),
+    url(../images/tile-white.png),
+    linear-gradient(180deg, rgba(246,253,247,1) 0%, rgba(239,239,242,1) 100%);
+    background-repeat:
+      repeat-x,
+      repeat-y,
+      repeat-y,
+      repeat;
+    background-attachment: 
+    scroll,
+    scroll,
+    scroll,
+    fixed;
+  background-position:
+    top left,
+    top left,
+    top right,
+    0 0;
+}
+
+.navbar-brand {
+  a.navbar-item {
+    position: relative;
+    overflow: hidden;
+    z-index: 420;
+    padding: 2.5rem 2rem;
+    margin: -0.5rem 0 0 2.5rem;
+    @include transition;
+
+    img {
+      position: relative;
+      z-index: 350;
+    }
+
+    em.stripe {
+      position: absolute;
+      width: 0.5rem;
+      height: 1rem;
+      display: block;
+      z-index: 250;
+      margin-left: -2.5rem;
+      border-radius: 1rem;
+      opacity: 0.25;
+      background-blend-mode: multiply;
+      mix-blend-mode: multiply;
+      background-repeat: repeat;
+      @include transition;
+
+      &.stripe-blue {
+        background-image:  url(../images/tile-blue.png);
+        margin-left: 120%;
+        z-index: 520;
+        height: 1.5rem;
+      }
+      &.stripe-red {
+        background-image:  url(../images/tile-red.png);
+        top: 1.75rem;
+        height: 1.5rem;
+      }
+      &.stripe-green {
+        background-image:  url(../images/tile-green.png);
+        bottom: 2.25rem;
+      }
+    }
+
+    // logo hover effect thing
+    &:hover {
+      background-color: white !important;
+      
+      em.stripe {
+        opacity: 1;
+        margin-left: 0;
+
+        &.stripe-blue {
+          width: 66.67%;
+          left: 16.33%;
+        }
+        &.stripe-red {
+          width: 25%;
+          left: 50%;
+        }
+        &.stripe-green {
+          width: 33.33%;
+          left: 33.33%;
+        }
+      }
+
+      img {
+        opacity: 0.85;
+      }
+    }
+  }
+}
+.navbar.is-transparent a.navbar-item:hover, .navbar.is-transparent a.navbar-item.is-active, .navbar.is-transparent .navbar-link:hover, .navbar.is-transparent .navbar-link.is-active {
+  background-color: white !important;
+}
+
+.content-blog,
+.content-single {
+  width: 86vw;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 80vh;
+}
+
+.content-wrapper {
+  position: relative;
+
+  h1, h2, h3, h4, p, ul, li {
+    font-family: 'Nunito Sans';
+    color: $charcoal;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 3.333rem;
+    line-height: 1.2;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 1.2em
+  }
+
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-top: 2.5em;
+    margin-bottom: 1.2em
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 0.825em
+  }
+
+  a {
+    background: rgba(255,255,255,0.333);
+    color: darken($blue, 10%) !important;
+    @include transition;
+
+    &:hover {
+      background: rgba(255,255,255,1);
+      color: darken($blue, 25%) !important;
+    }
+  }
+
+  &:after {
+    height: 1.5rem;
+    background: white;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    display: block;
+  }
+
+  blockquote {
+    line-height: 1.8;
+    border-left: 7px solid white;
+    font-size: 1.2rem;
+    background: desaturate(darken($cream, 5%), 50%);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.75em;
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  code,
+  pre {
+    color: black;
+    background-color: lighten($charcoal, 62.5%);
+  }
+
+}
+
+.content-single {
+  
+  p:first-of-type {
+    font-size: 1.333rem;
+    line-height: 1.7;
+  }
+
+  p, ul, ol, li, blockquote {
+    font-size: 1.25rem;
+    line-height: 1.636;
+  }
+}
+
+.title-blog {
+  max-width: 90vw;
+  
+  h1.title {
+    font-weight: bold;
+    font-size: 3.333rem;
+    font-family: 'Nunito Sans';
+    margin-bottom: 3.5rem;
+  }
+}
+
+.content-blog {
+  
+  p:first-of-type {
+    font-size: 1.333rem;
+    line-height: 1.7;
+  }
+
+  p, ul, ol, li, blockquote {
+    font-size: 1.25rem;
+    line-height: 1.636;
+  }
+
+  a {
+    color: $charcoal;
+  }
+}
+
+
+// homepage
+.hero {
+  min-height: 90vh;
+
+  .title {
+    font-family: 'Nunito Sans';
+    font-size: 3.333rem !important;
+    padding-right: 30%;
+  }
+
+  h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 3.5vw;
+    padding-right: 3.5vw;
+  }
+
+  .landing-caption {
+    position: relative;
+    margin-top: 12.5vh;
+    margin-left: 10vw;
+
+    .hero-shape {
+      -webkit-mask-image: url(../images/hero-text-clip.svg);
+      mask-position: 0 0;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-transition: all 0.3s linear !important;
+      transition: all 0.3s linear !important;
+    }
+
+    .hero-text,
+    .hero-shape {
+      position: absolute;
+      left: 0;
+    }
+
+    // animate the masked shapes inside the text
+    // (essentially witchcraft)
+    @-webkit-keyframes shape1 {
+      0%   { top: 60px; -webkit-mask-position: -520px -48px; }
+      50% { top: 8px; -webkit-mask-position: -520px 4px; }
+      100% { top: 60px; -webkit-mask-position: -520px -48px; }
+    }
+
+    @-webkit-keyframes shape2 {
+      0%   { left: 23px; -webkit-mask-position: -23px 10px; }
+      50% { left: 333px; -webkit-mask-position: -333px 10px; }
+      100% { left: 23px; -webkit-mask-position: -23px 10px; }
+    }
+
+    @-webkit-keyframes shape3 {
+      0%   { left: 219px; top: 55px; -webkit-mask-position: -219px -43px; }
+      50% { left: 69px; top: 40px; -webkit-mask-position: -69px -28px; }
+      100% { left: 219px; top: 55px; -webkit-mask-position: -219px -43px; }
+    }
+
+    // for some reason there is an 11px offset between the shape coords and the masking coords
+    .hero-shape-1 {
+      left: 520px;
+      top: 60px;
+      -webkit-mask-position: -520px -48px;
+      @include animation(0, 3s, shape1);
+      animation-iteration-count: infinite;
+    }
+
+    .hero-shape-2 {
+      left: 23px;
+      top: 2px;
+      -webkit-mask-position: -23px 10px;
+      @include animation(0, 10s, shape2);
+      animation-iteration-count: infinite;
+    }
+
+    .hero-shape-3 {
+      left: 219px;
+      top: 55px;
+      -webkit-mask-position: -219px -43px;
+      @include animation(2s, 8s, shape3);
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+.feature-card {
+  .card-text {
+    p {
+      color: $charcoal;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
+}
+
+ul.dates {
+
+  .date {
+    background-color: $charcoal !important;
+  }
+  .date:after {
+    border-left-color: $charcoal !important;
+  }
+  
+  li {
+    h2 {
+      margin: 0;
+      font-size: 1.75rem !important;
+      
+      a {
+        color: $charcoal !important;
+        font-size: 1.5rem !important;
+      }
+    }
+
+    p {
+      color: $charcoal;
+      font-size: 0.925rem;
+    }
+
+  }
+}
+
+
+
+
+// bottom
+
+.footer {
+  padding: 0;
+  background-color: white;
+  position: relative;
+  margin-top: 8rem;
+  
+  .container {
+    max-width: 92.5vw !important;
+    width: 100%;
+  }
+}
+
+.footer-logo {
+  p {
+    padding-top: 1.85rem;
+    margin: 0 0 0 6.25rem;
+    opacity: 0.75;
+  }
+}
+
+.footer-social {
+  position: absolute;
+  right: 2.75rem;
+  top: 2rem;
+  font-size: 2rem;
+
+  a {
+    color: $charcoal;
+    padding: 0 1rem;
+    opacity: 0.667;
+    @include transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.deislabs {
+  width: 5.5rem;
+  height: 7.3rem;
+  display: inline-block;
+  position: absolute;
+  top: -4rem;
+
+  span {
+    background: url(../images/deislabs.svg) no-repeat center bottom;
+    width: 100%;
+    height: 3rem;
+    background-size: contain;
+    display: inline-block;
+    text-indent: -999em;
+    position: absolute;
+    bottom: 0;
+    @include transition;
+  }
+
+  em {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    position: absolute;
+    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
+    content: " ";
+    @include transition(all, 0.3s, ease-in-out);
+    
+    &.dl-tr {
+      background: url(../images/deislabs-tr.svg) no-repeat 50% 50%;
+      background-size: contain;
+      left: 0;
+      top: 0;
+    }
+
+    &.dl-sq {
+      background: url(../images/deislabs-sq.svg) no-repeat 50% 50%;
+      background-size: contain;
+      right: 0;
+      bottom: 1.8rem;
+    }
+
+    &.dl-ci {
+      background: url(../images/deislabs-ci.svg) no-repeat 50% 50%;
+      background-size: contain;
+      left: 0;
+      bottom: 1.8rem;
+    }
+  }
+
+  .shapes {
+    position: fixed;
+    bottom: 1.55rem;
+    display: inline-block;
+    width: 5.5rem;
+    height: 7.3rem;
+    @include transition;
+
+    &.bottom {
+      bottom: 2.667rem;
+    }
+  }
+
+  a {
+    display: inline-block;
+    width: 5.5rem;
+    height: 7.3rem;
+
+    &:hover {
+      em {
+        &.dl-tr {
+          left: 2.2rem;
+          top: 2.5rem;
+        }
+        &.dl-sq {
+          right: 2.5rem;
+        }
+        &.dl-ci {
+          bottom: 4.2rem;
+        }
+      }
+    }
+  }
+}

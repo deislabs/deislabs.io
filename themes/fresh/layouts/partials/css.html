@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}">
 {{- else }}
 {{- $css := resources.Get $sass | toCSS $cssOpts | minify | fingerprint }}
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{- end }}
 <link rel="stylesheet" type="text/css" href="{{ "/css/icons.css" | absURL }}">

@@ -8,6 +8,14 @@ Navbar
     min-height: 3.8rem;
     transition: all .3s;
     z-index: 99;
+    font-size: 1.25rem;
+
+    .navbar-menu {
+        .navbar-item {
+            margin-left: 2rem;
+        }
+    }
+    
     .container {
         min-height: 4rem;
     }
@@ -18,6 +26,9 @@ Navbar
     .navbar-burger {
         width: 4rem;
         height: 4rem;
+        position: absolute;
+        right: 3.5rem;
+        top: 1.5rem;
     }
     //Brand
     .navbar-brand {
@@ -29,7 +40,7 @@ Navbar
         //Removing navbar item default hover behaviour
         &:hover {
             .navbar-item {
-                background: transparent !important;
+                // background: transparent !important;
             }
         }
     }
@@ -38,22 +49,23 @@ Navbar
     }
     //Navbar items
     .navbar-item {
-        color: $muted-grey;
+        color: $charcoal;
         &.is-secondary {
             &:hover {
-                color: $secondary !important;
+                color: black !important;
             }
         }
         &.has-dropdown {
             padding: 10px 0;
             .navbar-link {
-                color: $muted-grey;
+                font-weight: bold;
+                
                 &:after {
                     top: 55%;
                     height: 0.5em;
                     width: 0.5em;
                     border-width: 2px;
-                    border-color: $muted-grey;
+                    border-color: $charcoal;
                 }
             }
             .navbar-dropdown {
@@ -61,15 +73,16 @@ Navbar
                 min-width: 220px;
                 margin-top: 4px;
                 border-top-color: $secondary;
+                
                 .navbar-item {
                     padding: 10px 20px;
                 }
             }
             &:hover {
                 .navbar-link {
-                    color: $secondary;
+                    color: black;
                     &:after {
-                        border-color: $secondary;
+                        border-color: black;
                     }
                 }
             }
