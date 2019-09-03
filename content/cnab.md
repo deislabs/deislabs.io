@@ -50,4 +50,8 @@ of all of these to manage your application, then your bundles can continue to
 use those. Depending on your needs, you can select one of the [CNAB compliant
 tools][tools] to create your bundle and try out Cloud Native Application Bundles today.
 
+This is a modified copy of the original announcement [Introducing CNAB: a cloud-agnostic format for packaging and running distributed applications][announcement] by [Matt Butcher][technosophos].
+
 [tools]: https://cnab.io/community-projects/#tools
+[announcement]: https://cloudblogs.microsoft.com/opensource/2018/12/04/announcing-cnab-cloud-agnostic-format-packaging-running-distributed-applications/
+[technosophos]: https://twitter.com/technosophos
