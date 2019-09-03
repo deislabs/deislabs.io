@@ -6996,7 +6996,7 @@ Responsive Styles
   .content-wrapper h2 {
     font-size: 1.333rem !important; }
   .content-wrapper h3, .content-wrapper h4 {
-    font-size: 1.125rem !important; }
+    font-size: 1rem !important; }
   .content-wrapper ul, .content-wrapper ol, .content-wrapper p, .content-wrapper li, .content-wrapper blockquote, .content-wrapper blockquote p {
     font-size: 1rem !important; }
   .content-wrapper code, .content-wrapper pre, .content-wrapper code pre {
@@ -7315,8 +7315,8 @@ body {
     line-height: 1.4;
     margin-top: 2.5em;
     margin-bottom: 1.2em; }
-  .content-wrapper h2 {
-    font-size: 1.25rem;
+  .content-wrapper h4 {
+    font-size: 1.125rem;
     line-height: 1.4;
     margin-top: 2em;
     margin-bottom: 0.825em; }

@@ -50,7 +50,7 @@ $ helm init \
 ```
 
 
-## Heading Four
+#### Heading Four
 
 Deis Labs is a shoutout to Deis, the organization where many of started our journey into Kubernetes and Open Source - creating and nuturing the Helm **project and working to simplify** the tooling around Container Native development and operations. Over the past year and a half, we have been busy _continuing that same mission; bolstered by new colleagues and resources within the Cloud Native Compute Team_ of Microsoft Azure. You may be familiar with some of our work.
 
