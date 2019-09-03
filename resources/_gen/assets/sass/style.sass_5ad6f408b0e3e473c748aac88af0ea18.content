@@ -7504,9 +7504,12 @@ ul.dates .date {
 ul.dates .date:after {
   border-left-color: #4A4A4A !important; }
 
-ul.dates li h3 a {
-  color: #4A4A4A;
-  font-size: 1.5rem; }
+ul.dates li h2 {
+  margin: 0;
+  font-size: 1.75rem !important; }
+  ul.dates li h2 a {
+    color: #4A4A4A !important;
+    font-size: 1.5rem !important; }
 
 ul.dates li p {
   color: #4A4A4A;

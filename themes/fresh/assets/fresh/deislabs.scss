@@ -457,10 +457,13 @@ ul.dates {
   }
   
   li {
-    h3 {
+    h2 {
+      margin: 0;
+      font-size: 1.75rem !important;
+      
       a {
-        color: $charcoal;
-        font-size: 1.5rem;
+        color: $charcoal !important;
+        font-size: 1.5rem !important;
       }
     }
 
