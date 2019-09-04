@@ -58,10 +58,9 @@ The core specification covers the following areas:
 - [the bundle runtime][runtime]
 - [the bundle formats][bundle-formats]
 
-This is the area of CNAB that has seen the most interest so far, and at the beginning of August, a core [specification freeze][core-freeze] has been instated.
-Of course following the freeze [a number of issues have been raised regarding some clarifications][issues], but none of them has lead to major changes.
+This is the area of CNAB that has seen the most interest so far, and at the beginning of August, a core [specification freeze][core-freeze] has been instated, stabilizing the core specification even more, and allowing [the reference implementation][duffle] and other tools implementing the specification (such as [Porter][porter] or [Docker App][app]) to implement the latest changes.
 
-The specification freeze also allows [the reference implementation][duffle] and other tools implementing the specification (such as [Porter][porter] or [Docker App][app]) to catch up.
+Of course following the specification freeze [a number of issues have been raised regarding some clarifications][issues], but none of them has lead to major changes.
 
 So what does stabilizing the core specification mean for the community?
 It means that you can build a bundle with tool A, install it with tool B, then upgrade it or uninstall it with tool C - so the following workflow could be possible:
