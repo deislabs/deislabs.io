@@ -7286,7 +7286,7 @@ body {
 .content-blog,
 .content-single {
   width: 86vw;
-  max-width: 780px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   min-height: 80vh; }
@@ -7346,7 +7346,8 @@ body {
     margin-bottom: 1.75em; }
     .content-wrapper blockquote p {
       margin: 0.5rem 0;
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      text-align: justify; }
   .content-wrapper code,
   .content-wrapper pre {
     color: black;
@@ -7364,17 +7365,19 @@ body {
   max-width: 90vw; }
   .title-blog h1.title {
     font-weight: bold;
-    font-size: 3.333rem;
+    font-size: 3rem;
     font-family: 'Nunito Sans';
     margin-bottom: 3.5rem; }
 
 .content-blog p:first-of-type {
-  font-size: 1.333rem;
+  font-size: 1.20rem;
   line-height: 1.7; }
 
 .content-blog p, .content-blog ul, .content-blog ol, .content-blog li, .content-blog blockquote {
-  font-size: 1.25rem;
-  line-height: 1.636; }
+  font-size: 1.10rem;
+  line-height: 1.636;
+  text-align: justify;
+  font-weight: normal; }
 
 .content-blog a {
   color: #4A4A4A; }
