@@ -5,6 +5,7 @@ date: 2019-09-04 00:00:00 +0000 UTC
 authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
+image: "images/logos/twitter-card.png"
 ---
 
 ## What is CNAB?
