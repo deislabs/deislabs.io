@@ -9,7 +9,7 @@ authorlink: "https://twitter.com/matei_radu"
 
 ## What is CNAB?
 
-Late last year, the CNAB (Cloud Native Application Bundles) specification was announced - [the news made it to TechCrunch][techcrunch] and other tech publications, and partner organizations wrote about how they're using CNAB (for example [Docker][docker-app], [Pivotal][pivotal], or [Bitnami][bitnami]).
+Late last year, the [CNAB (Cloud Native Application Bundles)][what-cnab] specification was announced - [the news made it to TechCrunch][techcrunch] and other tech publications, and partner organizations wrote about how they're using CNAB (for example [Docker][docker-app], [Pivotal][pivotal], or [Bitnami][bitnami]).
 
 So what is CNAB? According to [the official specification][core]:
 
