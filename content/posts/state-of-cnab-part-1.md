@@ -117,7 +117,7 @@ In the next article, we will discuss the distribution of CNAB bundles.
 [image-relocation]: https://github.com/deislabs/cnab-spec/blob/master/103-bundle-runtime.md#image-relocation
 [issues]: https://github.com/deislabs/cnab-spec/issues
 [duffle]: https://github.com/deislabs/duffle
-[porter]: https://github.com/deislabs/porter
+[porter]: https://porter.sh
 [app]: https://github.com/docker/app
 [pivotal-build-service]: https://content.pivotal.io/blog/pivotal-build-service-now-alpha-assembles-and-updates-containers-in-kubernetes
 [pivotal-function-service]: https://pivotal.io/platform/pivotal-function-service
