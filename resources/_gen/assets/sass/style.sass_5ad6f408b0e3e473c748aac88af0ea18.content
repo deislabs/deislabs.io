@@ -7376,7 +7376,8 @@ body {
 .content-blog p, .content-blog ul, .content-blog ol, .content-blog li, .content-blog blockquote {
   font-size: 1.25rem;
   line-height: 1.636;
-  text-align: justify; }
+  text-align: justify;
+  font-weight: normal; }
 
 .content-blog a {
   color: #4A4A4A; }
