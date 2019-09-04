@@ -21,7 +21,7 @@ But let's take a step back and recap what problems CNAB is trying to solve:
 > 2. We must be able to provision our applications without having to master dozens of tools; and
 > 3. We need to manage lifecycle (particularly installation, upgrade, and deletion) of our applications.
 >
-> [Here you can find an introduction to CNAB][what-cnab], and here you can read the [CNAB announcement blog post][cloudblogs].
+> [You can read an introduction to CNAB][what-cnab], and here you can find the [CNAB announcement blog post][cloudblogs].
 
 The same introduction document introduced the desired functionality CNAB hoped to bring:
 
