@@ -34,7 +34,14 @@ The same introduction document introduced the desired functionality CNAB hoped t
 > 5. Enable the export of the bundle and all dependencies to reliably reproduce in another environment, including offline environments (IoT edge, air-gapped environments).
 > 6. Store bundles in repositories for remote installation.
 
-In the months following the initial announcement, the specification was split into three separate specifications: [CNAB Core][core] (tackling points 1, 2, and part of 5), [CNAB Registries][registries] (tackling part of point 5 and point 6), and [CNAB Security][security] (tackling points 3 and 4).
+In the months following the initial announcement, the specification was split into three separate specifications:
+
+- [CNAB Core][core] - addresses 1, 2, and part of 5.
+
+- [CNAB Registries][registries] - addresses part of 5 and 6.
+
+- [CNAB Security][security] - addresses 3 and 4.
+
 (Two more sub-specifications followed, for [claims][claims] and [bundle dependencies][dependencies].)
 
 Why break down into multiple specifications in the first place? The scope of the problem is objectively broad, and it's much easier to iterate and agree on a subset of changes, with a reduced problem space. Also, all other areas depended on the core specification, so it made sense to reach a stability point there, then turn to the other parts of the ecosystem.
