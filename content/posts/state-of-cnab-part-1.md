@@ -1,7 +1,7 @@
 ---
 title: "The state of CNAB: Part 1 - CNAB Core"
 description: "In this series, we explore the state of the Cloud Native Application Bundles (CNAB) specifications, and do a deep dive into the distribution of bundles, and security and attestation."
-date: 2019-09-03 00:00:00 +0000 UTC
+date: 2019-09-04 00:00:00 +0000 UTC
 authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
