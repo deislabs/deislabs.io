@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-Deis Labs is a shoutout to Deis, the organization where many of started our
+Deis Labs is a shoutout to Deis, the organization where many of us started our
 journey into Kubernetes and Open Source - creating and nuturing the Helm project
 and working to simplify the tooling around Container Native development and
 operations.
