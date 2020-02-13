@@ -5,7 +5,7 @@ date: "2020-02-13"
 authorname: "Carolyn Van Slyck"
 author: "@carolynvs"
 authorlink: "https://twitter.com/carolynvs"
-image: "images/logos/client/porter.png"
+image: "images/porter-twitter-card.png"
 ---
 
 One tenent of working on a great team, is that no one deploys alone. I may have
