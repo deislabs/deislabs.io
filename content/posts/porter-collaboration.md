@@ -31,7 +31,7 @@ generic storage and credential resolution strategies.
 Now your team can setup a cloud account, and then share a Porter
 config file that says which plugin to use and how to connect to the account.
 Porter uses the plugin to resolve credentials against the team's secret store,
-such as Azure Key Vault, and stores the record of running bundlesß in cloud
+such as Azure Key Vault, and stores the record of running bundles in cloud
 storage, like Azure Blob Storage.
 
 With the [latest release][release] of Porter, the [azure plugin][azure-plugin]
