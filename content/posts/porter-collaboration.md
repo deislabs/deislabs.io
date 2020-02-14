@@ -34,17 +34,20 @@ Porter uses the plugin to resolve credentials against the team's secret store,
 such as Azure Key Vault, and stores the record of running bundles in cloud
 storage, like Azure Blob Storage.
 
-With the [latest release][release] of Porter, the [azure plugin][azure-plugin]
+With the [latest release][release] of Porter, the [Azure plugin][azure-plugin]
 is installed by default so that people can try it out. Nothing about the plugin framework is
 specific to Azure, it is just the first plugin we implemented. We would love to
 see more plugins for other providers! Just like with mixins, anyone can write a
-plugin, distribute and list it alongside the porter-authored plugins. Please
+plugin, distribute, and list it alongside the porter-authored plugins. Please
 reach out to us on the [#porter Slack][slack] if you are interested in making a
 plugin.
 
-😎 Already using Porter? [Install][install] the latest release, give the [plugins tutorial][tutorial] a try and let us know what you think!
+😎 Already using Porter? [Install][install] the latest release, give the
+[plugins tutorial][tutorial] a try and let us know what you think!
 
-🎉 Ready to try Porter for the first time? [Install][install], head over to the quickstart and then check out our [learning][learning] page for a high level overview of CNAB, demos of bundles in action and more.
+🎉 Ready to try Porter for the first time? [Install][install], head over to the
+quickstart and then check out our [learning][learning] page for a high level
+overview of CNAB, demos of bundles in action and more.
 
 [release]: https://github.com/deislabs/porter/releases/tag/v0.23.0-beta.1
 [plugins]: https://porter.sh/plugins/
