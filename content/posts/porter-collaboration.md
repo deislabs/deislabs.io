@@ -20,19 +20,26 @@ Key Vault.
 🔷 When a new version of the application comes out on Thursday, Adnan updates
 the deployed bundle. 
 
-🔷 Their manager Qi downloads Porter onto her laptop over the weekend, editing
-the config file to point to the team's Azure account. Then she runs a custom
-bundle action to view logs to investigate a bug report.
+🔷 Their manager Qi downloads Porter onto her laptop over the weekend and in
+minutes is running a custom bundle action to view logs to investigate a bug
+report.
 
 These seamless handoffs are now possible because of two big efforts: Porter's
 new [plugin framework][plugins] and changes to [cnab-go][cnabgo] supporting
 generic storage and credential resolution strategies.
 
-Now your team can setup a cloud account, and then share a Porter
+Now your team can setup a cloud account, and share a Porter
 config file that says which plugin to use and how to connect to the account.
 Porter uses the plugin to resolve credentials against the team's secret store,
-such as Azure Key Vault, and stores the record of running bundles in cloud
+such as Azure Key Vault, and stores the bundle instance in cloud
 storage, like Azure Blob Storage.
+
+This is a big step forward for collaborating on bundles. More importantly it is
+**much more secure**. Secrets plugins move the storage of credentials used by
+your bundles off of laptops and CI machines, back into secure secret stores
+where they can be managed by the team, encrypted at rest and not left around
+after the bundle is executed. Even if you are using Porter as a single user, you
+should move to using a secrets plugin.
 
 With the [latest release][release] of Porter, the [Azure plugin][azure-plugin]
 is installed by default so that people can try it out. Nothing about the plugin framework is
