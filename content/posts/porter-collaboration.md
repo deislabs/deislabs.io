@@ -8,7 +8,7 @@ authorlink: "https://twitter.com/carolynvs"
 image: "images/porter-twitter-card.png"
 ---
 
-One tenent of working on a great team, is that no one deploys alone. I may have
+One tenet of working on a great team, is that no one deploys alone. I may have
 originally deployed our application, but that doesn't mean that I am responsible
 for patching it until the end of time, or until I run away screaming. I am
 excited to announce that Porter now fully supports teams managing a bundle
