@@ -1,7 +1,7 @@
 ---
 title: "Managing Bundles as a Team with Porter"
 description: "Porter's latest release makes managing a bundle's lifecycle as a team possible."
-date: "2020-02-13"
+date: "2020-02-19"
 authorname: "Carolyn Van Slyck"
 author: "@carolynvs"
 authorlink: "https://twitter.com/carolynvs"
