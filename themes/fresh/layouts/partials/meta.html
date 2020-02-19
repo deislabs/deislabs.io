@@ -7,8 +7,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 {{ if .Params.Image }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/{{ .Params.Image }}">
+  <meta name="twitter:image" content="{{ .Params.Image | absURL }}">
   {{ else }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/images/twitter-card.png">
+  <meta name="twitter:image" content="{{ .Site.Params.Image | absURL }}">
 {{ end }}
 
