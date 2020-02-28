@@ -43,6 +43,7 @@ Name        Description                           Author           URL          
 terraform   A mixin for using the terraform cli   Porter Authors   https://cdn.porter.sh/mixins/atom.xml   Atom Feed
 ```
 
+
 We can then install this mixin via the provided URL, which in this case is of
 the Atom feed type:
 
@@ -50,6 +51,7 @@ the Atom feed type:
 $ porter mixin install terraform --feed-url https://cdn.porter.sh/mixins/atom.xml
 installed terraform mixin v0.5.1-beta.1 (597a442)
 ```
+
 
 The `terrraform` mixin is now available for use in our next Porter bundle.
 To peruse the full list of mixins, simply issue `porter mixin search` without
