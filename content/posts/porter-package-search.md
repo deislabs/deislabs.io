@@ -53,7 +53,7 @@ installed terraform mixin v0.5.1-beta.1 (597a442)
 ```
 
 
-The `terrraform` mixin is now available for use in our next Porter bundle.
+The [Terraform mixin](https://porter.sh/mixins/terraform) is now available for use in our next Porter bundle.
 To peruse the full list of mixins, simply issue `porter mixin search` without
 any query.
 
@@ -84,4 +84,3 @@ check out the code for the `azure` plugin via the
 [kubernetes]: https://porter.sh/mixins/kubernetes/
 [porter-packages]: https://github.com/deislabs/porter-packages
 [package-search]: https://porter.sh/package-search/
-
