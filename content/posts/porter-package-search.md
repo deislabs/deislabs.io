@@ -1,6 +1,6 @@
 ---
 title: "Searching for Mixins and Plugins with Porter"
-description: "Quickly discover mixins and plugins available for Porter -- and add yours to the list."
+description: "Discover mixins and plugins available for Porter and add yours to the list."
 date: "2020-02-28"
 authorname: "Vaughn Dice"
 author: "@vdice"
