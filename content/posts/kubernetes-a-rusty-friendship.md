@@ -23,12 +23,12 @@ Kubernetes focused application.
 Before even talking about the good coding experience, let's talk about dependency management. As a
 bit of background, I am also one of the core maintainers of Helm and have participated in adding new
 Kubernetes library dependencies or upgrading the existing ones in almost every release since Helm
-2.3. As someone who has developed many large projects against the Kubernetes libraries/API, it is an
-absolute nightmare to upgrade or add any library dependency. Several of them have different
-versioning schemes (such as [`client-go`](https://github.com/kubernetes/client-go)) and you have to
-go figure out specific hashes or branches to get everything to compile, particularly if you have
-dependencies on multiple libraries. With Rust's powerful dependency and build management tool
-`cargo`, things become much more simple:
+2.3. As someone who has developed many large projects against the Kubernetes libraries/API, I can
+tell you it is an absolute nightmare to upgrade or add any library dependency. Several of them have
+different versioning schemes (such as [`client-go`](https://github.com/kubernetes/client-go)) and
+you have to go figure out specific hashes or branches to get everything to compile, particularly if
+you have dependencies on multiple libraries. With Rust's powerful dependency and build management
+tool `cargo`, things become much more simple:
 
 ```toml
 kube = "0.31.0" 
@@ -135,16 +135,16 @@ becomes stacks of `if err != nil`. With Rust, tests are much cleaner and use a s
 `my_function().expect("oh noes")`.
 
 To put it succinctly, when writing large Kubernetes projects in Go, the code quickly becomes
-unwieldy and hard to read. Whereas with Rust, the code stays much more clean and readable.
+unwieldy and hard to read. Whereas with Rust, the code stays much cleaner and more readable.
 
 ## Extensibility
 Another thing we loved about using Rust with Kubernetes was its generics and powerful
-[trait](https://doc.rust-lang.org/1.8.0/book/traits.html) system, especially when creating a Kubelet
-implementation that others can use and extend. These two features resulted in less code that was
-also easily extensible by others. Although what we did is partially replicable using Go interfaces,
-it would have been more code across more files (e.g. you can't create default implementations of
-functions for an interface) and a whole lot more dynamic dispatch. With generics in Rust, we could
-write a Kubernetes client [that accepts any
+[trait](https://doc.rust-lang.org/1.41.0/book/ch10-02-traits.html) system, especially when creating
+a Kubelet implementation that others can use and extend. These two features resulted in less code
+that was also easily extensible by others. Although what we did is partially replicable using Go
+interfaces, it would have been more code across more files (e.g. you can't create default
+implementations of functions for an interface) and a whole lot more dynamic dispatch. With generics
+in Rust, we could write a Kubernetes client [that accepts any
 type](https://docs.rs/kube/0.31.0/kube/api/struct.Api.html#method.create), and interact with it in
 the same manner regardless of type. Contrast this to client-go's `PodInterface`, which would limit
 us only pods, or we'd need to accept (and implement) the `kubernetes.Interface`, which is quite
@@ -193,7 +193,7 @@ concurrency problems, etc. that plagued us in other Kubernetes projects.
 
 
 ## WASM and WASI support
-This was a small, but important, consideration for our use case since we were targeting running
+This was a small but important consideration for our use case since we were targeting running
 WebAssembly and [WASI](https://wasi.dev) compatible workloads. At this point only a few languages
 have WASI support built in, and Rust has some of the best support for WASI workloads right now. It
 is as simple as adding the build target like so:
@@ -227,4 +227,4 @@ for Kubernetes projects. It results in cleaner, more manageable, and easily exte
 takes advantage of the added safety benefits provided by the Rust compiler.
 
 If you'd like to give Rust + Kubernetes a whirl, feel free to come check out and/or help with
-[Krustlet](https://github.com/deislabs/krustlet), we'd love to see you there!
+[Krustlet](https://github.com/deislabs/krustlet); we'd love to see you there!
