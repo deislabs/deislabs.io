@@ -6,6 +6,7 @@ authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
 image: "images/cnab-twitter-card.png"
+tags: ["cnab"]
 ---
 
 ## What is CNAB?

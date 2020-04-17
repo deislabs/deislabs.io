@@ -11,7 +11,9 @@
     <div class="content-wrapper content-blog">
       {{ .Content }}
       <p class="author"><a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.authorname }}<br>
-        <small>{{ .Params.author }}</a></small></p>
+        <small>{{ .Params.author }}</a></small>
+      </p>
+      {{ partial "tags.html" . }}
     </div>
   </div>
 </section>
