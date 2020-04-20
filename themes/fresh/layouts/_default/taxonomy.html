@@ -1,0 +1,20 @@
+{{ define "content" }}
+<section class="section section-feature-grey is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h1 class="title section-title">{{ .Title }}</h1>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      <ul class="dates">
+        {{ range .Pages }}
+        <li>
+            <span class="date">{{ .Date.Format "Jan" }} <strong>{{ .Date.Format "_2" }}</strong></span>
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Description }}</p>
+        </li>
+        {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

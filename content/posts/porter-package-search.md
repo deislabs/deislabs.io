@@ -5,6 +5,7 @@ date: "2020-03-02"
 authorname: "Vaughn Dice"
 author: "@vdice"
 authorlink: "https://github.com/vdice"
+tags: ["porter"]
 ---
 
 Two of Porter's great strengths lie in composability and extensibility.

@@ -6,6 +6,7 @@ authorname: "Carolyn Van Slyck"
 author: "@carolynvs"
 authorlink: "https://twitter.com/carolynvs"
 image: "images/porter-twitter-card.png"
+tags: ["porter"]
 ---
 
 One tenet of working on a great team, is that no one deploys alone. I may have

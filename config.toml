@@ -5,6 +5,7 @@ theme = "fresh"
 
 disableHugoGeneratorInject = true
 
+
 [params]
 
   image = "images/twitter-card.png"

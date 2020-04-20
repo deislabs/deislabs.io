@@ -6,6 +6,7 @@ authorname: "Taylor Thomas"
 author: "@_oftaylor"
 authorlink: "https://twitter.com/_oftaylor"
 image: "images/twitter-card.png"
+tags: ["krustlet"]
 ---
 
 A few days ago, [we introduced Krustlet](../introducing-krustlet/), a WebAssembly focused
