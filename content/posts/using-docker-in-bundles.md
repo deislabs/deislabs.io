@@ -59,7 +59,7 @@ extension that says that the bundle [requires access to a Docker
 daemon](https://porter.sh/author-bundles/#docker):
 
 ```yaml
-requires:
+required:
 - docker
 ```
 
@@ -67,7 +67,7 @@ Optionally you can include that you also want the bundle to be run with
 `--privileged` which is intended for docker-in-docker scenarios:
 
 ```yaml
-requires:
+required:
 - docker:
     privileged: true
 ```
