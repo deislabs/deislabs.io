@@ -52,7 +52,7 @@ follow along with.
 
 ### Require Docker
 
-The user running the bundle, and Porter, needs to know that this bundles
+The user running the bundle, and Porter, needs to know that this bundle
 requires the local Docker daemon connected to the bundle. We have added a new
 section to porter.yaml for required extensions, and defined a new prototype
 extension that says that the bundle [requires access to a Docker
@@ -112,7 +112,7 @@ docker-compose:
   - -d
 ```
 
-We are going to focus just using Docker for this blog post, but here is a [full
+We are going to focus on just using Docker for this blog post, but here is a [full
 working example for how to use Docker Compose in a
 bundle](https://github.com/deislabs/porter-docker-compose/tree/master/examples/compose).
 
@@ -213,7 +213,7 @@ Now that the bundle is ready to use, the user running the bundle needs to
 give the bundle elevated permission with the [Allow Docker Host
 Access](https://porter.sh/configuration/#allow-docker-host-access) setting. This
 is because giving a container access to the host's Docker socket, or running a
-container with `--privileged` has security implications for the underlying host,
+container with `--privileged`, has security implications for the underlying host,
 and should only be given to trusted containers, or in this case trusted bundles.
 
 Let the whales speak!
