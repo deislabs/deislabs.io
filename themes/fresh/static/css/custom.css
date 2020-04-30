@@ -107,3 +107,8 @@ blockquote {
 	color: #444F60;
 	text-align: center;
 }
+
+/* Add some space after code examples before normal text again */
+.content-wrapper pre {
+	margin-bottom: 2em;
+}
