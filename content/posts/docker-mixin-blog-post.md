@@ -2,41 +2,50 @@
 
 We are excited to announce the first release of a Docker mixin for Porter! :whale: 
 
-Mixins are critical building blocks for bundles, and we hope the Docker mixin will help ease the process of composing bundles. The Docker mixin installs Docker and provides the Docker CLI within bundles. Prior to the creation of this mixin, in order to use Docker within your bundle, you would have to create a custom Dockerfile and install Docker. Then, to run any Docker commands, you would need to use the exec mixin and call a bash script to execute the Docker commands. The Docker mixin abstracts this for the user and allows the user to directly specify in the Porter manifest what Docker commands they want to run and pass in all the arguments and flags they need. The commands that the Docker mixin provides are pull, push, run, build, login, and remove. To view all the syntax for the commands, take a look at the [README]. (https://github.com/deislabs/porter-docker/tree/v0.1.0)
+Mixins are critical building blocks for bundles, and we hope the Docker mixin will help ease the process of composing bundles. The Docker mixin installs Docker and provides the Docker CLI within bundles. Prior to the creation of this mixin, in order to use Docker within your bundle, you would have to create a custom Dockerfile and install Docker. Then, to run any Docker commands, you would need to use the exec mixin and call a bash script to execute the Docker commands. 
+
+The Docker mixin abstracts this logic for you and allows you to specify the Docker commands with the arguments and flags that you want to execute directly in the Porter manifest. The commands that the Docker mixin provides are pull, push, run, build, login, and remove. To view all the syntax for the commands, take a look at the [README]. (https://github.com/deislabs/porter-docker/tree/v0.1.0)
 
 Let's go through an example bundle that uses the Docker mixin with [docker/whalesay] (https://hub.docker.com/r/docker/whalesay/). 
 
 ## Author the bundle
-Writing a bundle with Docker has a few steps:
+Writing a bundle with the Docker mixin has a few steps:
 * Create a bundle
 * Install the Docker mixin
-* List the Docker mixin 
+* Add the Docker mixin to the Porter manifest
 * Set up credentials
 * Use Docker CLI
 
+Let's run through these steps with our example docker-say-bundle. First, set up a project:
+```
+mkdir docker-say-bundle;
+cd docker-say-bundle;
+```
+
 ### Create a bundle
-Run the line below to generate a bundle. 
+Next, use the porter create command to generate a skeleton bundle that you can modify for your needs.
 ```
 porter create
 ```
 
 ### Install the Docker mixin
-To install the mixin, run the line below and you should see the output that it was installed.
+Next, you need to install the docker mixin to extend the Porter client. To install the mixin, run the line below and you should see the output that it was installed.
 ```
 porter mixins install docker
 
 installed docker mixin v0.1.0 (b660770)
 ```
+This installs the docker mixin into porter, by default in ~/.porter/mixins.
 
-### List the Docker mixin
-To use the mixin within your bundle, list it as a mixin. 
+### Add the Docker mixin to the Porter manifest
+In order to use the Docker mixin within your bundle, you need to add it to the mixin list. In the create a bundle step, porter create added the exec mixin. Replace the exec line with docker. 
 ```
 mixins:
 - docker
 ```
 
 ### Set up credentials
-This step is needed if you wish to use Docker push and need to login to Docker. To set up your credentials, make sure the environment variables DOCKER_USERNAME and DOCKER_PASSWORD are set. Next, add these lines in your porter.yaml. You may change the name to what you want it to be.
+This step is needed if you wish to use Docker push to push an image to a registry. In order to push to one of your registries, you need to login to Docker Hub. To set up your credentials to login to Docker Hub, make sure the environment variables DOCKER_USERNAME and DOCKER_PASSWORD are set. Next, add these lines in your porter.yaml. You may change the name to what you want it to be.
 ```
 credentials:
   - name: DOCKER_USERNAME
