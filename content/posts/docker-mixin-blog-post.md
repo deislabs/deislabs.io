@@ -1,6 +1,6 @@
 ---
 title: "Docker Mixin for Porter!"
-description: SHORT DESCRIPTION OF BLOG POST
+description: Now you can use the Docker CLI in the Porter manifest
 date: "2020-07-28"
 authorname:  Gauri Madhok
 author: gaurimadhok
@@ -21,10 +21,10 @@ Writing a bundle with the Docker mixin has a few steps:
 
 
 * [Create a bundle] (#create-a-bundle)
-* Install the Docker mixin
-* Add the Docker mixin to the Porter manifest
-* Set up credentials
-* Use Docker CLI
+* [Install the Docker mixin] (#install-the-docker-mixin)
+* [Add the Docker mixin to the Porter manifest] (#add-the-docker-mixin-to-the-porter-manifest)
+* [Set up credentials] (#set-up-credentials)
+* [Use Docker CLI] (#use-docker-cli)
 
 Let's run through these steps with our example docker-say-bundle. First, set up a project:
 ```
