@@ -1,9 +1,9 @@
 ---
 title: "Docker Mixin for Porter!"
-description: Now you can use the Docker CLI in the Porter manifest
+description: New mixin to use the Docker CLI within the Porter manifest
 date: "2020-07-28"
 authorname:  Gauri Madhok
-author: gaurimadhok
+author: "@gaurimadhok"
 authorlink: "https://twitter.com/gaurimadhok"
 # image: "images/porter-with-docker.png" OPTIONAL CUSTOM IMAGE FOR PAGE
 tags: ["porter"]
