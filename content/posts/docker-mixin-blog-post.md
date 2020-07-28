@@ -19,7 +19,8 @@ Let's go through an example bundle that uses the Docker mixin with [docker/whale
 ## Author the bundle
 Writing a bundle with the Docker mixin has a few steps:
 
-* [Create a bundle] (#create-a-bundle) 
+
+* Create a bundle
 * Install the Docker mixin
 * Add the Docker mixin to the Porter manifest
 * Set up credentials
