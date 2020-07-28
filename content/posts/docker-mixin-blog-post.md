@@ -123,7 +123,7 @@ uninstall:
       container: dockermixin
 ```
 
-Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to a registry on Docker hub. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
+Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to Docker hub. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
 ```
 FROM debian:stretch
 
