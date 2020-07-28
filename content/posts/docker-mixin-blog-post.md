@@ -66,7 +66,7 @@ Next, run the following line and select environment variable for where the crede
 ```
 porter credentials generate
 ```
-Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the -c or --cred flag. Here is an example: 
+Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the `-c` or `--cred` flag. Here is an example: 
 ```
 porter install -c credentialName
 ```
