@@ -34,7 +34,7 @@ cd docker-mixin-practice;
 
 ### Create a bundle
 Next, use the porter create command to generate a skeleton bundle that you can modify as we go through our example. Be sure to update the tag at the top of the porter.yaml file from getporter to the name of your own registry.
-```
+```console
 porter create
 ```
 
@@ -64,11 +64,11 @@ credentials:
     env: DOCKER_PASSWORD
 ``` 
 Next, run the following line and select environment variable for where the credentials will come from.
-```
+```console
 porter credentials generate
 ```
 Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the -c or --cred flag. Here is an example: 
-```
+```console
 porter install -c credentialName
 ```
 
@@ -93,7 +93,7 @@ install:
 ```
 When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker Daemon. 
 
-```
+```console
 porter install -c myCredentials --allow-docker-host-access
 ```
 This is the output that should be generated after it runs. 
@@ -149,7 +149,7 @@ install:
 ```
 When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker Daemon. 
 
-```
+```console
 porter install -c myCredentials --allow-docker-host-access
 ```
 After it runs, you should see output that the image was built and tagged successfully, the login succeeded, and the push to your repository happened.
