@@ -44,6 +44,7 @@ Next, you need to install the Docker mixin to extend the Porter client. To insta
 $ porter mixins install docker
 
 installed docker mixin v0.1.0 (b660770)
+```
 This installs the docker mixin into porter, by default in ~/.porter/mixins.
 
 ### Add the Docker mixin to the Porter manifest
