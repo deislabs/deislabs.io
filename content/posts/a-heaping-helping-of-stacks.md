@@ -11,7 +11,7 @@ tags: ["krustlet", "rust"]
 
 We recently [landed support](https://github.com/deislabs/krustlet/pull/321) for Windows in
 [Krustlet](https://github.com/deislabs/krustlet). Although the final PR was relatively small, there
-was a lot of learning behind it. While adding this support we came across an oddity that forced us
+was a lot of learning behind it. While adding this support, we came across an oddity that forced us
 to learn a whole bunch about stack vs heap allocation in Rust and figured it would be good to share
 with the world. As with most learning opportunities, this one starts with a story.
 
@@ -53,7 +53,7 @@ with the same error. We also started looking for some big structs, but didn't se
 
 ## Getting somewhere
 
-Someone else at the company suggest we trying bumping the stack size. Turns out it really isn't that
+Someone else at the company suggested we trying bumping the stack size. Turns out it really isn't that
 difficult to do (please note that if you have a large project, setting `RUSTFLAGS` will make
 everything recompile):
 
