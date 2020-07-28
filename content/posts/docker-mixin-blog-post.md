@@ -8,13 +8,11 @@ authorlink: "https://twitter.com/gaurimadhok"
 # image: "images/porter-with-docker.png" OPTIONAL CUSTOM IMAGE FOR PAGE
 tags: ["porter"]
 ---
-# Docker Mixin for Porter!
-
-We are excited to announce the first release of a Docker mixin for Porter! :whale: 
+We are excited to announce the first release of a Docker mixin for Porter! 🐳
 
 Mixins are critical building blocks for bundles, and we hope the Docker mixin will help ease the process of composing bundles. The Docker mixin installs Docker and provides the Docker CLI within bundles. Prior to the creation of this mixin, in order to use Docker within your bundle, you would have to create a custom Dockerfile and install Docker. Then, to run any Docker commands, you would need to use the exec mixin and call a bash script to execute the Docker commands. 
 
-The Docker mixin abstracts this logic for you and allows you to specify the Docker commands with the arguments and flags that you want to execute directly in the Porter manifest. The commands currently provided by the Docker mixin provides are pull, push, run, build, login, and remove. To view all the syntax for the commands, take a look at the [README]. (https://github.com/deislabs/porter-docker/tree/v0.1.0)
+The Docker mixin abstracts this logic for you and allows you to specify the Docker commands with the arguments and flags that you want to execute directly in the Porter manifest. The commands currently provided by the Docker mixin provides are pull, push, run, build, login, and remove. To view all the syntax for the commands, take a look at the [README] (https://github.com/deislabs/porter-docker).
 
 Let's go through an example bundle that uses the Docker mixin with [docker/whalesay] (https://hub.docker.com/r/docker/whalesay/). 
 
@@ -175,4 +173,4 @@ execution completed successfully!
 ``` 
 
 ## Thank you for reading!
-Please try out the mixin and let us know if you have any feedback to make it better! You can dig into the code [here] (https://github.com/deislabs/porter-docker)and create an issue [here] (https://github.com/deislabs/porter-docker/issues/new).
+Please try out the mixin and let us know if you have any feedback to make it better! You can dig into the code [here] (https://github.com/deislabs/porter-docker)  and create an issue [here] (https://github.com/deislabs/porter-docker/issues/new).
