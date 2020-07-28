@@ -20,11 +20,11 @@ Let's go through an example bundle to try out the mixin. First, we will use the 
 Writing a bundle with the Docker mixin has a few steps:
 
 
-* [Create a bundle] (#create-a-bundle)
-* [Install the Docker mixin] (#install-the-docker-mixin)
-* [Add the Docker mixin to the Porter manifest] (#add-the-docker-mixin-to-the-porter-manifest)
-* [Set up credentials] (#set-up-credentials)
-* [Use Docker CLI] (#use-docker-cli)
+* [Create a bundle](#create-a-bundle)
+* [Install the Docker mixin](#install-the-docker-mixin)
+* [Add the Docker mixin to the Porter manifest](#add-the-docker-mixin-to-the-porter-manifest)
+* [Set up credentials](#set-up-credentials)
+* [Use Docker CLI](#use-docker-cli)
 
 Let's run through these steps with our example bundle called docker-mixin-practice. First, set up a project:
 ```
