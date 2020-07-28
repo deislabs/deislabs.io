@@ -12,9 +12,9 @@ We are excited to announce the first release of a Docker mixin for Porter! 🐳
 
 Mixins are critical building blocks for bundles, and we hope the Docker mixin will help ease the process of composing bundles. The Docker mixin installs Docker and provides the Docker CLI within bundles. Prior to the creation of this mixin, in order to use Docker within your bundle, you would have to create a custom Dockerfile and install Docker. Then, to run any Docker commands, you would need to use the exec mixin and call a bash script to execute the Docker commands. 
 
-The Docker mixin abstracts this logic for you and allows you to specify the Docker commands with the arguments and flags that you want to execute directly in the Porter manifest. The commands currently provided by the Docker mixin provides are pull, push, run, build, login, and remove. To view all the syntax for the commands, take a look at the [README] (https://github.com/deislabs/porter-docker).
+The Docker mixin abstracts this logic for you and allows you to specify the Docker commands with the arguments and flags that you want to execute directly in the Porter manifest. The commands currently provided by the Docker mixin are pull, push, run, build, login, and remove. To view all the syntax for the commands, take a look at the [README](https://github.com/deislabs/porter-docker).
 
-Let's go through an example bundle that uses the Docker mixin with [docker/whalesay] (https://hub.docker.com/r/docker/whalesay/). 
+Let's go through an example bundle to try out the mixin. First, we will use the Docker mixin to pull and run [docker/whalesay](https://hub.docker.com/r/docker/whalesay/). Then, we will create our Dockerfile, build it, and push it to Docker Hub.
 
 ## Author the bundle
 Writing a bundle with the Docker mixin has a few steps:
@@ -26,20 +26,20 @@ Writing a bundle with the Docker mixin has a few steps:
 * [Set up credentials] (#set-up-credentials)
 * [Use Docker CLI] (#use-docker-cli)
 
-Let's run through these steps with our example docker-say-bundle. First, set up a project:
+Let's run through these steps with our example bundle called docker-mixin-practice. First, set up a project:
 ```
-mkdir docker-say-bundle;
-cd docker-say-bundle;
+mkdir docker-mixin-practice;
+cd docker-mixin-practice;
 ```
 
 ### Create a bundle
-Next, use the porter create command to generate a skeleton bundle that you can modify for your needs.
+Next, use the porter create command to generate a skeleton bundle that you can modify as we go through our example. Be sure to update the tag at the top of the porter.yaml file from getporter to the name of your own registry.
 ```
 porter create
 ```
 
 ### Install the Docker mixin
-Next, you need to install the docker mixin to extend the Porter client. To install the mixin, run the line below and you should see the output that it was installed.
+Next, you need to install the Docker mixin to extend the Porter client. To install the mixin, run the line below and you should see the output that it was installed.
 ```
 porter mixins install docker
 
@@ -55,7 +55,7 @@ mixins:
 ```
 
 ### Set up credentials
-This step is needed if you wish to use Docker push to push an image to a registry. In order to push to one of your registries, you need to login to Docker Hub. To set up your credentials to login to Docker Hub, make sure the environment variables DOCKER_USERNAME and DOCKER_PASSWORD are set. Next, add these lines in your porter.yaml. You may change the name to what you want it to be.
+This step is needed if you wish to use Docker push to push an image to a registry. In order to push to one of your registries, you need to login to Docker Hub. To set up your credentials to login to Docker Hub, make sure the environment variables DOCKER_USERNAME and DOCKER_PASSWORD are set on your machine. Next, add these lines in your porter.yaml. You may change the name to what you want it to be.
 ```
 credentials:
   - name: DOCKER_USERNAME
@@ -74,7 +74,7 @@ porter install -c credentialName
 
 ### Use Docker CLI
 
-To run docker/whalesay, use the code below to pull the image and then run it with a command to say "Hello World". 
+Next, to run docker/whalesay, use the code below to pull the image and then run it with a command to say "Hello World". 
 ```
 install:
 - docker:
@@ -124,14 +124,13 @@ uninstall:
       container: dockermixin
 ```
 
-Now we will go through an example of how you can incorporate and build your own Docker image and then push it to a registry. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
+Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to a registry on Docker hub. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
 ```
 FROM debian:stretch
 
 CMD ["echo", "Everyone loves cookies"]
 ```
-
-To build an image from this Dockerfile, you can use the code below and specify the name of your file and the tag you want. If you want to push your image to a registry, you can add the code to login to Docker and then push the image. 
+To build an image from this Dockerfile, you can use the code below and specify the name of your file and the tag you want. We created our Dockerfile in the same directory as the bundle. If you wish to create it somewhere else, you can specify the path to the file as an additional parameter under build. The default path is the current directory. If you want to push your image to a registry, you can add the code to login to Docker and then push the image. 
 ```
 install:
 - docker:
@@ -153,7 +152,7 @@ When you are ready to install your bundle, run the command below to identify the
 ```
 porter install -c myCredentials --allow-docker-host-access
 ```
-After it runs, you should see output that the image was built and tagged successfully, login succeeded, and the push to your repository happened.
+After it runs, you should see output that the image was built and tagged successfully, the login succeeded, and the push to your repository happened.
 ```
 Build image
 Sending build context to Docker daemon  101.2MB
@@ -175,4 +174,4 @@ execution completed successfully!
 ``` 
 
 ## Thank you for reading!
-Please try out the mixin and let us know if you have any feedback to make it better! You can dig into the code [here] (https://github.com/deislabs/porter-docker)  and create an issue [here] (https://github.com/deislabs/porter-docker/issues/new).
+Please try out the mixin and let us know if you have any feedback to make it better! You can dig into the code [here](https://github.com/deislabs/porter-docker)  and create an issue [here](https://github.com/deislabs/porter-docker/issues/new).
