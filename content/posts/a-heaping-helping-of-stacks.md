@@ -11,9 +11,9 @@ tags: ["krustlet", "rust"]
 
 We recently [landed support](https://github.com/deislabs/krustlet/pull/321) for Windows in
 [Krustlet](https://github.com/deislabs/krustlet). Although the final PR was relatively small, there
-was a lot of learning behind it. We ended up learning a whole bunch about stack vs heap allocation
-in Rust and figured it would be good to share with the world. But as with most learning
-opportunities, this one starts with a story.
+was a lot of learning behind it. While adding this support we came across an oddity that forced us
+to learn a whole bunch about stack vs heap allocation in Rust and figured it would be good to share
+with the world. As with most learning opportunities, this one starts with a story.
 
 ## A stack overflow
 
@@ -134,7 +134,13 @@ rid of the stack pinning, everything started working with no stack overflows!
 
 Ok, that was a lot of information, so what did we actually learn here? 
 
-One item not directly addressed above is the whole ["with great power comes great
+If you are having problems with a stack overflow, remember to check these things:
+
+- Do you need to increase the stack size?
+- Do you have any large structs? Try printing the type sizes to check
+- Are you pinning or allocating things on the stack you didn't mean to?
+
+Another lesson we learned from this experience is ["with great power comes great
 responsibility"](https://en.wikipedia.org/wiki/With_great_power_comes_great_responsibility) around
 zero cost abstractions. Rust focuses on having zero cost abstractions across its whole API surface.
 This is quite useful as you can feel free to use any of the abstractions without worry for adding
@@ -148,13 +154,6 @@ them on heap (i.e. we don't have to go manually allocate the memory ourselves) i
 managing the choice for us. But in this case, we weren't aware of all the repercussions of our
 choices and it led us down a rabbit hole. So the lesson to remember here is to remember that "zero
 cost" doesn't mean "zero responsibility."
-
-As for the stack overflow we addressed here, if you are having problems, remember to check these
-things:
-
-- Do you need to increase the stack size?
-- Do you have any large structs? Try printing the type sizes to check
-- Are you pinning or allocating things on the stack you didn't mean to?
 
 Hopefully this is helpful to you and helps you avoid possible pitfalls in your own applications.
 
