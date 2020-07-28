@@ -146,7 +146,7 @@ install:
       name: gmadhok/cookies
       tag: v1.0
 ```
-When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker Daemon. 
+When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker daemon. 
 
 ```
 porter install -c myCredentials --allow-docker-host-access
