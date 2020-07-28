@@ -1,3 +1,13 @@
+---
+title: "Docker Mixin for Porter!"
+description: SHORT DESCRIPTION OF BLOG POST
+date: "2020-07-28"
+authorname:  Gauri Madhok
+author: @gaurimadhok
+authorlink: "https://twitter.com/gaurimadhok"
+# image: "images/porter-with-docker.png" OPTIONAL CUSTOM IMAGE FOR PAGE
+tags: ["porter"]
+---
 # Docker Mixin for Porter!
 
 We are excited to announce the first release of a Docker mixin for Porter! :whale: 
