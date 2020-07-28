@@ -35,13 +35,13 @@ cd docker-mixin-practice;
 ### Create a bundle
 Next, use the porter create command to generate a skeleton bundle that you can modify as we go through our example. Be sure to update the tag at the top of the porter.yaml file from getporter to the name of your own registry.
 ```console
-porter create
+$ porter create
 ```
 
 ### Install the Docker mixin
 Next, you need to install the Docker mixin to extend the Porter client. To install the mixin, run the line below and you should see the output that it was installed.
-```
-porter mixins install docker
+```console
+$ porter mixins install docker
 
 installed docker mixin v0.1.0 (b660770)
 ```
@@ -65,11 +65,11 @@ credentials:
 ``` 
 Next, run the following line and select environment variable for where the credentials will come from.
 ```console
-porter credentials generate
+$ porter credentials generate
 ```
-Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the -c or --cred flag. Here is an example: 
+Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the `-c` or `--cred` flag. Here is an example: 
 ```console
-porter install -c credentialName
+$ porter install -c credentialName
 ```
 
 ### Use Docker CLI
@@ -94,7 +94,7 @@ install:
 When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker Daemon. 
 
 ```console
-porter install -c myCredentials --allow-docker-host-access
+$ porter install -c myCredentials --allow-docker-host-access
 ```
 This is the output that should be generated after it runs. 
 ```
@@ -124,7 +124,7 @@ uninstall:
       container: dockermixin
 ```
 
-Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to a registry on Docker hub. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
+Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to Docker hub. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
 ```
 FROM debian:stretch
 
@@ -147,10 +147,10 @@ install:
       name: gmadhok/cookies
       tag: v1.0
 ```
-When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker Daemon. 
+When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker daemon. 
 
 ```console
-porter install -c myCredentials --allow-docker-host-access
+$ porter install -c myCredentials --allow-docker-host-access
 ```
 After it runs, you should see output that the image was built and tagged successfully, the login succeeded, and the push to your repository happened.
 ```
