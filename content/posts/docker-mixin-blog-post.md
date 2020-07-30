@@ -26,6 +26,7 @@ Writing a bundle with the Docker mixin has a few steps:
 * [Use Docker CLI](#use-docker-cli)
 * [Set up credentials](#set-up-credentials)
 
+
 Let's run through these steps with our example bundle called docker-mixin-practice. First, set up a project:
 ```
 mkdir docker-mixin-practice;
@@ -34,6 +35,7 @@ cd docker-mixin-practice;
 
 ### Create a bundle
 Next, use the porter create command to generate a skeleton bundle that you can modify as we go through our example. 
+
 ```console
 $ porter create
 ```
@@ -73,7 +75,7 @@ install:
       command: cowsay
       arguments:
         - "Hello World"
- 
+        
 uninstall:
 - docker:
     description: "Remove dockermixin container"
@@ -111,9 +113,11 @@ FROM debian:stretch
 
 CMD ["echo", "Everyone loves cookies"]
 ```
+
 To build an image from this Dockerfile, copy and paste the code below and replace the current install action. This will build your image, login to Docker, and push your image to a registry. 
 
 Change YOURNAME to your docker username. 
+
 ```
 install:
 - docker:
@@ -176,5 +180,6 @@ Finally, run the following command to clean everything up:
 ```console
 $ porter uninstall demo -c docker --allow-docker-host-access
 ```
+
 ## Thank you for reading!
 Please try out the mixin and let us know if you have any feedback to make it better! You can dig into the code [here](https://github.com/deislabs/porter-docker)  and create an issue [here](https://github.com/deislabs/porter-docker/issues/new).
