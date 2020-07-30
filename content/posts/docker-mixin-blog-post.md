@@ -88,6 +88,7 @@ When you are ready to install your bundle, run the command below to install and 
 $ porter install demo --allow-docker-host-access
 ```
 This is the output that should be generated after it runs. 
+
 ```
 Run Whalesay
  _____________ 
