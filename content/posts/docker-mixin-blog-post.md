@@ -23,8 +23,8 @@ Writing a bundle with the Docker mixin has a few steps:
 * [Create a bundle](#create-a-bundle)
 * [Install the Docker mixin](#install-the-docker-mixin)
 * [Add the Docker mixin to the Porter manifest](#add-the-docker-mixin-to-the-porter-manifest)
-* [Set up credentials](#set-up-credentials)
 * [Use Docker CLI](#use-docker-cli)
+* [Set up credentials](#set-up-credentials)
 
 Let's run through these steps with our example bundle called docker-mixin-practice. First, set up a project:
 ```
@@ -33,7 +33,7 @@ cd docker-mixin-practice;
 ```
 
 ### Create a bundle
-Next, use the porter create command to generate a skeleton bundle that you can modify as we go through our example. Be sure to update the tag at the top of the porter.yaml file from getporter to the name of your own registry.
+Next, use the porter create command to generate a skeleton bundle that you can modify as we go through our example. 
 ```console
 $ porter create
 ```
@@ -54,27 +54,10 @@ mixins:
 - docker
 ```
 
-### Set up credentials
-This step is needed if you wish to use Docker push to push an image to a registry. In order to push to one of your registries, you need to login to Docker Hub. To set up your credentials to login to Docker Hub, make sure the environment variables DOCKER_USERNAME and DOCKER_PASSWORD are set on your machine. Next, add these lines in your porter.yaml. You may change the name to what you want it to be.
-```
-credentials:
-  - name: DOCKER_USERNAME
-    env: DOCKER_USERNAME
-  - name: DOCKER_PASSWORD
-    env: DOCKER_PASSWORD
-``` 
-Next, run the following line and select environment variable for where the credentials will come from.
-```console
-$ porter credentials generate
-```
-Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the `-c` or `--cred` flag. Here is an example: 
-```console
-$ porter install -c credentialName
-```
-
 ### Use Docker CLI
 
-Next, to run docker/whalesay, use the code below to pull the image and then run it with a command to say "Hello World". 
+Next, delete the install, upgrade, and uninstall actions. Now, to run docker/whalesay, copy and paste the code below into the porter.yaml to pull the image and then run it with a command to say "Hello World". 
+
 ```
 install:
 - docker:
@@ -90,11 +73,17 @@ install:
       command: cowsay
       arguments:
         - "Hello World"
+ 
+uninstall:
+- docker:
+    description: "Remove dockermixin container"
+    remove:
+      container: dockermixin
 ```
-When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker Daemon. 
+When you are ready to install your bundle, run the command below to install and give access to the Docker Daemon. 
 
 ```console
-$ porter install -c myCredentials --allow-docker-host-access
+$ porter install demo --allow-docker-host-access
 ```
 This is the output that should be generated after it runs. 
 ```
@@ -115,28 +104,22 @@ Run Whalesay
           \____\______/   
 ```
 
-Here is an example of what you can do in the uninstall step to remove the container we made above. 
-```
-uninstall:
-- docker:
-    description: "Remove dockermixin container"
-    remove:
-      container: dockermixin
-```
+Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to Docker hub. First, you will need to create a Dockerfile named Dockerfile-cookies next to your porter.yaml and copy paste the code below into the file. 
 
-Now, we will go through an example of how you can incorporate and build your own Docker image and then push it to Docker hub. First, you will need to create a Dockerfile. For example, here is a simple Dockerfile called Dockerfile-cookies.
 ```
 FROM debian:stretch
 
 CMD ["echo", "Everyone loves cookies"]
 ```
-To build an image from this Dockerfile, you can use the code below and specify the name of your file and the tag you want. We created our Dockerfile in the same directory as the bundle. If you wish to create it somewhere else, you can specify the path to the file as an additional parameter under build. The default path is the current directory. If you want to push your image to a registry, you can add the code to login to Docker and then push the image. 
+To build an image from this Dockerfile, copy and paste the code below and replace the current install action. This will build your image, login to Docker, and push your image to a registry. 
+
+Change YOURNAME to your docker username. 
 ```
 install:
 - docker:
     description: "Build image"
     build:
-      tag: "gmadhok/cookies:v1.0"
+      tag: "YOURNAME/cookies:v1.0"
       file: Dockerfile-cookies
 - docker:
     description: "Login to docker"
@@ -144,13 +127,29 @@ install:
 - docker:
     description: "Push image"
     push:
-      name: gmadhok/cookies
+      name: YOURNAME/cookies
       tag: v1.0
 ```
+
+### Set up credentials
+This step is needed if you wish to use Docker push to push an image to a registry. In order to push to one of your registries, you need to login to Docker Hub. To set up your credentials to login to Docker Hub, make sure the environment variables DOCKER_USERNAME and DOCKER_PASSWORD are set on your machine. Next, add these lines in your porter.yaml. You may change the name to what you want it to be.
+```
+credentials:
+  - name: DOCKER_USERNAME
+    env: DOCKER_USERNAME
+  - name: DOCKER_PASSWORD
+    env: DOCKER_PASSWORD
+``` 
+Next, run the following line and select environment variable for where the credentials will come from.
+```console
+$ porter credentials generate docker
+```
+Your credentials are now set up. When you run install or upgrade or uninstall, you need to pass in your credentials using the `-c` or `--cred` flag. 
+
 When you are ready to install your bundle, run the command below to identify the credentials and give access to the Docker daemon. 
 
 ```console
-$ porter install -c myCredentials --allow-docker-host-access
+$ porter install demo -c docker --allow-docker-host-access
 ```
 After it runs, you should see output that the image was built and tagged successfully, the login succeeded, and the push to your repository happened.
 ```
@@ -173,5 +172,9 @@ v1.0: digest: sha256:1fb89bd28f81c3e29ae16a44f077f4709f33ac410581faf23b42d9bd7a6
 execution completed successfully!
 ``` 
 
+Finally, run the following command to clean everything up:
+```console
+$ porter uninstall demo -c docker --allow-docker-host-access
+```
 ## Thank you for reading!
 Please try out the mixin and let us know if you have any feedback to make it better! You can dig into the code [here](https://github.com/deislabs/porter-docker)  and create an issue [here](https://github.com/deislabs/porter-docker/issues/new).
