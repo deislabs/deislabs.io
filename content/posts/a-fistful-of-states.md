@@ -1,7 +1,7 @@
 ---
 title: "A Fistful of States: More State Machine Patterns in Rust"
 description: "State machines in Rust"
-date: 2020-08-24 00:00:00 +0000 UTC
+date: 2020-09-24 00:00:00 +0000 UTC
 authorname: "Kevin Flansburg"
 author: "@kflansburg"
 authorlink: "https://github.com/kflansburg"
