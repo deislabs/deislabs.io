@@ -3,8 +3,8 @@ title: "A Fistful of States: More State Machine Patterns in Rust"
 description: "State machines in Rust"
 date: 2020-08-24 00:00:00 +0000 UTC
 authorname: "Kevin Flansburg"
-author: "@kevin_flansburg"
-authorlink: "https://twitter.com/kevin_flansburg"
+author: "@kflansburg"
+authorlink: "https://github.com/kflansburg"
 image: "images/twitter-card.png"
 tags: ["krustlet", "rust"]
 ---
@@ -77,7 +77,7 @@ first-class capability for streaming logs and exec sessions. However these
 capabilities, as they are implemented in Krustlet, are orthogonal to this 
 discussion.
 
-Our goal with this rewrite was to ensure that Krustlet would match the official
+Our goal with this rewrite was to ensure that Krustlet would mirror the official
 Kubelet's behavior as closely as possible. We found that many details about
 this behavior are undocumented, and spent considerable time running the 
 application to infer its behavior and inspecting the Go source code. Our 
@@ -241,7 +241,7 @@ moves the object itself to the heap.
 
 Utilizing the heap violates one of Ana's original goals, and we learned that 
 the use of trait objects introduces a lot of (necessary) limitations on the 
-trait itself, including that it disallows generic methods and returning `Self`. 
+trait itself, including that it disallows generic methods and referencing `Self` in return types. 
 [^Trait Objects] This does not prevent us from achieving our goals, but is 
 limiting and reduces performance due to the use of dynamic dispatch. We will 
 continue to explore stack-based solutions.
@@ -274,7 +274,7 @@ transitioned to in a given state handler, making it impractical to support more
 than a few outgoing edges in the state graph.
 
 ```rust
-/// Represents result of state execution and which state to transition to next.
+/// Represents result of state execution and which state to transition to.
 pub enum Transition<S, E> {
     /// Advance to next state.
     Advance(S),
