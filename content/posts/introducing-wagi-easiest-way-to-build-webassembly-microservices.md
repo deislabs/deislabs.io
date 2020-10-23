@@ -11,7 +11,7 @@ tags: ["wasm", "wasi", "cgi", "microservices", "krustlet", "rust"]
 
 A few months ago we released [Krustlet](https://github.com/deislabs/krustlet), a Kubernetes Kubelet that executes WebAssembly payloads instead of Docker containers
 
-Today, we are open sourcing another experimental WebAssembly effort: the [WebAssembly Gateway Interface (WAGI)](https://github.com/deislabs/wagi). Pronounced "waggy" (and inspired by some of the [puppies](images/puppy.jpg) on our team), WAGI is the easiest way to build WebAssembly microservices.
+Today, we are open sourcing another experimental WebAssembly effort: the [WebAssembly Gateway Interface (WAGI)](https://github.com/deislabs/wagi). Pronounced "waggy" (and inspired by some of the [puppies](/images/puppy.jpg) on our team), WAGI is the easiest way to build WebAssembly microservices.
 
 WAGI is for writing HTTP response handlers. It uses the [WASI](https://wasi.dev/) POSIX-like system to expose an HTTP request to a WebAssembly module. Rather than requiring developers to learn new frameworks or work directly with network sockets, WAGI uses basic features like environment variables and files.
 
