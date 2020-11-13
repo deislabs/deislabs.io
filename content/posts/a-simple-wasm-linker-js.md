@@ -121,7 +121,7 @@ imports.
 
 #### Linking modules, instances, and aliases
 
-But what if we don't want to satisfy imports with a JavaScript objects, but with
+But what if we don't want to satisfy imports with JavaScript objects, but with
 other WebAssembly modules? We would have to instantiate those modules, and
 manually iterate through their exported items, then construct an import object
 suitable for the module that is trying to import them. This is the main scenario
@@ -208,9 +208,9 @@ linker (by passing a true boolean to its constructor).
 We can now call `define` on the linker, and pass and `async` function.
 
 The main aspect to remember when using Asyncify is that modules instantiated
-using this method must be transformed by Binaryen by running the `asyncify`
-pass - which we do next using the `runPasses(["asyncify"])`. Then we can
-continue to use both the linker and instances created with the linker as before:
+using this method must be transformed by running the Binaryen `asyncify` pass -
+which we do next using the `runPasses(["asyncify"])`. Then we can continue to
+use both the linker and instances created with the linker as before:
 
 ```
 var useAsyncify = true;
@@ -248,7 +248,7 @@ console.log(result);
 #### Using the linker in the browser
 
 Currently, this library has limited support for running in a browser. The
-easiest way to use is to pull the library through [UNPKG][unpkg], and you can
+easiest way to use it is to pull the library through [UNPKG][unpkg], and you can
 check a complete example of this library in the browser in the
 [repository][browser-demo]:
 
