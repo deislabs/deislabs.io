@@ -267,7 +267,7 @@ issue][browser-issue] if you want to help make it better!
 
 We want to thank the WebAssembly community for building great tools, and we hope
 this little library will be helpful for people working with WebAssembly from
-JavaScript runtime!
+JavaScript runtimes!
 
 [krustlet]: https://deislabs.io/posts/introducing-krustlet/
 [wagi]:
