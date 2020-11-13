@@ -5,7 +5,7 @@ description:
   modules with imports by providing functionality to link JavaScript objects as
   imports, as well as automatically perform name based resolution for linking
   entire modules."
-date: 2020-11-12 00:00:00 +0000 UTC
+date: 2020-11-13 00:00:00 +0000 UTC
 authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
