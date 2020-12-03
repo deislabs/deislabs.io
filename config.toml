@@ -2,12 +2,13 @@ baseURL = "https://deislabs.io/"
 languageCode = "en-us"
 title = "Deis Labs"
 theme = "fresh"
-
 disableHugoGeneratorInject = true
 
+[markup]
+  [markup.highlight]
+    style = "monokailight"
 
 [params]
-
   image = "images/twitter-card.png"
   
   [params.font]
