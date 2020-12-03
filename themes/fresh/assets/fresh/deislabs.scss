@@ -307,7 +307,8 @@ body {
   code,
   pre {
     color: black;
-    background-color: lighten($charcoal, 62.5%);
+    background-color: #fff;
+    font-size: 15px !important;
   }
 
 }
