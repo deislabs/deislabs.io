@@ -12,10 +12,10 @@ disableHugoGeneratorInject = true
   image = "images/twitter-card.png"
   
   [params.font]
-  name = "Nunito Sans"
+  name = "Work Sans"
   sizes = [
     400.0,
-    800.0
+    600.0
   ]
 
   [params.hero]
