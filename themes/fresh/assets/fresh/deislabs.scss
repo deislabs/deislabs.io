@@ -252,7 +252,7 @@ body {
 
   h3 {
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     font-size: 1.25rem;
     line-height: 1.4;
     margin-top: 2.5em;
@@ -294,13 +294,24 @@ body {
     border-left: 7px solid white;
     font-size: 1.2rem;
     background: desaturate(darken($cream, 5%), 50%);
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem 1rem;
     margin-bottom: 1.75em;
 
     p {
       margin: 0.5rem 0;
       font-size: 1.2rem;
       text-align: justify;
+    }
+  }
+  .appendix {
+    background: rgba(255,255,255,0.35);
+    padding: 1.5rem 2.5rem;
+    border: 2px solid white;
+    margin: 8.25rem auto 3.5rem;
+    box-shadow: 0 1px 8px 0px #e3e3e3;
+
+    h2 {
+      margin-top: 0.25rem;
     }
   }
 

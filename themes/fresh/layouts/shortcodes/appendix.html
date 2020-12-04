@@ -1,0 +1,23 @@
+<section class="appendix">
+  <h2>Appendix: Well, what about Go?</h2>
+
+  <h3>What do we miss</h3>
+
+  <ul>
+    <li>Our kingdom for the ability to schedule concurrent work as easily in Rust as you can in Go. It is so easy to make things concurrent in comparison</li>
+    <li>A "batteries included" standard library, including HTTP support </li>
+  </ul>
+
+  <h3>What do we not miss?</h3>
+
+  <ul>
+    <li>Not to sound like a broken record, but Go dependency management is not good (just ask any of the Helm maintainers on the team). Cargo makes our lives and dependency management so much easier.</li>
+    <li>Rust allows you to make much more ergonomic and flexible APIs for consumers</li>
+    <li>We <i>really_ don’t</i> miss <code>if err != nil</code>. Error handling in Rust is great while still holding mostly to the "an error is just a value" we liked in Go. But even more importantly, Rust enforces this rather than Go's approach of relying on programmer discipline</li>
+    <li>Not having generics. Rust has very very solid generics with its trait system. The new proposal for Go generics still doesn't hold a candle to traits</li>
+  </ul>
+
+  <h3>Our opinion</h3>
+
+  <p>Go is a great tool for small projects that need to be written quickly and with ease, but we generally steer clear of it for larger projects due to how difficult it is to maintain. Between the bloat caused by <code>if err != nil</code>, lack of collection functions (like mapping and filtering), lack of generics, and a less-than-stellar dependency management solution, it becomes increasingly difficult to maintain as project size increases.</p>
+</section>
