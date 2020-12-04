@@ -151,4 +151,4 @@ After this year of learning and using Rust in all sorts of projects, we find Rus
 
 We'd also like to give a huge shout out to the Rust community and the authors of the many crates we have used. It has been a welcoming place and we very much appreciate all the effort various maintainers put into their projects. Hopefully this will be helpful to the community and offer a balanced perspective on the strengths and weaknesses of Rust.
 
-{{< shortcodes/appendix >}}
+{{< appendix >}}
