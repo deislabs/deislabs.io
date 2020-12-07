@@ -41,12 +41,12 @@ The generator will ask you a few questions, of which two are interesting:
 The result of all this is a "hello, world" application.  The code itself is uninteresting, being just a minimal Rust, C or AssemblyScript program, but the generator also provides a bunch of things to make the development experience easier:
 
 1. Visual Studio Code tasks to build and debug the Wasm build.  This means that - if you're a VS Code user - you can get up and running editing and debugging the project very quickly.  The Debug Wasm debug configuration uses `wasmtime` to run the program, and the LLDB debugger to support breakpoints, etc. in the running Wasm.
-
-![The Debug WASM configuration in VS Code](https://i.imgur.com/ypz6o0P.png)
+    
+    ![The Debug WASM configuration in VS Code](https://i.imgur.com/ypz6o0P.png)
 
 2. GitHub actions to build pull requests, and to publish the compiled Wasm module to your chosen OCI registry when you merge to `main` or tag a release with a string of the form `v*` (e.g. `v1.0.0`).  (If you chose not to publish to an OCI registry, this action just creates a build artifact.)
-
-![Build and publish workflows running out of the box](https://i.imgur.com/ARpY3jl.png)
+    
+    ![Build and publish workflows running out of the box](https://i.imgur.com/ARpY3jl.png)
 
 The preview release has some limitations.  We've mentioned the limited language and registry options.  One important restriction is that all our current templates target WASI (WebAssembly System Interface) and the `wasmtime` runtime.  We'd love to have templates for other environments and runtimes, but we could really do with feedback on that before we invest in it.
 
