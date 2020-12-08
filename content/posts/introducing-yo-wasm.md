@@ -1,7 +1,7 @@
 ---
 title: "yo wasm - The Easy Way to WebAssembly"
 description: "Introducing a Wasm project generator"
-date: 2020-12-04 00:00:00 +0000 UTC
+date: 2020-12-08 00:00:00 +0000 UTC
 authorname: "Ivan Towlson"
 author: "@itowlson"
 authorlink: "https://github.com/itowlson"
