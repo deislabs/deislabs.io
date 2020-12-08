@@ -127,8 +127,8 @@ As we've mentioned in various discussions and posts, the learning curve with Rus
 
 ### Grab Bag
 
-- Macros can lead to weird or hard to decipher errors, generally being labeled by the compiler as occurring in some place nowhere near to the actual code causing the issue.
-- Although this is a personal preference on our part, we feel that traits can be overused. So many times we'll read library documentation and be like “where in the world is this coming from?” Then we have to dig through a huge stack of traits and implementations scattered across 20 files to figure out what is happening.
+- Macros can lead to weird or hard to decipher errors, generally being labeled by the compiler as occurring in some place nowhere near to the actual code causing the issue
+- Although this is a personal preference on our part, we feel that traits can be overused. So many times we'll read library documentation and be like “where in the world is this coming from?” Then we have to dig through a huge stack of traits and implementations scattered across 20 files to figure out what is happening
 - We wish dependency features in Cargo.toml were a bit more concrete and easier to debug. Right now they are arbitrary strings with no enforcement on how they are used. It sure would be nice if we could see a "dependency graph," as it were, of enabled features and where they were enabled at
 
 ## The Ugly
