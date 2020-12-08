@@ -11,9 +11,9 @@ tags: ["rust", "krustlet"]
 
 It has been about a year since the DeisLabs team starting using Rust in a "serious" project. About this time last year, we started work on what became the [Krustlet](https://github.com/deislabs/krustlet) project. Since then, we have been using Rust extensively across our projects and have learned a ton more about the language's strengths and weaknesses. As "Rust After the Honeymoon" posts currently seem to be all the rage, we thought we could contribute a little to the discussion with our experiences writing applications for the cloud world.
 
-This post is organized using the classic (if not tired) good, bad, and ugly structure. In the bad and ugly sections, everything is stated as points of feedback and is not meant as a complaint. The whole point of this post is to go beyond the more superficial parts of the language and into things that really make a difference in our day-to-day programming work. Spoiler alert: We still _really_ like Rust, so all of this is intended as helpful data for those working on the language, to give people new the the language a good idea of some of the things they might run into, and to help others evaluate Rust for their own use. We have tried to incorporate ideas of possible solutions, no matter how vague, to the problems we bring up.
+This post is organized using the classic (if not tired) good, bad, and ugly structure. In the bad and ugly sections, everything is stated as points of feedback and is not meant as a complaint. The whole point of this post is to go beyond the more superficial parts of the language and into things that really make a difference in our day-to-day programming work. Spoiler alert: We still _really_ like Rust, so all of this is intended as helpful data for those working on the language, to give people new to the language a good idea of some of the things they might run into, and to help others evaluate Rust for their own use. We have tried to incorporate ideas of possible solutions, no matter how vague, to the problems we bring up.
 
-At the very end, we also have a bonus feature about Go and Rust. Given the team's background in many Go projects, we often hear something like this: "Well, what about Go? Do you regret moving to Rust? What do you miss from Go?" Addressing this in context of our discussion of Rust felt like a smart decision. If you don't care about that topic or it doesn't interest you, feel free to skip it.
+At the very end, we also have a bonus feature about Go and Rust. Given the team's background in many Go projects, we often hear something like this: "Well, what about Go? Do you regret moving to Rust? What do you miss from Go?" Addressing this in the context of our discussion of Rust felt like a smart decision. If you don't care about that topic or it doesn't interest you, feel free to skip it.
 
 Now with that out of the way, let's get going!
 
@@ -34,7 +34,7 @@ fn write_all<T: AsRef<[u8]>>(data: T)
 fn do_something<T: Into<MyType>>(thing: T)
 ```
 
-Basically traits allow you to design flexible APIs for users that allow them to latch on to and/or extend the functionality of your code. This leads to my next point – [Serde](https://serde.rs).
+Basically, traits allow you to design flexible APIs for users that allow them to latch on to and/or extend the functionality of your code. This leads to my next point – [Serde](https://serde.rs).
 
 ### A Love Letter to Serde
 
