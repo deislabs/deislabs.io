@@ -6,7 +6,7 @@ authorname: "Matt Butcher"
 author: "@technosophos"
 authorlink: "https://github.com/technosophos"
 image: "images/twitter-card.png"
-tags: ["wasm", "wasi", "object storage", "microservices", "rust"]
+tags: ["wasm", "wasi", "objectstorage", "microservices", "rust"]
 ---
 
 DeisLabs has been experimenting with a variety of WebAssembly tools over the last few months. While it might not appear so at first glance, Bindle is another piece of our WebAssembly research. We were excited to discover applications in addition to WebAssembly.
