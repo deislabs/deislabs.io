@@ -3287,20 +3287,6 @@ a.tag:hover {
     overflow: auto;
     max-width: 100%; }
 
-.number {
-  align-items: center;
-  background-color: whitesmoke;
-  border-radius: 290486px;
-  display: inline-flex;
-  font-size: 1.25rem;
-  height: 2em;
-  justify-content: center;
-  margin-right: 1.5rem;
-  min-width: 2.5em;
-  padding: 0.25rem 0.5rem;
-  text-align: center;
-  vertical-align: top; }
-
 .breadcrumb {
   font-size: 1rem;
   white-space: nowrap; }
