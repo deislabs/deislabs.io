@@ -17,6 +17,18 @@ $(document).ready(function(){
             $('.navbar.is-light').toggleClass('is-dark-mobile')
         });
     }
+    
+    // hide menu on scroll (headroom)
+    var headRoom = document.querySelector(".navbar");
+    var options = {
+        offset : 0,
+        tolerance : {
+            up : 25,
+            down : 0
+        }
+    };
+    var headroom  = new Headroom(headRoom, options);
+    headroom.init();
 
     //Animate left hamburger icon and open sidebar
     $('.menu-icon-trigger').click(function(e){

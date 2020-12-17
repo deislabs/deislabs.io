@@ -5,7 +5,18 @@ $red: #FF0056;
 $green: #00BE40;
 
 $charcoal: #4A4A4A;
+$midnight: #444360;
 $cream: #F6FDF7;
+$links: saturate($midnight, 33%);
+
+$displaytype: Monosten, 'Monosten Regular', monospaced;
+$primarytype: 'Work Sans', sans-serif;
+
+@mixin stencilType {
+  font-family: $displaytype;
+  letter-spacing: -0.05em;
+  font-weight: normal;
+}
 
 
 // Deis Labs Mixins
@@ -66,11 +77,24 @@ html {
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 19px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 21px;
   line-height: 1.727;
   color: $charcoal;
   min-height: 101vh;
+
+  &:before {
+    display: block;
+    content: " ";
+    height: 1.5rem;
+    background: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    position: fixed;
+  }
 }
 
 .viewporter {
@@ -94,57 +118,64 @@ body {
   min-height: 90vh;
 }
 
-// top
-.navbar,
-#navbar-clone {
-  background: transparent;
+// menu setup
+.navbar {
   box-shadow: none;
   padding-top: 2rem;
+  margin: 0;
+  will-change: transform;
+  transition: transform 200ms linear;
+  background: transparent;
+  position: fixed;
+  left: 1.5rem;
+  right: 1.5rem;
 
   .container {
     max-width: 100vw !important;
   }
 
-  a.navbar-item {
-    font-weight: 600 !important;
+  a.navbar-item,
+  .navbar-link {
+    @include stencilType;
   }
 
   .navbar-menu {
-    margin: 0 2.5rem 0 0 !important;
+    margin: 0 !important;
+  }
+
+  &.headroom--pinned {
+    margin: 0;
+    transform: translateY(0%);
+    border-bottom: 2px solid white !important;
+    // maintain the white border around the viewport whilst scrolling, and ensure the background gradient aligns with the overall page background
+    background: 
+      url(../images/tile-white.png),
+      linear-gradient(180deg, rgba(246,253,247,1) 0%, rgba(245,250,247,1) 100%);
+    background-repeat: 
+      repeat-x,
+      repeat;
+    background-attachment: 
+      scroll,
+      fixed;
+    background-position: 
+      top left,
+      0 0;
+    }
+  &.headroom--unpinned {
+    transform: translateY(-100%);
   }
 }
 
-#navbar-clone {
-  // maintain the white border around the viewport whilst scrolling, and ensure the background gradient aligns with the overall page background
-  background: 
-    url(../images/tile-white.png),
-    url(../images/tile-white.png),
-    url(../images/tile-white.png),
-    linear-gradient(180deg, rgba(246,253,247,1) 0%, rgba(239,239,242,1) 100%);
-    background-repeat:
-      repeat-x,
-      repeat-y,
-      repeat-y,
-      repeat;
-    background-attachment: 
-    scroll,
-    scroll,
-    scroll,
-    fixed;
-  background-position:
-    top left,
-    top left,
-    top right,
-    0 0;
-}
-
+// menu content
 .navbar-brand {
+  margin-left: 0 !important;
+  
   a.navbar-item {
     position: relative;
     overflow: hidden;
     z-index: 420;
-    padding: 2.5rem 2rem;
-    margin: -0.5rem 0 0 2.5rem;
+    padding: 2.5rem 2.5rem;
+    margin: -0.5rem 0 0 0;
     @include transition;
 
     img {
@@ -152,13 +183,14 @@ body {
       z-index: 350;
     }
 
+    // deis labs rollover fx (normal state)
     em.stripe {
       position: absolute;
       width: 0.5rem;
       height: 1rem;
       display: block;
       z-index: 250;
-      margin-left: -2.5rem;
+      margin-left: -3.5rem;
       border-radius: 1rem;
       opacity: 0.25;
       background-blend-mode: multiply;
@@ -183,7 +215,7 @@ body {
       }
     }
 
-    // logo hover effect thing
+    // deislabs rollover fx (hover state)
     &:hover {
       background-color: white !important;
       
@@ -211,29 +243,53 @@ body {
     }
   }
 }
+
+.navbar-end {
+  margin-right: 2vw;
+}
+
 .navbar.is-transparent a.navbar-item:hover, .navbar.is-transparent a.navbar-item.is-active, .navbar.is-transparent .navbar-link:hover, .navbar.is-transparent .navbar-link.is-active {
   background-color: white !important;
 }
 
-.content-blog,
-.content-single {
-  width: 86vw;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 80vh;
+
+// page content styles
+
+section.page,
+section.blog {
+  padding-top: 5.5rem;
 }
 
 .content-wrapper {
-  position: relative;
+  article {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-width: 50vw;
+    max-width: 72rem;
+  }
+}
 
-  h1, h2, h3, h4, p, ul, li {
-    font-family: 'Nunito Sans';
-    color: $charcoal;
+.content-wrapper {
+  h1,
+  h1.title,
+  h2 {
+    @include stencilType;
+    color: $midnight;
   }
 
-  h1, h2, h3, h4 {
+  h2 {
+    @include stencilType;
+  }
+
+  h2, h3, h4, p, ul, li {
+    font-family: $primarytype;
+    color: darken($charcoal, 5%);
+  }
+
+  h3, h4 {
     font-weight: bold;
+    color: $midnight;
   }
 
   h1 {
@@ -244,7 +300,7 @@ body {
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 1.4;
     margin-top: 1.75em;
     margin-bottom: 1.2em
@@ -255,7 +311,7 @@ body {
     letter-spacing: 0.1em;
     font-size: 1.25rem;
     line-height: 1.4;
-    margin-top: 2.5em;
+    margin-top: 3em;
     margin-bottom: 1.2em
   }
 
@@ -267,8 +323,9 @@ body {
   }
 
   a {
-    background: rgba(255,255,255,0.333);
-    color: darken($blue, 10%) !important;
+    background: rgba(255,255,255,0.2);
+    color: $links !important;
+    border-bottom: 1px solid lighten($midnight, 57.5%);
     @include transition;
 
     &:hover {
@@ -299,8 +356,6 @@ body {
 
     p {
       margin: 0.5rem 0;
-      font-size: 1.2rem;
-      text-align: justify;
     }
   }
   .appendix {
@@ -322,48 +377,105 @@ body {
     font-size: 15px !important;
   }
 
-}
+  .highlight {
+    box-shadow:  0 3px 5px 1px lighten($charcoal, 60%);
+    margin-bottom: 2.5rem;
 
-.content-single {
-  
-  p:first-of-type {
-    font-size: 1.333rem;
-    line-height: 1.7;
-  }
-
-  p, ul, ol, li, blockquote {
-    font-size: 1.25rem;
-    line-height: 1.636;
+    pre {
+      margin: 0;
+    }
   }
 }
 
-.title-blog {
-  max-width: 90vw;
-  
+// titles
+.title-wrapper {
+  $sidebarWidth: 30rem;
+  font-size: 1rem;
+
   h1.title {
-    font-weight: bold;
-    font-size: 3rem;
-    font-family: 'Nunito Sans';
-    margin-bottom: 3.5rem;
+    font-size: 2.35em;
+    margin-bottom: 1.5rem;
+    padding-right: 5%;
+    line-height: 1.25;
+    @include stencilType;
+    letter-spacing: -0.05em;
+    color: $midnight;
+  }
+  
+  header {
+    text-align: left;
+    position: fixed;
+    top: 6.25rem;
+    max-width: $sidebarWidth;
+    padding: 11.5vh 2.25rem 0;
+    @include transition;
+
+    .post-meta {
+      border-top: 3px solid white;
+      padding-top: 1.5rem;
+      margin-top: 0rem;
+    }
   }
 }
 
-.content-blog {
+.tags {
+  text-align: left;
+  margin-top: 2em;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding-right: 0;
+  };
+  
+  a {
+    border: 3px dashed lighten($charcoal, 60%);
+    border-radius: 3rem;
+    float: left;
+    margin-right: 1.5rem;
+    display: inline-block;
+    color: $links;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    @include stencilType;
+    @include transition;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    padding: 0.125rem 1.25rem 0;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.5);
+      border-color: $blue;
+      color: $blue;
+    }
+  }
+}
+
+// blog content
+.blog {
+  font-size: 1.125em;
+
+  .blog-menu {
+    a {
+
+    }
+  }
   
   p:first-of-type {
-    font-size: 1.20rem;
-    line-height: 1.7;
+    margin-top: 3.5em;
+    margin-bottom: 3.5em;
+    font-size: 1.125em;
+    line-height: 1.55;
+    padding-right: 7%;
   }
 
   p, ul, ol, li, blockquote {
-    font-size: 1.10rem;
-    line-height: 1.636;
-    text-align: justify;
     font-weight: normal;
+    padding-right: 5%;
   }
 
   a {
-    color: $charcoal;
+    color: $links;
   }
 }
 
@@ -373,14 +485,13 @@ body {
   min-height: 90vh;
 
   .title {
-    font-family: 'Nunito Sans';
-    font-size: 3.333rem !important;
+    font-family: $displaytype;
+    font-size: 5rem !important;
     padding-right: 30%;
   }
 
   h1 {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
+    font-family: $displaytype;
     font-size: 3.5vw;
     padding-right: 3.5vw;
   }
@@ -456,7 +567,7 @@ body {
   .card-text {
     p {
       color: $charcoal;
-      font-size: 1rem;
+      // font-size: 1rem;
       font-weight: normal;
     }
   }
@@ -477,16 +588,15 @@ ul.dates {
       font-size: 1.75rem !important;
       
       a {
-        color: $charcoal !important;
+        color: $links !important;
         font-size: 1.5rem !important;
       }
     }
 
     p {
       color: $charcoal;
-      font-size: 0.925rem;
+      // font-size: 0.925rem;
     }
-
   }
 }
 
@@ -586,7 +696,7 @@ ul.dates {
 
   .shapes {
     position: fixed;
-    bottom: 1.55rem;
+    bottom: 2vw;
     display: inline-block;
     width: 5.5rem;
     height: 7.3rem;

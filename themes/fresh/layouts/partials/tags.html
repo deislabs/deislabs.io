@@ -1,4 +1,4 @@
-<div id="tags">
+<span class="tags">
 {{ $taxo := "tags" }} <!-- Use the plural form here -->
 {{ with .Param $taxo }}
     {{ range $index, $tag := . }}
@@ -8,4 +8,4 @@
         {{- end -}}
     {{- end -}}
 {{ end }}
-</div>
+</span>

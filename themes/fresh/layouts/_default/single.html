@@ -1,5 +1,5 @@
 {{ define "content"}}
-<section class="section section-feature-grey is-medium">
+<section class="section section-feature-grey is-medium page">
   <div class="container">
     <div class="title-wrapper title-blog has-text-centered">
       <h1 class="title section-title">{{ .Title }}</h1>
@@ -8,9 +8,8 @@
         {{ .Description }}
       </div>
       {{ end }}
-      <div class="divider is-centered"></div>
     </div>
-    <div class="content-wrapper content-blog">
+    <div class="content-wrapper">
       {{ .Content }}
     </div>
   </div>
