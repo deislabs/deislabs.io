@@ -31,34 +31,34 @@ $(document).ready(function(){
     headroom.init();
 
     //Animate left hamburger icon and open sidebar
-    $('.menu-icon-trigger').click(function(e){
+    $('a#Projects').click(function(e){
         e.preventDefault();
-        $('.menu-icon-wrapper').toggleClass('open');
-        $('.sidebar').toggleClass('is-active');
+        // $('#Projects').toggleClass('open');
+        $('body').toggleClass('projects-open');
     });
 
     //Close sidebar
-    $('.sidebar-close').click(function() {
-        $('.sidebar').removeClass('is-active');
-        $('.menu-icon-wrapper').removeClass('open');
-    })
+    // $('.sidebar-close').click(function() {
+    //     $('.sidebar').removeClass('is-active');
+    //     $('.menu-icon-wrapper').removeClass('open');
+    // })
 
     //Sidebar menu
-    if ($('.sidebar').length) {
-        $(".sidebar-menu > li.have-children a").on("click", function(i){
-            i.preventDefault();
-            if( ! $(this).parent().hasClass("active") ){
-                $(".sidebar-menu li ul").slideUp();
-                $(this).next().slideToggle();
-                $(".sidebar-menu li").removeClass("active");
-                $(this).parent().addClass("active");
-            }
-            else{
-                $(this).next().slideToggle();
-                $(".sidebar-menu li").removeClass("active");
-            }
-        });
-    }
+    // if ($('.sidebar').length) {
+    //     $(".sidebar-menu > li.have-children a").on("click", function(i){
+    //         i.preventDefault();
+    //         if( ! $(this).parent().hasClass("active") ){
+    //             $(".sidebar-menu li ul").slideUp();
+    //             $(this).next().slideToggle();
+    //             $(".sidebar-menu li").removeClass("active");
+    //             $(this).parent().addClass("active");
+    //         }
+    //         else{
+    //             $(this).next().slideToggle();
+    //             $(".sidebar-menu li").removeClass("active");
+    //         }
+    //     });
+    // }
 
     //Navbar Clone
     if ($('#navbar-clone').length) {

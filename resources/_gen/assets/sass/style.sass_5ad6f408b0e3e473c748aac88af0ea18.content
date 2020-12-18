@@ -7174,6 +7174,17 @@ body {
     width: 100%;
     z-index: 500;
     position: fixed; }
+  body:after {
+    display: block;
+    content: " ";
+    height: 1.5rem;
+    background: white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1850;
+    position: fixed; }
 
 .viewporter {
   position: fixed;
@@ -7209,10 +7220,15 @@ body {
     font-family: Monosten, "Monosten Regular", monospaced;
     letter-spacing: -0.05em;
     font-weight: normal; }
+    .navbar a.navbar-item[id^="Projects"],
+    .navbar .navbar-link[id^="Projects"] {
+      font-weight: bold;
+      color: #0082a8; }
   .navbar .navbar-menu {
-    margin: 0 !important; }
+    margin: 0 0.5rem 0 0 !important; }
   .navbar.headroom--pinned {
     margin: 0;
+    position: fixed;
     transform: translateY(0%);
     border-bottom: 2px solid white !important;
     background: url(../images/tile-white.png), linear-gradient(180deg, #f6fdf7 0%, #f5faf7 100%);
@@ -7385,17 +7401,64 @@ section.blog {
   background-color: #fff;
   font-size: 15px !important; }
 
+.content-wrapper pre {
+  max-width: 96%; }
+
 .content-wrapper .highlight {
   box-shadow: 0 3px 5px 1px #e3e3e3;
   margin-bottom: 2.5rem; }
   .content-wrapper .highlight pre {
     margin: 0; }
 
+aside#projects {
+  background: #4A4A4A;
+  color: white;
+  height: 100vh;
+  min-width: 300px;
+  position: fixed;
+  z-index: 1750;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: left;
+  padding-top: 6.75rem;
+  right: -25%;
+  transition: all 0.3s ease-in-out; }
+  aside#projects nav {
+    position: fixed;
+    top: 8.125rem;
+    bottom: 1.6rem;
+    overflow-y: scroll;
+    display: inline;
+    overflow-x: hidden;
+    width: 300px;
+    padding-bottom: 7.5rem; }
+  aside#projects a {
+    color: white;
+    display: list-item;
+    list-style: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1.75rem;
+    margin: 1rem;
+    border-radius: 0.667rem;
+    transition: all 0.3s ease-in-out;
+    font-family: Monosten, "Monosten Regular", monospaced;
+    letter-spacing: -0.05em;
+    font-weight: normal;
+    letter-spacing: 0.05em; }
+    aside#projects a:hover {
+      background: black; }
+
+body.projects-open aside#projects {
+  right: 0 !important; }
+
 .title-wrapper {
   font-size: 1rem; }
   .title-wrapper h1.title {
     font-size: 2.35em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     padding-right: 5%;
     line-height: 1.25;
     font-family: Monosten, "Monosten Regular", monospaced;
@@ -7413,20 +7476,22 @@ section.blog {
     .title-wrapper header .post-meta {
       border-top: 3px solid white;
       padding-top: 1.5rem;
-      margin-top: 0rem; }
+      margin-top: 0rem;
+      color: #8a8a8a; }
 
 .tags {
   text-align: left;
-  margin-top: 2em; }
+  margin-top: 2em;
+  max-width: 60%; }
   .tags li {
     list-style: none;
-    margin: 0;
-    padding-right: 0; }
+    margin: 0 !important;
+    padding-right: 0 !important; }
   .tags a {
-    border: 3px dashed #e3e3e3;
+    border: 2px dashed #e3e3e3;
     border-radius: 3rem;
     float: left;
-    margin-right: 1.5rem;
+    margin: 0.35rem 0.67rem 0.35rem 0;
     display: inline-block;
     color: #2b287b;
     text-transform: uppercase;
@@ -7445,16 +7510,31 @@ section.blog {
 
 .blog {
   font-size: 1.125em; }
-  .blog p:first-of-type {
-    margin-top: 3.5em;
+  .blog.blog-list .content-wrapper .tags a {
+    background-color: white; }
+  .blog.blog-list .content-wrapper ul {
+    margin: 0; }
+    .blog.blog-list .content-wrapper ul li {
+      list-style: none;
+      margin: 1.5rem 0 5rem; }
+      .blog.blog-list .content-wrapper ul li h1 {
+        border-bottom: 2px dashed white;
+        background-color: rgba(255, 255, 255, 0.125); }
+      .blog.blog-list .content-wrapper ul li p.post-meta {
+        color: #707070; }
+      .blog.blog-list .content-wrapper ul li:hover h1 {
+        background-color: rgba(255, 255, 255, 0.5); }
+  .blog .content-blog p:first-of-type {
+    margin-top: 1.5em;
     margin-bottom: 3.5em;
     font-size: 1.125em;
-    line-height: 1.55;
-    padding-right: 7%; }
-  .blog p, .blog ul, .blog ol, .blog li, .blog blockquote {
+    line-height: 1.825;
+    padding-right: 12.5%;
+    color: black; }
+  .blog .content-blog p, .blog .content-blog ul, .blog .content-blog ol, .blog .content-blog li, .blog .content-blog blockquote {
     font-weight: normal;
     padding-right: 5%; }
-  .blog a {
+  .blog .content-blog a {
     color: #2b287b; }
 
 .hero {
@@ -7594,7 +7674,8 @@ ul.dates li p {
   padding: 0;
   background-color: white;
   position: relative;
-  margin-top: 8rem; }
+  margin-top: 8rem;
+  z-index: 1330; }
   .footer .container {
     max-width: 92.5vw !important;
     width: 100%; }

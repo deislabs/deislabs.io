@@ -95,6 +95,19 @@ body {
     z-index: 500;
     position: fixed;
   }
+
+  &:after {
+    display: block;
+    content: " ";
+    height: 1.5rem;
+    background: white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1850;
+    position: fixed;
+  }
 }
 
 .viewporter {
@@ -137,14 +150,20 @@ body {
   a.navbar-item,
   .navbar-link {
     @include stencilType;
+
+    &[id^="Projects"] {
+      font-weight: bold;
+      color: darken($blue, 12.5%);
+    }
   }
 
   .navbar-menu {
-    margin: 0 !important;
+    margin: 0 0.5rem 0 0 !important;
   }
 
   &.headroom--pinned {
     margin: 0;
+    position: fixed;
     transform: translateY(0%);
     border-bottom: 2px solid white !important;
     // maintain the white border around the viewport whilst scrolling, and ensure the background gradient aligns with the overall page background
@@ -377,6 +396,10 @@ section.blog {
     font-size: 15px !important;
   }
 
+  pre {
+    max-width: 96%;
+  }
+
   .highlight {
     box-shadow:  0 3px 5px 1px lighten($charcoal, 60%);
     margin-bottom: 2.5rem;
@@ -387,6 +410,63 @@ section.blog {
   }
 }
 
+// project right-hand menu
+$projectsWidth: 300px;
+
+aside#projects {
+  background: $charcoal;
+  color: white;
+  height: 100vh;
+  min-width: $projectsWidth;
+  position: fixed;
+  z-index: 1750;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: left;
+  padding-top: 6.75rem;
+  right: -25%;
+  @include transition;
+
+  nav {
+    position: fixed;
+    top: 8.125rem;
+    bottom: 1.6rem;
+    overflow-y: scroll;
+    display: inline;
+    overflow-x: hidden;
+    width: $projectsWidth;
+    padding-bottom: 7.5rem;
+  }
+  
+  a {
+    color: white;
+    display: list-item;
+    list-style: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1.75rem;
+    margin: 1rem;
+    border-radius: 0.667rem;
+    @include transition;
+    @include stencilType;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      background: black;
+    }
+  }
+}
+
+// open and close projects menu
+body.projects-open {
+
+  aside#projects {
+    right: 0 !important;
+  }
+}
+
 // titles
 .title-wrapper {
   $sidebarWidth: 30rem;
@@ -394,7 +474,7 @@ section.blog {
 
   h1.title {
     font-size: 2.35em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     padding-right: 5%;
     line-height: 1.25;
     @include stencilType;
@@ -414,6 +494,7 @@ section.blog {
       border-top: 3px solid white;
       padding-top: 1.5rem;
       margin-top: 0rem;
+      color: lighten($charcoal, 25%);
     }
   }
 }
@@ -421,18 +502,19 @@ section.blog {
 .tags {
   text-align: left;
   margin-top: 2em;
+  max-width: 60%;
 
   li {
     list-style: none;
-    margin: 0;
-    padding-right: 0;
+    margin: 0 !important;
+    padding-right: 0 !important;
   };
   
   a {
-    border: 3px dashed lighten($charcoal, 60%);
+    border: 2px dashed lighten($charcoal, 60%);
     border-radius: 3rem;
     float: left;
-    margin-right: 1.5rem;
+    margin: 0.35rem 0.67rem 0.35rem 0;
     display: inline-block;
     color: $links;
     text-transform: uppercase;
@@ -455,27 +537,56 @@ section.blog {
 .blog {
   font-size: 1.125em;
 
-  .blog-menu {
-    a {
 
+  &.blog-list {
+    .content-wrapper {
+
+      .tags a {
+        background-color: white;
+      }
+
+      ul {
+        margin: 0;
+      
+        li {
+          list-style: none;
+          margin: 1.5rem 0 5rem;
+
+          h1 {
+            border-bottom: 2px dashed white;
+            background-color: rgba(255,255,255,0.125);
+          }
+
+          p.post-meta {
+            color: lighten($charcoal, 15%);
+          }
+
+          &:hover h1 {
+            background-color: rgba(255,255,255,0.5);
+          }
+        }
+      }
     }
   }
+
+  .content-blog {
+    p:first-of-type {
+      margin-top: 1.5em;
+      margin-bottom: 3.5em;
+      font-size: 1.125em;
+      line-height: 1.825;
+      padding-right: 12.5%;
+      color: black;
+    }
   
-  p:first-of-type {
-    margin-top: 3.5em;
-    margin-bottom: 3.5em;
-    font-size: 1.125em;
-    line-height: 1.55;
-    padding-right: 7%;
-  }
-
-  p, ul, ol, li, blockquote {
-    font-weight: normal;
-    padding-right: 5%;
-  }
-
-  a {
-    color: $links;
+    p, ul, ol, li, blockquote {
+      font-weight: normal;
+      padding-right: 5%;
+    }
+  
+    a {
+      color: $links;
+    }
   }
 }
 
@@ -610,7 +721,8 @@ ul.dates {
   background-color: white;
   position: relative;
   margin-top: 8rem;
-  
+  z-index: 1330;
+
   .container {
     max-width: 92.5vw !important;
     width: 100%;

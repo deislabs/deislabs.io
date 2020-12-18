@@ -1,0 +1,11 @@
+{{- $projects      := .Site.Params.projects }}
+{{- $projectList := index $projects "projectList" }}
+<aside id="projects">
+  <nav>
+    {{- range $projectList }}
+    <a href="{{ .link }}">
+      {{ .name }}
+    </a>
+    {{- end }}
+  </nav>
+</aside>

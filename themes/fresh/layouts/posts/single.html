@@ -5,9 +5,8 @@
       <header>
         <h1 class="title section-title">{{ .Title }}</h1>
         <p class="post-meta">
-          <span class="author">By <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.authorname }}<br>
-            (<code>{{ .Params.author }}</code>)</a></span>
-          <time>{{ .Date.Format "January 02, 2006" }}</time>
+          <span class="author">By <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.authorname }}</a>.</span>
+          <time>{{ .Date.Format "Jan 02, 2006" }}</time>
           {{ partial "tags.html" . }}
         </p>
       </header>
