@@ -1,7 +1,7 @@
 ---
 title: "Krator: My God, it's Full of States!"
 description: "Building state-machine-based Operators in Rust"
-date: 2021-01-19 00:00:00 +0000 UTC
+date: 2021-01-29 00:00:00 +0000 UTC
 authorname: "Kevin Flansburg"
 author: "@kflansburg"
 authorlink: "https://kflansburg.com/"
@@ -199,7 +199,6 @@ as the state handler. This method has a number of important arguments:
   This type implements the `Stream` API for detecting changes to the object
   manifest within a state handler, or you can simply call `latest` to obtain
   a clone of the current object manifest.
-  
 
 ```rust
 #[derive(Debug, Default)]
@@ -264,14 +263,21 @@ impl State<MooseState> for Roam {
 
 To finish our state machine, we must define valid transitions between states.
 The compiler will ensure that we do not make invalid transitions, which helps
-us to avoid undefined behavior. For Kubelet there exists a macro to derive this
-trait, and this will eventually be migrated to Krator.
+us to avoid undefined behavior.
 
 ```rust
 impl TransitionTo<Roam> for Tagged {}
 impl TransitionTo<Eat> for Roam {}
 impl TransitionTo<Sleep> for Eat {}
-impl TransitionTo<Roam> for Sleep {}
+```
+
+Alternatively, Krator provides a macro for deriving this trait:
+
+```rust
+#[derive(Debug, Default, TransitionTo)]
+#[transition_to(Roam)]
+/// Moose is sleeping.
+struct Sleep;
 ```
 
 Finally we must implement the `Operator` trait to tie this all together. Note
