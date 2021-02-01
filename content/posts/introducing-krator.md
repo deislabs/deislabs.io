@@ -26,9 +26,9 @@ architecture so that it can be used to build Kubernetes Operators. It turned
 out to be fairly straightforward to extract the "operator" portion of Krustlet
 to a new crate, and today we are pleased to announce Krator (pronounced
 crater), which stands for [K]ubernetes [R]ust st[at]e machine Operat[or].
-Krator will be released alongside the next release of Krustlet, `0.6.0`, at
-which point Krustlet will use Krator internally to watch Pods and manage
-their state machines.
+Krator was released alongside the latest release of Krustlet, `0.6.0`, and
+Krustlet now uses Krator internally to watch Pods and manage their state
+machines.
 
 Implementing an Operator involves a number of moving parts, so I have put
 together a fairly minimal example, which I will walk through in the rest of
