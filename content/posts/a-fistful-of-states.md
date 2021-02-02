@@ -4,7 +4,7 @@ description: "State machines in Rust"
 date: 2020-09-24 00:00:00 +0000 UTC
 authorname: "Kevin Flansburg"
 author: "@kflansburg"
-authorlink: "https://github.com/kflansburg"
+authorlink: "https://kflansburg.com/"
 image: "images/twitter-card.png"
 tags: ["krustlet", "rust"]
 ---
