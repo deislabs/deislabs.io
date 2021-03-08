@@ -14,24 +14,23 @@ tags: ["wasm", "wasi"]
 
 Over the last year, our team has been experimenting with executing WebAssembly
 workloads on the server using the [WebAssembly System Interface][wasi] and
-[Wasmtime][wasmtime], and while more and more [proposals][proposals] get
-implemented, networking is one scenario that doesn't have a stable API yet,
-which limits current applications compiled to WASI, and restricts the types of
+[Wasmtime][wasmtime]. While more and more [proposals][proposals] get
+implemented, networking is one scenario that doesn't have a stable API yet. This
+limits current applications compiled to WASI, and restricts the types of
 workloads that can be executed in WASI runtimes.
 
-Today, [we are releasing a library][gh] which adds experimental and _temporary_
-support for outgoing HTTP requests for WASI modules running in Wasmtime. It is
-important to note from the beginning that this library does not aim to replace
-the WASI sockets API, but rather provide a temporary workaround until the WASI
-networking API is stable, and we expect that once [the WASI sockets
-proposal][sockets-wip] gets adopted and implemented in language toolchains, the
-need for this library would go away.
+Today [we are releasing a library][gh] which adds support for outgoing HTTP
+requests for WASI modules running in Wasmtime. This is an experiment intended to
+provide a _temporary_ workaround until the WASI networking API is stable, and we
+expect that once [the WASI sockets proposal][sockets-wip] gets adopted and
+implemented in language toolchains, the need for this library will vanish.
 
 ### Using the new HTTP library
 
-There are two aspects to a WebAssembly library - building guest Wasm modules,
-and adding runtime support for instantiating and executing those modules. Let's
-first see how to build a guest module in Rust:
+There are two main components to this project - libraries to help building Wasm
+modules, and a library that adds runtime support for instantiating those modules
+in Wasmtime. Let's first see how to build a module that sends an HTTP request in
+Rust:
 
 ```rust
 use bytes::Bytes;
@@ -54,17 +53,19 @@ pub extern "C" fn _start() {
 }
 ```
 
-From the start, the one thing to note is that we are reusing the Rust `Request`
-and `Response` structures from [the `http` crate][rust-http] (with `Bytes`
-request and response bodies), so this way of building HTTP requests should feel
-somewhat familiar to Rust developers. Then, a response can be sent and received
-using `wasi_experimental_http::request(req)`. This simple program can now be
-compiled to the `wasm32-wasi` target. AssemblyScript is another popular language
-that natively compiles to WebAssembly, and the library we are releasing also
-includes an AssemblyScript NPM package (with examples for how it can be used on
-[GitHub][gh]).
+Because we are reusing the Rust `Request` and `Response` structures from [the
+`http` crate][rust-http] (with `Bytes` request and response bodies), this way of
+building an HTTP request should feel familiar to Rust developers. Then, the
+request can be sent using `wasi_experimental_http::request(req)`, which returns
+a response that can be read appropriately, depending on the content type of the
+response body. This simple program can now be compiled to the `wasm32-wasi`
+target.
 
-In order to run the module in a WebAssembly runtime, we have to satisfy the new
+AssemblyScript is another popular language that natively compiles to
+WebAssembly, and the library we are releasing also includes an AssemblyScript
+NPM package (with examples for how it can be used on [GitHub][gh]).
+
+To run the module in a WebAssembly runtime, we have to satisfy the new
 functionality, and we can do this in Wasmtime using the
 `wasi_experimental_http_wasmtime` crate:
 
@@ -87,8 +88,8 @@ wasi_experimental_http_wasmtime::link_http(&mut linker, None)?;
 The Wasmtime implementation also enables passing a list of allowed hosts - an
 optional and configurable list of domains or hosts that guest modules are
 allowed to send requests to. If a guest module attempts to send a request to a
-domain not explicitly allowed when the runtime was configured, it would receive
-an error:
+domain not explicitly allowed when the runtime was configured, it receives an
+error:
 
 ```
 'cannot make request: URL not allowed because domain or subdomain not in allowed list
