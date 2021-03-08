@@ -21,9 +21,11 @@ workloads that can be executed in WASI runtimes.
 
 Today [we are releasing a library][gh] which adds support for outgoing HTTP
 requests for WASI modules running in Wasmtime. This is an experiment intended to
-provide a _temporary_ workaround until the WASI networking API is stable, and we
-expect that once [the WASI sockets proposal][sockets-wip] gets adopted and
-implemented in language toolchains, the need for this library will vanish.
+provide a _temporary_ workaround until the WASI networking API is stable, and is
+compatible with [Wasmtime v0.24][24] by using the
+`wasi_experiemental_http_wasmtime` crate. We expect that once [the WASI sockets
+proposal][sockets-wip] gets adopted and implemented in language toolchains, the
+need for this library will vanish.
 
 ### Using the new HTTP library
 
@@ -145,3 +147,4 @@ Discord server][discord], or in the [ByteCodeAlliance Zulip chat][ba-zulip].
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [discord]: https://discordapp.com/invite/nEFErF8
 [ba-zulip]: https://bytecodealliance.zulipchat.com/
+[24]: https://github.com/bytecodealliance/wasmtime/releases/tag/v0.24.0
