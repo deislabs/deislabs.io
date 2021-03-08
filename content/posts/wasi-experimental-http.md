@@ -1,7 +1,9 @@
 ---
 title:
   "An experimental outbound HTTP library for the WebAssembly System Interface"
-description: ""
+description:
+  "Send HTTP requests from Rust and AssemblyScript Wasm modules running in
+  Wasmtime"
 date: 2021-03-08 00:00:00 +0000 UTC
 authorname: "Radu Matei"
 author: "@matei_radu"
