@@ -22,10 +22,10 @@ workloads that can be executed in WASI runtimes.
 Today [we are releasing a library][gh] which adds support for outgoing HTTP
 requests for WASI modules running in Wasmtime. This is an experiment intended to
 provide a _temporary_ workaround until the WASI networking API is stable, and is
-compatible with [Wasmtime v0.24][24] by using the
-`wasi_experiemental_http_wasmtime` crate. We expect that once [the WASI sockets
-proposal][sockets-wip] gets adopted and implemented in language toolchains, the
-need for this library will vanish.
+compatible with [Wasmtime v0.24][24] by using [the
+`wasi_experiemental_http_wasmtime` crate][wasmtime-crate]. We expect that once
+[the WASI sockets proposal][sockets-wip] gets adopted and implemented in
+language toolchains, the need for this library will vanish.
 
 ### Using the new HTTP library
 
@@ -58,14 +58,14 @@ pub extern "C" fn _start() {
 Because we are reusing the Rust `Request` and `Response` structures from [the
 `http` crate][rust-http] (with `Bytes` request and response bodies), this way of
 building an HTTP request should feel familiar to Rust developers. Then, the
-request can be sent using `wasi_experimental_http::request(req)`, which returns
-a response that can be read appropriately, depending on the content type of the
-response body. This simple program can now be compiled to the `wasm32-wasi`
-target.
+request can be sent using the `request` function from [the
+`wasi_experimental_http` crate][guest-crate], which returns a response that can
+be read appropriately, depending on the content type of the response body. This
+simple program can now be compiled to the `wasm32-wasi` target.
 
 AssemblyScript is another popular language that natively compiles to
-WebAssembly, and the library we are releasing also includes an AssemblyScript
-NPM package (with examples for how it can be used on [GitHub][gh]).
+WebAssembly, and the library we are releasing also includes an [AssemblyScript
+NPM package][npm] (with examples for how it can be used on [GitHub][gh]).
 
 To run the module in a WebAssembly runtime, we have to satisfy the new
 functionality, and we can do this in Wasmtime using the
@@ -148,3 +148,6 @@ Discord server][discord], or in the [ByteCodeAlliance Zulip chat][ba-zulip].
 [discord]: https://discordapp.com/invite/nEFErF8
 [ba-zulip]: https://bytecodealliance.zulipchat.com/
 [24]: https://github.com/bytecodealliance/wasmtime/releases/tag/v0.24.0
+[wasmtime-crate]: https://crates.io/crates/wasi-experimental-http-wasmtime
+[guest-crate]: https://crates.io/crates/wasi-experimental-http
+[npm]: https://www.npmjs.com/package/@deislabs/wasi-experimental-http
