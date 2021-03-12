@@ -18,6 +18,18 @@ $(document).ready(function(){
         });
     }
 
+    // hide menu on scroll (headroom)
+    var headRoom = document.querySelector(".navbar");
+    var options = {
+        tolerance: {
+            down: 10,
+            up: 20
+        },
+        offset: 15
+    };
+    var headroom  = new Headroom(headRoom, options);
+    headroom.init();
+
     //Animate left hamburger icon and open sidebar
     $('.menu-icon-trigger').click(function(e){
         e.preventDefault();
