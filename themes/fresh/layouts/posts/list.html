@@ -1,22 +1,26 @@
 {{ define "content" }}
-<section class="section section-feature-grey is-medium">
+<section class="section section-feature-grey is-medium blog blog-list">
   <div class="container">
-    <div class="title-wrapper has-text-centered">
-      <h1 class="title section-title">{{ .Title }}</h1>
-      {{ if .Description }}
-      <div class="subtitle is-muted">
-        {{ .Description }}
-      </div>
-      {{ end }}
-      <div class="divider is-centered"></div>
-    </div>
     <div class="content-wrapper">
-      <ul class="dates">
+
+      <ul class="tags blog-menu inline">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+          <li><a href="../tags/{{ $name | urlize}}">{{ $name }}</a></li>
+        {{ end }}
+      </ul>
+
+      <ul class="blog-listing">
         {{ range .Pages }}
         <li>
-            <span class="date">{{ .Date.Format "Jan" }} <strong>{{ .Date.Format "_2" }}</strong></span>
-            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Description }}</p>
+          <h1 class="title section-title"><a href="{{.Permalink}}">{{ .Title }}</a></h1>
+          <p class="post-meta">
+            <time>By {{ .Params.authorname }} on {{ .Date.Format "January 02, 2006" }}</time>
+          </p>
+
+          {{ .Summary }}
+          {{ if .Truncated }}
+            <a href="{{ .RelPermalink }}">Read More…</a>
+          {{ end }}
         </li>
         {{ end }}
     </ul>

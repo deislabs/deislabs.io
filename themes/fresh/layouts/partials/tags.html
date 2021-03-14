@@ -1,11 +1,10 @@
-<div id="tags">
+<ul class="tags">
 {{ $taxo := "tags" }} <!-- Use the plural form here -->
 {{ with .Param $taxo }}
     {{ range $index, $tag := . }}
-        {{- if gt $index 0 }}, {{ end -}}
         {{ with $.Site.GetPage (printf "/%s/%s" $taxo $tag) -}}
-            <a href="{{ .Permalink }}">{{ $tag }}</a>
+            <li><a href="{{ .Permalink }}">{{ $tag }}</a></li>
         {{- end -}}
     {{- end -}}
 {{ end }}
-</div>
+</ul>

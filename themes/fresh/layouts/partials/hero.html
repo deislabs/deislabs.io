@@ -1,4 +1,12 @@
 <section class="hero is-default is-bold">
-  {{ partial "hero-body.html" . }}
-  {{ partial "hero-footer.html" . }}
+  <div class="column landing-caption is-flex-desktop is-hidden-mobile">
+    <img class="hero-text" src="images/hero-text-clip.svg">
+    <img class="hero-shape hero-shape-1" src="images/deislabs-ci.svg">
+    <img class="hero-shape hero-shape-2" src="images/deislabs-sq.svg">
+    <img class="hero-shape hero-shape-3"src="images/deislabs-tr.svg">
+  </div>
+  
+  <div class="is-flex-mobile is-hidden-tablet">
+    <img class="hero-text" src="images/hero-text-mobile.svg">
+  </div>
 </section>
