@@ -484,7 +484,35 @@ section.blog {
   .navbar-brand a.navbar-item {
     margin-left: 0.425rem !important;
   }
-  
+
+  .section-divider {
+    max-width: 88vw;
+    margin-left: 6vw !important;
+    margin-right: 6vw !important;
+    min-height: 25rem !important;
+
+    img {
+       max-width: 20vw;
+    }
+
+    small {
+      font-size: 0.825rem;
+    }
+
+    &:after {
+      display: none !important;
+    }
+  }
+
+  .project-list .project-item a {
+    border-left: none !important;
+    min-height: 7.5rem !important;
+    
+    p {
+      opacity: 1 !important;
+    }
+  }
+
   $sidebarWidth: 100%;
 
   .blog-single {
