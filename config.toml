@@ -113,6 +113,12 @@ disableHugoGeneratorInject = true
     url = "https://github.com/deislabs/mystikos"
 
     [[params.section1.tiles]]
+    title = "VS Code Extensions"
+    icon = "vscode"
+    text = "Extensions for accessing cloud-native tools inside Visual Studio Code."
+    url = "https://github.com/deislabs?q=vscode&type=&language=&sort="
+
+    [[params.section1.tiles]]
     title = "WAGI"
     icon = "wagi"
     text = "Write HTTP handlers in WebAssembly with a minimal amount of work."
