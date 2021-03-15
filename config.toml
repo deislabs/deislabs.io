@@ -130,55 +130,7 @@ disableHugoGeneratorInject = true
     [[params.footer.socialmedia]]
     link = "https://twitter.com/deislabs"
     icon = "twitter"
-    #
-    # [[params.footer.product]]
-    # text = "Discover features"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Why choose our product?"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Compare features"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Our roadmap"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Request features"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "Get started"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "User guides"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "Admin guide"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "Developers"
-    # link = "/"
-    #
-    # [[params.footer.blogroll]]
-    # text = "Latest news"
-    # link = "/"
-    #
-    # [[params.footer.blogroll]]
-    # text = "Tech articles"
-    # link = "/"
-    #
-    # [[params.footer.blogroll]]
-    # text = "Video blog"
-    # link = "/"
-
+  
   [[params.navbar]]
   title = "About"
   url = "/about"
@@ -189,32 +141,4 @@ disableHugoGeneratorInject = true
 
   [[params.navbar]]
   title = "Projects"
-
-    [[params.navbar.sublinks]]
-    title = "Helm"
-    url = "https://helm.sh"
-
-    [[params.navbar.sublinks]]
-    title = "Draft"
-    url = "https://draft.sh"
-
-    [[params.navbar.sublinks]]
-    title = "Brigade"
-    url = "https://brigade.sh"
-
-    [[params.navbar.sublinks]]
-    title = "CNAB"
-    url = "/cnab/"
-
-    [[params.navbar.sublinks]]
-    title = "Duffle"
-    url = "https://duffle.sh"
-
-    [[params.navbar.sublinks]]
-    title = "Porter"
-    url = "https://porter.sh"
-
-  #[[params.navbar]]
-  #title = "Contribute"
-  #url = "/contribute"
-  #button = true
+  url = "https://deislabs.io/#projects"

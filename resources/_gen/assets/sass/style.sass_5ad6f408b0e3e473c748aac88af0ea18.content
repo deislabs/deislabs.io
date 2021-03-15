@@ -6955,14 +6955,9 @@ Responsive Styles
     bottom: 0.35rem !important; }
     .deislabs .shapes.bottom {
       bottom: 0.35rem !important; }
-  .title-wrapper {
-    width: 78vw !important; }
-    .title-wrapper .subtitle time {
-      font-size: 0.825rem !important;
-      opacity: 0.7; }
-  .content-blog,
-  .content-single {
-    width: 78vw !important; }
+  .title-wrapper .subtitle time {
+    font-size: 0.825rem !important;
+    opacity: 0.7; }
   .title-blog h1.title {
     font-size: 1.825rem !important;
     line-height: 1.35;
@@ -7435,8 +7430,7 @@ section.blog {
   padding-top: 7.5rem; }
 
 .blog .title-wrapper {
-  font-size: 1rem;
-  border-right: 2px solid white; }
+  font-size: 1rem; }
   .blog .title-wrapper h1.title {
     font-size: 2.25em;
     margin-bottom: 1.75rem;
@@ -7449,10 +7443,8 @@ section.blog {
     color: #444360; }
   .blog .title-wrapper header {
     text-align: left;
-    position: fixed;
-    top: 6.25rem;
-    max-width: 30rem;
-    padding: 11.5vh 2.25rem 0;
+    position: relative;
+    top: auto;
     transition: all 0.3s ease-in-out; }
     .blog .title-wrapper header .post-meta {
       border-top: 3px solid white;
@@ -7465,6 +7457,70 @@ section.blog {
           color: #444360; }
     .blog .title-wrapper header .tags {
       padding: 5rem 35% 0 0; }
+
+@media only screen and (max-width: 1300px) {
+  .navbar-brand a.navbar-item {
+    margin-left: 0.425rem !important; }
+  .blog-single .columns {
+    flex-direction: column; }
+  .blog-single .title-wrapper {
+    max-width: 100% !important;
+    width: 94%;
+    position: relative;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1; }
+    .blog-single .title-wrapper header {
+      text-align: left;
+      position: relative;
+      top: auto;
+      width: auto;
+      padding: 5vh 2vw 0;
+      transition: all 0.3s ease-in-out;
+      display: flexbox; }
+      .blog-single .title-wrapper header h1.section-title {
+        font-size: 2.67rem;
+        padding-right: 7.5%; }
+      .blog-single .title-wrapper header p.post-meta {
+        margin-bottom: 0 !important; }
+      .blog-single .title-wrapper header .tags {
+        position: absolute;
+        right: 1rem;
+        bottom: 0.25rem;
+        padding: 0; }
+  .blog-single .content-wrapper {
+    padding-bottom: 7.5rem; }
+    .blog-single .content-wrapper article {
+      padding: 0 6vw !important; } }
+
+@media only screen and (min-width: 1540px) {
+  .blog .title-wrapper {
+    border-right: 2px solid white;
+    width: 100% !important; }
+    .blog .title-wrapper header {
+      text-align: left;
+      position: fixed;
+      top: 6.25rem;
+      padding: 11.5vh 2.25rem 0;
+      width: 25vw;
+      transition: all 0.3s ease-in-out; } }
+
+@media only screen and (min-width: 1301px) and (max-width: 1539px) {
+  .blog .title-wrapper {
+    border-right: 2px solid white;
+    width: 25vw; }
+    .blog .title-wrapper header {
+      text-align: left;
+      position: fixed;
+      top: 6.25rem;
+      padding: 11.5vh 2.25rem 0;
+      width: 25vw;
+      transition: all 0.3s ease-in-out; }
+    .blog .title-wrapper h1.title {
+      font-size: 2vw; }
+  .content-wrapper article {
+    max-width: 60rem; } }
 
 .tags {
   padding: 1rem 25% 1rem 0;
@@ -7658,7 +7714,7 @@ section.blog {
       animation-iteration-count: infinite; }
 
 .project-list {
-  padding: 5rem 5vw 12.5rem; }
+  padding: 5rem 4.3vw 12.5rem; }
   .project-list .project-item {
     margin-bottom: 0;
     padding: 0; }

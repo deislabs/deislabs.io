@@ -439,9 +439,7 @@ section.blog {
 
 // titles
 .blog .title-wrapper {
-  $sidebarWidth: 30rem;
   font-size: 1rem;
-  border-right: 2px solid white;
 
   h1.title {
     font-size: 2.25em;
@@ -455,10 +453,10 @@ section.blog {
   
   header {
     text-align: left;
-    position: fixed;
-    top: 6.25rem;
-    max-width: $sidebarWidth;
-    padding: 11.5vh 2.25rem 0;
+    position: relative;
+    top: auto;
+    // max-width: $sidebarWidth;
+    // padding: 11.5vh 2.25rem 0;
     @include transition;
 
     .post-meta {
@@ -479,6 +477,110 @@ section.blog {
     .tags {
       padding: 5rem 35% 0 0;
     }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .navbar-brand a.navbar-item {
+    margin-left: 0.425rem !important;
+  }
+  
+  $sidebarWidth: 100%;
+
+  .blog-single {
+    .columns {
+      flex-direction: column;
+    }
+
+    .title-wrapper {
+      max-width: 100% !important;
+      width: 94%;
+      position: relative;
+      display: block;
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      
+      header {
+        text-align: left;
+        position: relative;
+        top: auto;
+        width: auto;
+        padding: 5vh 2vw 0;
+        @include transition;
+        display: flexbox;
+
+        h1.section-title {
+          font-size: 2.67rem;
+          padding-right: 7.5%;
+        }
+
+        p.post-meta {
+          margin-bottom: 0 !important;
+        }
+
+        .tags {
+          position: absolute;
+          right: 1rem;
+          bottom: 0.25rem;
+          padding: 0;
+        }
+      }
+    }
+
+    .content-wrapper {
+      padding-bottom: 7.5rem;
+      
+      article {
+        padding: 0 6vw !important;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 1540px) {
+  $sidebarWidth: 25vw;
+
+  .blog .title-wrapper {
+    border-right: 2px solid white;
+    width: 100% !important;
+    
+    header {
+      text-align: left;
+      position: fixed;
+      top: 6.25rem;
+      padding: 11.5vh 2.25rem 0;
+      width: $sidebarWidth;
+      @include transition;
+    }
+  }
+}
+
+@media only screen and (min-width: 1301px) and (max-width: 1539px) {
+  $sidebarWidth: 25vw ;
+
+  .blog .title-wrapper {
+    border-right: 2px solid white;
+    width: $sidebarWidth;
+    
+    header {
+      text-align: left;
+      position: fixed;
+      top: 6.25rem;
+      padding: 11.5vh 2.25rem 0;
+      width: $sidebarWidth;
+      @include transition;
+    }
+
+    h1.title {
+      font-size: 2vw;
+    }
+  }
+
+  .content-wrapper article {
+    max-width: 60rem;
   }
 }
 
@@ -670,7 +772,7 @@ section.blog {
 }
 
 .project-list {
-  padding: 5rem 5vw 12.5rem;
+  padding: 5rem 4.3vw 12.5rem;
 
   .project-item {
     margin-bottom: 0;
