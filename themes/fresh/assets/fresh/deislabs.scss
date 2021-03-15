@@ -771,6 +771,45 @@ section.blog {
   }
 }
 
+// project systems
+.section-divider {
+  width: 97vw;
+  margin: 0 1.5vw;
+  padding:  8.25vw;
+  min-height: 25rem;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  // stars go here
+  position: relative;
+  z-index: -10;
+  min-height: 90vh;
+
+  .column {
+    text-align: center;
+    padding-top: 14vw;
+  }
+
+  small {
+    color: $cream;
+    display: block;
+  }
+
+  &:after {
+    background-color: $cream;
+    content: "Projects";
+    text-align: center;
+    padding: 2rem 0;
+    @include stencilType;
+    font-weight: 500;
+    color: lighten($midnight, 25%);
+    display: block;
+    border-radius: 2rem 2rem 0rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 35vw;
+    right: 35vw;
+  }
+}
+
 .project-list {
   padding: 5rem 4.3vw 12.5rem;
 
@@ -998,4 +1037,76 @@ ul.dates {
       }
     }
   }
+}
+
+// Stars background made by @screenshake
+@function multiple-box-shadow ($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+$shadows-small:  multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big:    multiple-box-shadow(100);
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation			: animStar 50s linear infinite;
+  
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation			: animStar 100s linear infinite;
+    
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation			: animStar 150s linear infinite;
+  
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px) }
+  to   { transform: translateY(-2000px) }
 }

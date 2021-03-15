@@ -1,5 +1,22 @@
 {{- $section1 := .Site.Params.section1 }}
 {{- $tiles    := index $section1 "tiles" }}
+<section class="section is-fullheight section-divider" id="systems">
+  <div class="columns">
+    <div class="column is-one-third system-k8s">
+      <img src="images/abstract-kuberenetes.svg" alt="Kubernetes" />
+      <small>Kubernetes</small>
+    </div>
+    <div class="column is-one-third system-wasm">
+      <img src="images/abstract-wasm.png" alt="Web Assembly" />
+      <small>Web Assembly</small>
+    </div>
+    <div class="column is-one-third system-other">
+      <img src="images/abstract-other.png" alt="Assorted Projects" />
+      <small>Assorted Projects</small>
+    </div>
+  </div>
+  <div id="stars"></div><div id="stars2"></div><div id="stars3"></div>
+</section>
 <section class="section section-feature-grey is-fullheight" id="projects">
   <div class="columns is-multiline project-list">
     {{- range $tiles }}
