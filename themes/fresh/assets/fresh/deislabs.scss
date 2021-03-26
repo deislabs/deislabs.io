@@ -376,15 +376,26 @@ section.blog {
 
   blockquote {
     line-height: 1.8;
-    border-left: 7px solid white;
-    font-size: 1.2rem;
-    background: desaturate(darken($cream, 5%), 50%);
+    border: 1px solid saturate(lighten( $midnight, 50%), 12.5%);
+    font-size: 1.333rem;
+    background: saturate(lighten( $midnight, 60%), 12.5%);
     padding: 1rem 1.5rem 1rem;
-    margin-bottom: 1.75em;
+    margin: 2.5em auto 5rem;
+    text-align: left;
+    border-radius: 0.667rem;
+    box-shadow: 0 3px 6px 0px rgba(30,30,30,0.125);
 
     p {
-      margin: 0.5rem 0;
+      margin: 1rem 0 !important;
+      padding: 0 0 0 1rem;
       line-height: 1.75;
+      color: black;
+      font-size: 1.33rem;
+
+      &:first-of-type {
+        font-size: 1.333rem;
+        color: black;
+      }
     }
   }
   .appendix {
