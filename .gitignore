@@ -7,6 +7,7 @@ public/
 .ncurc.yml
 .publish/*
 .vscode/*
+resources/
 node_modules/
 bower_components/
 vendor/

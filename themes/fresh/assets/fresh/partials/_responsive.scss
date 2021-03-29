@@ -69,8 +69,9 @@ Responsive Styles
         .is-hidden-tablet {
             img.hero-text {
                 width: 70%;
-                margin-left: 3.75rem;
+                margin-left: 4.25rem;
                 max-width: 320px;
+                margin-top: 18.5rem;
             }
         }
     }
@@ -85,19 +86,12 @@ Responsive Styles
     }
 
     .title-wrapper {
-        width: 78vw !important;
-
         .subtitle {
             time {
                 font-size: 0.825rem !important;
                 opacity: 0.7;
             }
         }
-    }
-
-    .content-blog,
-    .content-single {
-        width: 78vw !important;
     }
 
     .title-blog h1.title {

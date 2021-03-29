@@ -6,7 +6,7 @@ disableHugoGeneratorInject = true
 
 [markup]
   [markup.highlight]
-    style = "monokailight"
+    style = "tomorrow-night"
 
 [params]
   image = "images/twitter-card.png"
@@ -21,17 +21,6 @@ disableHugoGeneratorInject = true
   [params.hero]
   title = "Cloud Native Developer Experience"
   subtitle = "Development on the leading edge of the adoption curve can be rocky. Deis Labs is here to help make you more productive."
-  buttontext = "Get started"
-  buttonlink = "#"
-  image = "illustrations/worker.svg"
-  clientlogos = [
-    "helm",
-    "draft",
-    "brigade",
-    "cnab",
-    "duffle",
-    "porter"
-  ]
 
   [params.navbarlogo]
     link = "/"
@@ -42,94 +31,99 @@ disableHugoGeneratorInject = true
   subtitle = "Bridging the gap between shiny tech and a great developer experience"
 
     [[params.section1.tiles]]
-    title = "Helm"
-    icon = "helm"
-    text = "Package management for Kubernetes applications"
-    url = "https://helm.sh"
-    buttonText = "Get started"
+    title = "Akri"
+    icon = "akri"
+    text = "A Kubernetes Resource Interface for the Edge, Akri exposes devices as resources in Kubernetes."
+    url = "https://github.com/deislabs/akri"
 
     [[params.section1.tiles]]
-    title = "Draft"
-    icon = "draft"
-    text = "Streamlined Kubernetes application development"
-    url = "https://draft.sh"
-    buttonText = "Get Started"
+    title = "Bindle"
+    icon = "bindle"
+    text = "Aggregate Object Storage for Collections - a Rust project we made as part of our WebAssembly research."
+    url = "https://github.com/deislabs/bindle"
 
     [[params.section1.tiles]]
     title = "Brigade"
     icon = "brigade"
-    text = "Event-driven pipelines for Kubernetes deployments"
+    text = "Create event-driven workflows and pipelines for your infrastructure, through scriptable, automated tasks."
     url = "https://brigade.sh"
-    buttonText = "Get Started"
+    badge = "cncf"
+    badgecolor = "teal"
 
     [[params.section1.tiles]]
     title = "CNAB"
     icon = "cnab"
-    text = "A spec for packaging distributed apps"
+    text = "CNABs facilitate the bundling, installing and managing of container-native apps — and their coupled services."
     url = "/cnab/"
-    buttonText = "Get Started"
+
+    [[params.section1.tiles]]
+    title = "Draft"
+    icon = "draft"
+    text = "A tool to quickly build & run Kubernetes apps, to streamline the dev process."
+    url = "https://draft.sh"
+    badge = "archived"
+    badgecolor = "gray"
 
     [[params.section1.tiles]]
     title = "Duffle"
     icon = "duffle"
-    text = "Install and manage distributed app bundles"
+    text = "A tool that installs and manages distributed app bundles (CNABs)."
     url = "https://duffle.sh"
-    buttonText = "Get Started"
+
+    [[params.section1.tiles]]
+    title = "Go Lua"
+    icon = "golua"
+    text = "A Lua 5.3 engine implemented in Go."
+    url = "https://github.com/Azure/golua"
+    badge = "archived"
+    badgecolor = "gray"
+
+    [[params.section1.tiles]]
+    title = "Helm"
+    icon = "helm"
+    text = "The package manager for Kubernetes. Created by Deis Labs members in 2015, now a CNCF graduated project."
+    url = "https://helm.sh"
+    badge = "cncf"
+    badgecolor = "teal"
+
+    [[params.section1.tiles]]
+    title = "Krustlet"
+    icon = "krustlet"
+    text = "Krustlet is a tool to run WebAssembly workloads natively on Kubernetes."
+    url = "https://krustlet.dev"
+
+    [[params.section1.tiles]]
+    title = "ORAS"
+    icon = "oras"
+    text = "OCI (Open Container Initiative) Registry As Storage."
+    url = "https://github.com/deislabs/oras"
 
     [[params.section1.tiles]]
     title = "Porter"
     icon = "porter"
-    text = "Porter makes authoring CNAB bundles easier"
+    text = "Porter makes authoring CNAB bundles easier, handling your app and everything you need to deploy with it."
     url = "https://porter.sh"
-    buttonText = "Get Started"
+    badge = "cncf"
+    badgecolor = "teal"
 
-  # [params.section2]
-  # title = "You're here because you want the best"
-  # subtitle = "And we know it"
-  #
-  #   [[params.section2.features]]
-  #   title = "Powerful and unified interface"
-  #   text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
-  #   icon = "laptop-globe"
-  #
-  #   [[params.section2.features]]
-  #   title = "Cross-device synchronisation"
-  #   text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
-  #   icon = "doc-sync"
-  #
-  #   [[params.section2.features]]
-  #   title = "Nomad system"
-  #   text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis."
-  #   icon = "mobile-feed"
-  #
-  # [params.section3]
-  # title = "One platform"
-  # subtitle = "To rule them all"
-  # image = "illustrations/mockups/app-mockup.png"
-  # buttonText = "Get started"
-  # buttonLink = "#"
-  #
-  # [params.section4]
-  # title = "Our Clients love us!"
-  # subtitle = "Lorem ipsum sit dolor amet is a dummy text used by typography industry"
-  #
-  #   [[params.section4.clients]]
-  #   name = "Irma Walters"
-  #   quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
-  #   job = "Accountant"
-  #   img = 1.0
-  #
-  #   [[params.section4.clients]]
-  #   name = "John Bradley"
-  #   quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
-  #   job = "Financial Analyst"
-  #   img = 2.0
-  #
-  #   [[params.section4.clients]]
-  #   name = "Gary Blackman"
-  #   quote = "Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at."
-  #   job = "HR Manager"
-  #   img = 3.0
+    [[params.section1.tiles]]
+    title = "Mystikos"
+    icon = "mystikos"
+    text = "Mystikos is a set of tools for running applications in a hardware trusted execution environment (TEE)."
+    url = "https://github.com/deislabs/mystikos"
+
+    [[params.section1.tiles]]
+    title = "VS Code Extensions"
+    icon = "vscode"
+    text = "Extensions for accessing cloud-native tools inside Visual Studio Code."
+    url = "https://github.com/deislabs?q=vscode&type=&language=&sort="
+
+    [[params.section1.tiles]]
+    title = "WAGI"
+    icon = "wagi"
+    text = "Write HTTP handlers in WebAssembly with a minimal amount of work."
+    url = "https://github.com/deislabs/wagi"
+
 
   [params.footer]
   logo = "deislabs.png"
@@ -142,55 +136,7 @@ disableHugoGeneratorInject = true
     [[params.footer.socialmedia]]
     link = "https://twitter.com/deislabs"
     icon = "twitter"
-    #
-    # [[params.footer.product]]
-    # text = "Discover features"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Why choose our product?"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Compare features"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Our roadmap"
-    # link = "/"
-    #
-    # [[params.footer.product]]
-    # text = "Request features"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "Get started"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "User guides"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "Admin guide"
-    # link = "/"
-    #
-    # [[params.footer.docs]]
-    # text = "Developers"
-    # link = "/"
-    #
-    # [[params.footer.blogroll]]
-    # text = "Latest news"
-    # link = "/"
-    #
-    # [[params.footer.blogroll]]
-    # text = "Tech articles"
-    # link = "/"
-    #
-    # [[params.footer.blogroll]]
-    # text = "Video blog"
-    # link = "/"
-
+  
   [[params.navbar]]
   title = "About"
   url = "/about"
@@ -201,32 +147,4 @@ disableHugoGeneratorInject = true
 
   [[params.navbar]]
   title = "Projects"
-
-    [[params.navbar.sublinks]]
-    title = "Helm"
-    url = "https://helm.sh"
-
-    [[params.navbar.sublinks]]
-    title = "Draft"
-    url = "https://draft.sh"
-
-    [[params.navbar.sublinks]]
-    title = "Brigade"
-    url = "https://brigade.sh"
-
-    [[params.navbar.sublinks]]
-    title = "CNAB"
-    url = "/cnab/"
-
-    [[params.navbar.sublinks]]
-    title = "Duffle"
-    url = "https://duffle.sh"
-
-    [[params.navbar.sublinks]]
-    title = "Porter"
-    url = "https://porter.sh"
-
-  #[[params.navbar]]
-  #title = "Contribute"
-  #url = "/contribute"
-  #button = true
+  url = "https://deislabs.io/#projects"

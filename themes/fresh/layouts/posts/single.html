@@ -1,19 +1,20 @@
 {{ define "content"}}
-<section class="section section-feature-grey is-medium">
-  <div class="container">
-    <div class="title-wrapper title-blog has-text-centered">
-      <h1 class="title section-title">{{ .Title }}</h1>
-      <div class="subtitle">
-        <time>{{ .Date.Format "January 02, 2006" }}</time>
-      </div>
-      <div class="divider is-centered"></div>
+<section class="section section-feature-grey is-medium blog blog-single">
+  <div class="columns">
+    <div class="column title-wrapper">
+      <header>
+        <h1 class="title section-title">{{ .Title }}</h1>
+        <p class="post-meta">
+          <span class="author">By <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.authorname }}</a></span><br>
+          <time>{{ .Date.Format "January 02, 2006" }}</time>
+          {{ partial "tags.html" . }}
+        </p>
+      </header>
     </div>
-    <div class="content-wrapper content-blog">
-      {{ .Content }}
-      <p class="author"><a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.authorname }}<br>
-        <small>{{ .Params.author }}</a></small>
-      </p>
-      {{ partial "tags.html" . }}
+    <div class="column content-wrapper content-blog">
+      <article>
+        {{ .Content }}
+      </article>
     </div>
   </div>
 </section>
