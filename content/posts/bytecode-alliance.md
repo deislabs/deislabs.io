@@ -9,7 +9,7 @@ image: "images/twitter-card.png"
 tags: ["wasm", "wasi", "bindle", "krustlet", "wagi"]
 ---
 
-We at DeisLabs have long been excited about the prospects of WebAssembly for cloud native development. Today, the Bytecode Alliance (BCA) has [officially launched as a foundation](https://bytecodealliance.org/press/calling-for-new-members) (with Microsoft as a founding member). And they are inviting you to join the foundation!
+We at DeisLabs have long been excited about the prospects of WebAssembly for cloud native development. Today, the Bytecode Alliance (BCA) has [officially launched as a foundation](https://bytecodealliance.org/articles/bytecode-alliance-update) (with Microsoft as a founding member). And they are [inviting you](https://bytecodealliance.org/press/calling-for-new-members) to join the foundation!
 
 WebAssembly has much to offer to the cloud native world. It is highly portable. Binaries are small in size. It focuses on security. And the list of programming languages that compile to WebAssembly is growing by the day. Our hunch is that WebAssembly is going to play an tremendous role as a cloud technology--well beyond the browser. And we have been experimenting in this space for over two years.
 
