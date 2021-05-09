@@ -73,10 +73,10 @@ restricts the types of workloads that can be executed in WASI runtimes for now,
 which is why we released an [experimental outbound HTTP library for
 WASI][http-library] that allows modules to create outbound HTTP connections.
 
-Specifically, the published [NPM package][npm] and a [crate][crate] can be used
-to send HTTP requests from AssemblyScript and Rust guest modules running in
-WAGI - for example, making a `GET` request and reading the response body as a
-string in AssemblyScript:
+Specifically, the published [NPM package][npm] and [crate][crate] can be used to
+send HTTP requests from AssemblyScript and Rust guest modules running in WAGI -
+for example, making a `GET` request and reading the response body as a string in
+AssemblyScript:
 
 ```typescript
 import { Console } from "as-wasi";
@@ -149,6 +149,60 @@ before starting WAGI to pull modules from authenticated repositories.
 Besides using the local filesystem and OCI registries as sources for modules,
 WAGI can also pull artifacts from [Bindle][bindle], although [support for it is
 still early][bindle-wagi].
+
+#### Declaring sub-routes in the module
+
+WAGI now also allows modules to define their own sub-routes - specifically, in
+cases when we want a single module to handle more than one sub-route, by
+implementing and exporting a `_routes()` function in the module that maps routes
+to custom handler functions:
+
+```rust
+fn main() {
+    println!("Content-Type: text/plain\n\n Hello from main()");
+}
+
+// Use no_mangle so we can call this from WAGI or other external tools.
+#[no_mangle]
+/// A provider function that can be called directly
+pub fn hello() {
+    println!("Content-Type: text/plain\n\n Hello")
+}
+
+#[no_mangle]
+/// Another provider function that can be called directly.
+pub fn goodbye() {
+    println!("Content-Type: text/plain\n\n Goodbye")
+}
+
+// This maps a few routes:
+// '/hello' will result in the `hello()` function being called.
+// '/goodbye' and all subpaths of '/goodbye' will call the `goodbye()` function.
+//
+// Note that when compiled, the `main` function is named `_start()`. So if you want
+// to map to that function, it is `/main _start`.
+#[no_mangle]
+pub fn _routes() {
+    println!("/hello hello");
+    println!("/goodbye/... goodbye");
+    println!("/main _start");
+}
+```
+
+Then, defining the top-level route for the module as `/example` in the WAGI
+configuration file:
+
+```toml
+[[module]]
+route = "/example"
+module = "/PATH/TO/hello_wagi.wasm"
+```
+
+After WAGI starts and build the routes, this module will map `/example` to
+`_start()`, `/example/hello` to `hello()`, and `/example/goodbye/...` to
+`goodbye()` (including wildcards).
+
+You can find a [full routing example here][routes-example].
 
 #### Using Azure services from Rust modules
 
@@ -244,3 +298,4 @@ and we are looking forward to your pull requests, issues, and suggestion.
 [launch]: https://bytecodealliance.org/articles/bytecode-alliance-update
 [wasi-repo]: https://github.com/webAssembly/wasi
 [coc]: https://opensource.microsoft.com/codeofconduct/
+[routes-example]: https://github.com/technosophos/hello-wagi
