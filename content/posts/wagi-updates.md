@@ -3,7 +3,7 @@ title: "Updates on WAGI, the WebAssembly Gateway Interface"
 description:
   "New features such as pulling from container registries and outbound HTTP
   connections are now part of WAGI."
-date: "2021-05-06"
+date: "2021-05-10"
 authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
