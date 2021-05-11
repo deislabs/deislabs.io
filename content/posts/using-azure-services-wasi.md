@@ -4,7 +4,7 @@ description:
   "With WAGI, the WebAssembly Gateway Interface, it is easier than ever to build
   microservices using WebAssembly. In this article, we explore building Wasm
   modules that use Azure services and how to run them using WAGI."
-date: "2021-05-10"
+date: "2021-05-11"
 authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
