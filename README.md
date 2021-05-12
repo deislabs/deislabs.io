@@ -14,3 +14,5 @@ The site uses a custom theme, based off of the Fresh theme for Hugo Luc Perkins.
 // commit the generated results to git
 # git add resources/_gen/*
 ```
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e90a0480-8860-458a-ae8d-e0707f54b5d9/deploy-status)](https://app.netlify.com/sites/deislabsio/deploys)
