@@ -27,7 +27,7 @@ Responsive Styles
         }
     }
     .title.section-title {
-        font-size: 2rem !important;
+        font-size: 1.75rem !important;
     }
     .level-left.level-social {
         display: flex;
@@ -91,6 +91,16 @@ Responsive Styles
                 font-size: 0.825rem !important;
                 opacity: 0.7;
             }
+        }
+
+        .tags {
+            left: 0.5rem;
+            right: auto;
+            bottom: 2.75rem !important;
+        }
+
+        .post-meta {
+            padding-top: 3.75rem !important;
         }
     }
 
