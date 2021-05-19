@@ -19,7 +19,7 @@ command = "hugo -b $DEPLOY_PRIME_URL/"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "https://docs.deislabs.io/krustlet"
+  from = "/krustlet"
   to = "https://krustlet-docs.netlify.app/"
   status = 200
   force = true
