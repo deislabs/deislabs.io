@@ -659,6 +659,16 @@ section.blog {
         color: $charcoal;
         border: none;
       }
+
+      &.rss {
+        background-color: lighten($midnight, 67%) !important;
+        color: black !important;
+        opacity: 1;
+
+        .fa {
+          color: #f08d49;
+        }
+      }
     }
   }
 }

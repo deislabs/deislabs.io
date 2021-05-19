@@ -7,6 +7,7 @@
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
           <li><a href="../tags/{{ $name | urlize}}">{{ $name }}</a></li>
         {{ end }}
+        <li><a href="{{ .Site.BaseURL }}posts/index.xml" class="rss"><i class="fa fa-rss"></i> Feed</a></li>
       </ul>
 
       <ul class="blog-listing">
