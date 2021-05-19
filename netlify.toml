@@ -19,8 +19,8 @@ command = "hugo -b $DEPLOY_PRIME_URL/"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "/krustlet"
-  to = "https://krustlet-docs.netlify.app/"
+  from = "/krustlet/*"
+  to = "https://krustlet-docs.netlify.app/:splat"
   status = 200
   force = true
-  headers = {X-From = "Netlify"}
+  headers = { Access-Control-Allow-Origin = “*”, X-From = "Netlify" }
