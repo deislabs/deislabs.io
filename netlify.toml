@@ -22,3 +22,5 @@ HUGO_ENABLEGITINFO = "true"
   from = "https://docs.deislabs.io/krustlet"
   to = "https://krustlet-docs.netlify.app/"
   status = 200
+  force = true
+  headers = {X-From = "Netlify"}
