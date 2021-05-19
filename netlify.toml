@@ -23,4 +23,4 @@ HUGO_ENABLEGITINFO = "true"
   to = "https://krustlet-docs.netlify.app/:splat"
   status = 200
   force = true
-  headers = { Access-Control-Allow-Origin = “*”, X-From = "Netlify" }
+  headers = { Access-Control-Allow-Origin = "*", X-From = "Netlify" }
