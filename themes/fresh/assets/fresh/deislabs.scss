@@ -410,10 +410,11 @@ section.blog {
     }
   }
 
-  p code {
+  p code,
+  li code {
     font-size: 1em;
     color: $charcoal;
-    background: rgba(30,30,30,0.025);
+    background: linear-gradient(20deg, rgba(30,30,30,0.05) 0%, rgba(30,30,30,0.125) 100%);
     border-radius: 0.5rem;
   }
 
