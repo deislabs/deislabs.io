@@ -11,7 +11,7 @@ description:
   targeting ONNX, the Open Neural Network Exchange , which allows the either
   usage of models built with PyTorch or TensorFlow from guest WebAssembly
   modules."
-date: "2021-07-06"
+date: "2021-07-07"
 authorname: "Radu Matei"
 author: "@matei_radu"
 authorlink: "https://twitter.com/matei_radu"
