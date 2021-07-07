@@ -8,8 +8,9 @@ description:
   implementations that can leverage CPU multi-threading, host optimizations, or
   hardware devices such as GPUs or TPUs. This article explores the goals of WASI
   NN, existing implementations, and details a new experimental implementation
-  targeting ONNX, the Open Neural Network Exchange , which allows the usage of
-  models built with PyTorch or TensorFlow from guest WebAssembly modules."
+  targeting ONNX, the Open Neural Network Exchange , which allows the either
+  usage of models built with PyTorch or TensorFlow from guest WebAssembly
+  modules."
 date: "2021-07-06"
 authorname: "Radu Matei"
 author: "@matei_radu"
@@ -34,7 +35,7 @@ proposal that allows guest WebAssembly modules running outside the browser, in
 WASI runtimes, access to highly optimized inferencing runtimes for machine
 learning workloads. Andrew Brown has an [excellent article on the
 BytecodeAlliance blog about the motivations of WASI NN][ab-1], but in short, the
-proposed API describes a way for guest modules to load an already built machine
+proposed API describes a way for guest modules to load a pre-built machine
 learning model, provide input tensors, and execute inferences on the highly
 optimized runtime provided by the WASI host. One of the most important things to
 note about the WASI NN API is that it is model agnostic, and so far quite
@@ -62,7 +63,8 @@ of the most popular machine learning frameworks, PyTorch and TensorFlow, have
 libraries that allow developers to convert built models to the ONNX format, then
 run them using an ONNX runtime. This means that by adding ONNX support to WASI
 NN, guest WebAssembly modules can perform inferences for both PyTorch and
-TensorFlow models converted to the common format.
+TensorFlow models converted to the common format -- which makes it even easier
+to use a wider array of models from the ecosystem.
 
 Because the WASI ecosystem is written in Rust, an ONNX implementation for WASI
 NN needs the underlying runtime to either be built in Rust, or have Rust
@@ -253,15 +255,11 @@ The following charts represent the total inference times for running the
 SqueezeNet and MobileNetV2 models on CPU-only hardware, natively, with WASI NN,
 and then purely in WebAssembly.
 
-<!-- ![WASI NN SqueezeNet performance](./static/img/article-photos/wasi-nn-onnx/squeezenet.png) -->
-
 ![WASI NN SqueezeNet performance](/images/wasi-nn-onnx/squeezenet.png)
 
 Being a much smaller module, the inference times for SqueezeNet are smaller
 relative to MobileNetV2, but the relative performance difference can still be
 observed:
-
-<!-- ![WASI NN MobileNetV2 performance](./static/img/article-photos/wasi-nn-onnx/mobilenetv2.png) -->
 
 ![WASI NN MobileNetV2 performance](/images/wasi-nn-onnx/mobilenetv2.png)
 
