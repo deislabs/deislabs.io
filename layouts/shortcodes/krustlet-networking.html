@@ -1,0 +1,25 @@
+<section class="appendix">
+  <h2>Appendix: Krustlet Networking</h2>
+  <p></p>
+  <p>
+    After many discussions, we have decided that CNI and 100% native Kubernetes
+    network support will not be part of the 1.0 release. Networking
+    implementations vary wildly between different Krustlet providers and it
+    would be difficult and unwise to try and define a common abstraction at this
+    time. For example, wasmCloud connects using a system called a “lattice”
+    which can consist of an arbitrary graph of connected hosts. Whereas the CRI
+    provider relies on the CNI spec implementations built in to many Kubernetes
+    distributions.
+  </p>
+
+  <p>
+    However, what we do have support for basic exposed host ports and/or the
+    ability to make HTTP calls. Any provider will be responsible for creating
+    their own networking implementation tailored to the needs of their provider.
+    Our hope is that once we have several different networking examples from
+    various providers, it will be easier to add in a common abstraction at this
+    time. Waiting on that information would only introduce additional delay for
+    releasing Krustlet as an otherwise stable and production-ready (though still
+    bleeding edge) project.
+  </p>
+</section>
