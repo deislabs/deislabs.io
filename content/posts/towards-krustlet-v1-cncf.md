@@ -74,7 +74,7 @@ will continue to update and add features as WebAssembly and WASI mature.
 
 The tl;dr? The APIs are stable and the project is mature enough to use without
 it falling over on itself constantly. WebAssembly? Not fully featured yet, but
-ready to be experiemented with and used, even if it is a bit bumpy at times.
+ready to be experimented with and used, even if it is a bit bumpy at times.
 
 ### WebAssembly, WASI, and containers
 
