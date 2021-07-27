@@ -142,8 +142,7 @@ excitement have been invaluable!
 [rust]: https://www.rust-lang.org/
 [cncf]: https://www.cncf.io/
 [krator]: https://github.com/krator-rs/krator
-[alpha1]:
-  https://github.com/krustlet/krustlet/releases/tag/untagged-31951eb32d9122a2afc5
+[alpha1]: https://github.com/krustlet/krustlet/releases/tag/v1.0.0-alpha.1
 [wasm]: https://webassembly.org/
 [wasmtime]: https://github.com/bytecodealliance/wasmtime
 [docs]: https://docs.krustlet.dev/krustlet/
