@@ -1,7 +1,7 @@
 ---
 title: "Towards Krustlet 1.0 and CNCF Sandbox"
 description:
-  "Krustlet is now a CNCF project, and reaches version, v1.0.0-alpha.1"
+  "Krustlet is now a CNCF project, and reaches version v1.0.0-alpha.1"
 date: 2021-07-27 00:00:00 +0000 UTC
 authorname: "Taylor Thomas and Radu Matei"
 authorlink: "https://github.com/deislabs"
