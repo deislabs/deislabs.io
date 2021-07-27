@@ -1,20 +1,20 @@
 <section class="appendix">
-  <h2>Appendix: Krustlet Networking</h2>
+  <h2>Appendix: What? No Networking?!</h2>
   <p></p>
   <p>
     After many discussions, we have decided that CNI and 100% native Kubernetes
-    network support will not be part of the 1.0 release. Wait? No networking?!
-    Networking implementations vary wildly between different Krustlet providers
-    and it would be difficult and unwise to try and define a common abstraction
-    at this time. For example, wasmCloud connects using a system called a
-    “lattice” which can consist of an arbitrary graph of connected hosts.
-    Whereas the CRI provider relies on the CNI spec implementations built in to
-    many Kubernetes distributions. Not only are we at a point where we need to
-    understand how more complex networking should work, but the same discussions
-    involve things like sidecars, service meshes, and so on. As a result, we
-    decided to let you handle your own networking here, which you can do, while
-    the community understands what's the best path forward with these more
-    complex interactions.
+    network support will not be part of the 1.0 release. Networking
+    implementations vary wildly between different Krustlet providers and it
+    would be difficult and unwise to try and define a common abstraction at this
+    time. For example, wasmCloud connects using a system called a “lattice”
+    which can consist of an arbitrary graph of connected hosts. Whereas the CRI
+    provider relies on the CNI spec implementations built in to many Kubernetes
+    distributions. Not only are we at a point where we need to understand how
+    more complex networking should work, but the same discussions involve things
+    like sidecars, service meshes, and so on. As a result, we decided to let you
+    handle your own networking here, which you can do, while the community
+    understands what's the best path forward with these more complex
+    interactions.
   </p>
 
   <p>

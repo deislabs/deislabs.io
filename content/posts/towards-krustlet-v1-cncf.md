@@ -102,7 +102,9 @@ WebAssembly outside the browser, together with a common layer and set of
 primitives that running instances can use to interact with their runtimes, while
 maintaining the sandbox promised by WebAssembly. For example, the included
 Krustlet provider (`krustlet-wasi`) is built using the reference implementation
-for WASI, [Wasmtime][wasmtime].
+for WASI, [Wasmtime][wasmtime]. There are also other providers out in the
+community and new providers we are working on (or are polishing) such as the
+wasmCloud provider and the WAGI provider.
 
 While containers and WebAssembly modules _can_ be used for some of the same
 workloads, we believe they are complementary technologies -- WebAssembly's true
