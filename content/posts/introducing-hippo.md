@@ -19,8 +19,9 @@ WebAssembly space, such as [Krustlet](https://github.com/krustlet/krustlet),
 
 While experimenting with these new technologies, it became clear that we need
 to make it easy for developers to deploy and test out their new ideas. Today,
-we're thrilled to announce a new project. We call it Hippo, an Open Source
-self-hosted Platform as a Service (PaaS).
+we're thrilled to announce a new project. We call it
+[Hippo](https://github.com/deislabs/hippo), an Open Source self-hosted Platform
+as a Service (PaaS).
 
 {{< youtube "lvUsCU0n1i0" >}}
 
