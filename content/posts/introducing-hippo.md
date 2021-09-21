@@ -34,14 +34,12 @@ Hippo uses a concept called "Channels" to perform automatic deployments of your
 applications. More on that later.
 
 Using the `hippo` command line interface, you can upload new releases or
-prepare a bindle for local development.
+prepare a bindle for local development. In the future, you can use this CLI to
+create applications, configure channels, gather logs, attach TLS certificates,
+and other commands you'd expect to use with a PaaS.
 
 Hippo provides a web interface for users to register new accounts, access their
 applications, and create new environments for testing.
-
-In the future, you can use this CLI to create applications, configure channels,
-gather logs, attach TLS certificates, and other commands you'd expect to use
-with a PaaS.
 
 Hippo makes it easy to run applications and services at scale.
 
