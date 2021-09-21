@@ -25,6 +25,8 @@ as a Service (PaaS).
 
 {{< youtube "lvUsCU0n1i0" >}}
 
+<br />
+
 Hippo takes a fresh spin on the PaaS ecosystem, taking advantage of the
 technology WebAssembly brings to the space.
 
