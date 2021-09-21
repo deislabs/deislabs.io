@@ -22,6 +22,8 @@ to make it easy for developers to deploy and test out their new ideas. Today,
 we're thrilled to announce a new project. We call it Hippo, an Open Source
 self-hosted Platform as a Service (PaaS).
 
+{{< youtube "lvUsCU0n1i0" >}}
+
 Hippo takes a fresh spin on the PaaS ecosystem, taking advantage of the
 technology WebAssembly brings to the space.
 
