@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Hippo: the WebAssembly PaaS"
 description: "Hippo makes it easy to run applications and services at scale"
-date: 2021-09-20 00:00:00 +0000 UTC
+date: 2021-09-21 00:00:00 +0000 UTC
 authorname: "Matthew Fisher"
 author: "@bacongobbler"
 authorlink: "https://deislabs.io/"
