@@ -1,6 +1,6 @@
 ---
 title: "Akri a Year Later"
-description: "Akri turns One and enters the CNCF Sandbox"
+description: "Akri turns One and Enters the CNCF Sandbox"
 date: 2021-10-20 00:00:00 +0000 UTC
 authorname: "Kate Goldenring"
 author: "@kate-goldenring"
