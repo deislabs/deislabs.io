@@ -14,3 +14,5 @@ Akri came from a question on how to incorporate constrained devices into Kuberne
 
 ## What’s happening in the Sandbox?
 We are very excited to announce that Akri was accepted into the CNCF as a [Sandbox project](https://www.cncf.io/sandbox-projects/)! This shows that Akri solves a unique problem and does it all in a cloud native way. With the acceptance comes support and promotion by the CNCF. Akri will soon be moved from Deis Labs to its new home under the [project-akri](https://github.com/project-akri) organization on GitHub. Thank you to everyone who helped get Akri to this milestone! 
+
+Want to learn more about what's next for Akri and how to get involved? Join our next community call on November 2nd or jump into the conversation now on Slack!
