@@ -93,12 +93,6 @@ disableHugoGeneratorInject = true
     url = "https://krustlet.dev"
 
     [[params.section1.tiles]]
-    title = "ORAS"
-    icon = "oras"
-    text = "OCI (Open Container Initiative) Registry As Storage."
-    url = "https://github.com/deislabs/oras"
-
-    [[params.section1.tiles]]
     title = "Porter"
     icon = "porter"
     text = "Porter makes authoring CNAB bundles easier, handling your app and everything you need to deploy with it."
