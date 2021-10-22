@@ -873,8 +873,8 @@ section.blog {
       display: inline-block;
       position: relative;
       width: 95%;
-      min-height: 10rem;
-      padding: 1rem 2vw 1rem 2rem;
+      min-height: 12rem;
+      padding: 1.5rem 2vw 2rem 2rem;
       margin-right: 5vw;
       border-left: 5px solid lighten($charcoal, 60%);
       @include transition;
@@ -886,24 +886,24 @@ section.blog {
       p {
         line-height: 1.5;
         font-size: 1rem;
-        opacity: 0;
+        opacity: 0.7;
         @include transition;
       }
 
       .badge {
         position: absolute;
-        right: 2vw;
-        top: 1.125rem;
+        right: 1.67vw;
+        top: 1.67rem;
         border-radius: 1.5rem;
-        background-color: $midnight;
+        background-color: lighten($midnight, 20%);
         font-family: monospace;
         text-transform: uppercase;
         font-size: 0.825rem;
-        letter-spacing: 0.0125rem;
-        padding: 0.1rem 1rem;
+        letter-spacing: 0.075rem;
+        padding: 0.1rem 0.67rem;
         color: white;
         @include transition;
-        opacity: 0;
+        opacity: 0.67;
 
         &.badge-teal {
           background-color: teal;
@@ -913,6 +913,7 @@ section.blog {
       &:hover {
         background: white;
         border-left-color: $green;
+        box-shadow: 0 1px 5px lighten($midnight, 52.5%);
         
         p,
         .badge {
