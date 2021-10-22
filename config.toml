@@ -35,6 +35,8 @@ disableHugoGeneratorInject = true
     icon = "akri"
     text = "A Kubernetes Resource Interface for the Edge, Akri exposes devices as resources in Kubernetes."
     url = "https://github.com/deislabs/akri"
+    badge = "cncf"
+    badgecolor = "teal"
 
     [[params.section1.tiles]]
     title = "Bindle"
@@ -69,6 +71,8 @@ disableHugoGeneratorInject = true
     icon = "duffle"
     text = "A tool that installs and manages distributed app bundles (CNABs)."
     url = "https://duffle.sh"
+    badge = "archived"
+    badgecolor = "gray"
 
     [[params.section1.tiles]]
     title = "Go Lua"
@@ -87,16 +91,26 @@ disableHugoGeneratorInject = true
     badgecolor = "teal"
 
     [[params.section1.tiles]]
+    title = "Hippo"
+    icon = "hippo"
+    text = "A self-hosted WebAssembly PaaS - Hippo provides a secure, portable and fast platform to run apps."
+    url = "https://github.com/deislabs/hippo"
+
+    [[params.section1.tiles]]
     title = "Krustlet"
     icon = "krustlet"
     text = "Krustlet is a tool to run WebAssembly workloads natively on Kubernetes."
     url = "https://krustlet.dev"
+    badge = "cncf"
+    badgecolor = "teal"
 
     [[params.section1.tiles]]
     title = "ORAS"
     icon = "oras"
     text = "OCI (Open Container Initiative) Registry As Storage."
     url = "https://github.com/deislabs/oras"
+    badge = "cncf"
+    badgecolor = "teal"
 
     [[params.section1.tiles]]
     title = "Porter"
