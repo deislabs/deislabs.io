@@ -138,6 +138,18 @@ disableHugoGeneratorInject = true
     text = "Write HTTP handlers in WebAssembly with a minimal amount of work."
     url = "https://github.com/deislabs/wagi"
 
+    [[params.section1.tiles]]
+    title = "SpiderLightning"
+    icon = "slight"
+    text = "A set of distributed capability interfaces for Wasm applications."
+    url = "https://github.com/deislabs/spiderlightning"
+
+    [[params.section1.tiles]]
+    title = "Containerd Wasm Shims"
+    icon = "shims"
+    text = "containerd shims for running WebAssembly workloads in Kubernetes."
+    url = "https://github.com/deislabs/containerd-wasm-shims"
+
 
   [params.footer]
   logo = "deislabs.png"
