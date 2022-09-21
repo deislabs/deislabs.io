@@ -59,6 +59,12 @@ disableHugoGeneratorInject = true
     url = "/cnab/"
 
     [[params.section1.tiles]]
+    title = "Containerd Wasm Shims"
+    icon = "shims"
+    text = "containerd shims for running WebAssembly workloads in Kubernetes."
+    url = "https://github.com/deislabs/containerd-wasm-shims"
+
+    [[params.section1.tiles]]
     title = "Draft"
     icon = "draft"
     text = "A tool to quickly build & run Kubernetes apps, to streamline the dev process."
@@ -125,6 +131,12 @@ disableHugoGeneratorInject = true
     icon = "mystikos"
     text = "Mystikos is a set of tools for running applications in a hardware trusted execution environment (TEE)."
     url = "https://github.com/deislabs/mystikos"
+
+    [[params.section1.tiles]]
+    title = "SpiderLightning"
+    icon = "slight"
+    text = "A set of distributed capability interfaces for Wasm applications."
+    url = "https://github.com/deislabs/spiderlightning"
 
     [[params.section1.tiles]]
     title = "VS Code Extensions"
