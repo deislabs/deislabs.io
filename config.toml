@@ -59,6 +59,12 @@ disableHugoGeneratorInject = true
     url = "/cnab/"
 
     [[params.section1.tiles]]
+    title = "Containerd Wasm Shims"
+    icon = "shims"
+    text = "containerd shims for running WebAssembly workloads in Kubernetes."
+    url = "https://github.com/deislabs/containerd-wasm-shims"
+
+    [[params.section1.tiles]]
     title = "Draft"
     icon = "draft"
     text = "A tool to quickly build & run Kubernetes apps, to streamline the dev process."
@@ -127,6 +133,12 @@ disableHugoGeneratorInject = true
     url = "https://github.com/deislabs/mystikos"
 
     [[params.section1.tiles]]
+    title = "SpiderLightning"
+    icon = "slight"
+    text = "A set of distributed capability interfaces for Wasm applications."
+    url = "https://github.com/deislabs/spiderlightning"
+
+    [[params.section1.tiles]]
     title = "VS Code Extensions"
     icon = "vscode"
     text = "Extensions for accessing cloud-native tools inside Visual Studio Code."
@@ -137,18 +149,6 @@ disableHugoGeneratorInject = true
     icon = "wagi"
     text = "Write HTTP handlers in WebAssembly with a minimal amount of work."
     url = "https://github.com/deislabs/wagi"
-
-    [[params.section1.tiles]]
-    title = "SpiderLightning"
-    icon = "slight"
-    text = "A set of distributed capability interfaces for Wasm applications."
-    url = "https://github.com/deislabs/spiderlightning"
-
-    [[params.section1.tiles]]
-    title = "Containerd Wasm Shims"
-    icon = "shims"
-    text = "containerd shims for running WebAssembly workloads in Kubernetes."
-    url = "https://github.com/deislabs/containerd-wasm-shims"
 
 
   [params.footer]
