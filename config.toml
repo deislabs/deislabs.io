@@ -49,8 +49,8 @@ disableHugoGeneratorInject = true
     icon = "brigade"
     text = "Create event-driven workflows and pipelines for your infrastructure, through scriptable, automated tasks."
     url = "https://brigade.sh"
-    badge = "cncf"
-    badgecolor = "teal"
+    badge = "archived"
+    badgecolor = "gray"
 
     [[params.section1.tiles]]
     title = "CNAB"
