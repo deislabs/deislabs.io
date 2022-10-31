@@ -133,6 +133,12 @@ disableHugoGeneratorInject = true
     url = "https://github.com/deislabs/mystikos"
 
     [[params.section1.tiles]]
+    title = "runwasi"
+    icon = "runwasi"
+    text = "Facilitates running Wasm / WASI workloads managed by containerd."
+    url = "https://github.com/deislabs/runwasi"
+
+    [[params.section1.tiles]]
     title = "SpiderLightning"
     icon = "slight"
     text = "A set of distributed capability interfaces for Wasm applications."
