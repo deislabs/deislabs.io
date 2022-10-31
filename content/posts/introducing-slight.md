@@ -13,7 +13,7 @@ At DeisLabs, we are researching and developing various WebAssembly tools and sys
 
 ## Authoring portable distributed applications is hard
 
-Imagine you're a developer working at a consumer-facing company A. You built a web app that runs on on-premises data centers and used open-source projects to build data stores and pipelines. At beginning, there are only a few hundreds of customers, so the web app worked well. However, as the company grows, the number of customers increases rapidly. The web app becomes slow and unstable. Now you're tasked to migrate from on-premises data centers to public cloud.
+Imagine you're a developer working at a consumer-facing company A. You built a web app that runs on on-premises data centers and used open-source projects to build data stores and pipelines. At the beginning, there are only a few hundreds of customers, so the web app worked well. However, as the company grows, the number of customers increases rapidly. The web app becomes slow and unstable. Now you're tasked to migrate from on-premises data centers to public cloud.
 
 Migrating to the cloud means that you will need to re-write the code to use cloud vendor resources, such as datastores and pipelines. Even worse, the company strategically decided to use two cloud vendors to reduce the risk of vendor lock-in. Now you need to re-write the code twice. This is a common scenario for many companies. The problem is that the code is not portable.
 
@@ -31,7 +31,7 @@ To experiment with SpiderLightning, we built a host CLI called slight. It embeds
 
 ## How to use slight?
 
-To use slight, you need to install it first. We assumed that you are using a UNIX-based machine. You can install slight by running the following command:
+To use slight, you need to install it first. Assuming that you are using a UNIX-based machine, you can install slight by running the following command:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/deislabs/spiderlightning/main/install.sh)"
@@ -67,7 +67,7 @@ If you see "Hello, SpiderLightning!", congratulations! You have successfully run
 
 ## How does it work?
 
-You might noticed that slight takes two arguments. The first argument is a configuration file called `slightfile.toml`. The second argument is a WebAssembly module. They represent two phases of software development: operation and development, resp.
+You might noticed that slight takes two arguments. The first argument is a configuration file called `slightfile.toml`. The second argument is a WebAssembly module. They represent two phases of software development: operation and development, respectively.
 
 ### Operations
 Let's take a look at the `slightfile.toml` file:
