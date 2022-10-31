@@ -158,11 +158,15 @@ Only at runtime, the WebAssembly runtime will provide the implementation of the 
 
 ## Standardization
 
-Without standardization and community support, SpiderLightning will not go far. We are working with the WebAssembly community to standardize these distributed application capability interfaces.
+Without standardization and community support, SpiderLightning interfaces will not go far. We are working with the WebAssembly community to standardize these distributed application capability interfaces.
 
-In fact, they are already in WebAssembly System Interface (WASI) phase 1 proposals. You can find the proposals [here](https://github.com/WebAssembly/WASI/blob/main/Proposals.md).
+Success via standardization will provide a common set of capabilities accessible by **ANY** runtime that exposes those interfaces. It means that you write application code once, and you can run it on any runtime that implement the standard interfaces.
 
-Our next step is to work with multiple parties to design a set of interfaces that find the balance between rich feature sets and portability across providers. 
+What's more, these interfaces are building on top of the [WebAssembly Component Model](https://github.com/WebAssembly/component-model), which can extend these standard interfaces to even more. For example, you can extend the key-value store interface to add transactional capability.
+
+You may find the proposals [here](https://github.com/WebAssembly/WASI/blob/main/Proposals.md).
+
+Our next step is to work with multiple parties to design a set of interfaces that find the balance between rich feature sets and portability across providers.
 
 ## Finishing thoughts
 
