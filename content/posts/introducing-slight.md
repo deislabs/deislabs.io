@@ -6,10 +6,10 @@ authorname: "Jiaxiao (Joe) Zhou"
 author: "@jiaxiao_zhou"
 authorlink: "https://twitter.com/jiaxiao_zhou"
 image: "images/logos/twitter-card.png"
-tags: ["slight", "spiderlightning"]
+tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 ---
 
-At DeisLabs, we are researching and developing various WebAssembly tools and systems overtime. We have been working on a new project called SpiderLightning, which is a cloud system interface written in a Interface Definition Language (IDL) called [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). We have also experimented with a CLI called slight, which we recently released "0.2.0" version. In this blog post, we will introduce SpiderLightning and slight.
+At DeisLabs, we are researching and developing various WebAssembly tools and systems overtime. We have been working on a new project called SpiderLightning, which is a cloud system interface written in an Interface Definition Language (IDL) called [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). SpiderLightning is paired with a CLI called slight, which we recently released "0.2.0" version. In this blog post, we will introduce SpiderLightning and slight.
 
 ## Authoring portable distributed applications is hard
 
@@ -19,11 +19,11 @@ Migrating to the cloud means that you will need to re-write the code to use clou
 
 ## What is SpiderLightning and slight?
 
-Making code more portable has always been a challenge. Think about POSIX. It is a system interface designed to maintain compatibility between operating systems. The key is to design a system interface that abstracts away cloud provider-specific capabilities.
+Making code more portable has always been a challenge. Think about POSIX. It is a system interface designed to maintain compatibility between operating systems. The key is to design a system interface that abstracts away specific capabilities into more generically applicable interfaces for those capabilities.
 
-SpiderLightning is a cloud system interface that is designed to make applications portable across cloud providers.
+SpiderLightning is a distributed application system interface that is designed to make applications portable across hosting providers (cloud, on-premise, IoT, etc).
 
-It's interface defines a set of common capabilities that are often needed to build distributed applications. These capabilities include key-value stores, message queue, pub/sub, runtime configuration etc.
+Its interface defines a set of common capabilities that are often needed to build distributed applications. These capabilities include key-value stores, message queue, pub/sub, runtime configuration etc.
 
 Application developers can then focus on writing business logic and not worry about the underlying infrastructure.
 
@@ -146,10 +146,10 @@ Without standardization and community support, SpiderLightning will not go far. 
 
 In fact, they are already in WebAssembly System Interface (WASI) phase 1 proposals. You can find the proposals [here](https://github.com/WebAssembly/WASI/blob/main/Proposals.md).
 
-Our next step is to work with multiple parties to design a set of interfaces that follow the least common denominator (LCD) principle. 
+Our next step is to work with multiple parties to design a set of interfaces that find the balance between rich feature sets and portability across providers. 
 
 ## Finishing thoughts
 
-We are excited for work like WebAssembly Component Model and WASI to mature. We believe that in the future, you will be able to build portable and secure wasm applications that can run on any places, including cloud, edge, and IoT.
+We are excited for the WebAssembly Component Model and WASI to continue maturing. We believe that in the future, you will be able to build portable and secure wasm applications that can run nearly anywhere, including on-premise, cloud, edge, IoT, on satellites in space, anywhere!
 
 Thanks for reading! If you'd like to learn more about SpiderLightning, please check out our [GitHub repo](https://github.com/deislabs/spiderlightning)
