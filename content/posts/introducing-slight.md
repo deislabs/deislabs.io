@@ -1,7 +1,7 @@
 ---
 title: "Introducing SpiderLightning - A Cloud System Interface with WebAssembly"
 description: "Announcing SpiderLightning and slight, a distributed application runtime for Wasm featuring portable application building blocks."
-date: 2022-10-30 00:00:00 +0000 UTC
+date: 2022-10-31 00:00:00 +0000 UTC
 authorname: "Jiaxiao (Joe) Zhou"
 author: "@jiaxiao_zhou"
 authorlink: "https://twitter.com/jiaxiao_zhou"
@@ -9,25 +9,32 @@ image: "images/logos/twitter-card.png"
 tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 ---
 
-At DeisLabs, we are researching and developing various WebAssembly tools and systems overtime. We have been working on a new project called SpiderLightning, which is a cloud system interface written in an Interface Definition Language (IDL) called [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). SpiderLightning is paired with a CLI called slight, which we recently released "0.2.0" version. In this blog post, we will introduce SpiderLightning and slight.
+At DeisLabs, we are researching and developing various WebAssembly tools and systems overtime. We have been working on a new project called SpiderLightning, which is a distributed application interface written in an Interface Definition Language (IDL) called [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). SpiderLightning is paired with a CLI called slight, which we recently released "0.2.0" version. In this blog post, we will introduce SpiderLightning and slight.
 
 ## Authoring portable distributed applications is hard
 
-Imagine you're a developer working at a consumer-facing company A. You built a web app that runs on on-premises data centers and used open-source projects to build data stores and pipelines. At the beginning, there are only a few hundreds of customers, so the web app worked well. However, as the company grows, the number of customers increases rapidly. The web app becomes slow and unstable. Now you're tasked to migrate from on-premises data centers to public cloud.
+Imagine you're a developer working at a consumer-facing company. You built a web app that runs on on-premises data centers and used open-source projects to build data stores and pipelines. At the beginning, there are only a few hundreds of customers, so the web app worked well. However, as the company grows, the number of customers increases rapidly. The web app becomes slow and unstable. This is a classic scaling issue. Now you're tasked to migrate from on-premises data centers to public cloud because they will horizontal scale the application for you.
 
-Migrating to the cloud means that you will need to re-write the code to use cloud vendor resources, such as datastores and pipelines. Even worse, the company strategically decided to use two cloud vendors to reduce the risk of vendor lock-in. Now you need to re-write the code twice. This is a common scenario for many companies. The problem is that the code is not portable.
+Migrating to the cloud means that you will need to re-write the code to use cloud vendor resources, such as datastores and pipelines. Even worse, the company you are working on strategically decided to use two cloud vendors to reduce the risk of vendor lock-in. Now you need to re-write the code twice and manage two different deployments. This is a common scenario for many companies. The problem is that the code is not portable.
 
 ## What is SpiderLightning and slight?
 
 Making code more portable has always been a challenge. Think about POSIX. It is a system interface designed to maintain compatibility between operating systems. The key is to design a system interface that abstracts away specific capabilities into more generically applicable interfaces for those capabilities.
 
-SpiderLightning is a distributed application system interface that is designed to make applications portable across hosting providers (cloud, on-premise, IoT, etc).
+SpiderLightning is a distributed application interface that is designed to make applications portable across hosting providers (cloud, on-premise, IoT, etc).
 
 Its interface defines a set of common capabilities that are often needed to build distributed applications. These capabilities include key-value stores, message queue, pub/sub, runtime configuration etc.
 
+You can think of SpiderLightning as a set of LEGO pieces that can be used to build distributed applications.
+
+![SpiderLightning as lego pieces](/images/spiderlightning/spiderlightning-capabilities.png)
+
 Application developers can then focus on writing business logic and not worry about the underlying infrastructure.
 
-To experiment with SpiderLightning, we built a host CLI called slight. It embeds a WebAssembly runtime called wasmtime.
+To experiment with SpiderLightning, we built a host CLI called slight. It embeds a WebAssembly runtime called wasmtime and instantiate distributed application capabilities to the underlying infrastructure. For example, it implements key-value capability by using Redis as the underlying data store.
+
+![slight provides services](/images/spiderlightning/slight-services.png)
+
 
 ## How to use slight?
 
