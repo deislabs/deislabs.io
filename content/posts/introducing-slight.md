@@ -1,6 +1,6 @@
 ---
 title: "Introducing SpiderLightning - A Cloud System Interface with WebAssembly"
-description: "Announcing slight"
+description: "Announcing SpiderLightning and slight, a distributed application runtime for Wasm featuring portable application building blocks."
 date: 2022-10-30 00:00:00 +0000 UTC
 authorname: "Jiaxiao (Joe) Zhou"
 author: "@jiaxiao_zhou"
