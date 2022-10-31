@@ -47,10 +47,10 @@ To use slight, you need to install it first. Assuming that you are using a UNIX-
 After installing slight, you can create your very first slight application by running the following command:
 
 ```bash
-slight new -n spidey@v0.1.0 rust && cd spidey
+slight new -n spidey@v0.2.0 rust && cd spidey
 ```
 
-This command will create a new rust project called spidey. The project will use the SpiderLightning interface version 0.1.0. We also support C.
+This command will create a new rust project called spidey. The project will use the SpiderLightning interface version 0.2.0. We also support C.
 
 Next, you will need to add `wasm32-wasi` target to your rust toolchain. You can do this by running the following command:
 
@@ -119,13 +119,22 @@ name = "my-container"
 If you open the `src/main.rs` file, you will see the following code:
 
 ```rust
+use anyhow::Result;
+
 use kv::*;
-wit_bindgen_rust::import!("wit/kv_v0.1.0/kv.wit");
+wit_bindgen_rust::import!("wit/kv_v0.2.0/kv.wit");
+wit_error_rs::impl_error!(kv::Error);
+
+fn main() -> Result<()> {
+    let my_kv = Kv::open("placeholder-name")?;
+    my_kv.set("hello-spiderlightning", b"Hello, SpiderLightning!")?;
+    ...
+}
 ```
 
-The application code imports the key-value store interface from the `wit/kv_v0.1.0/kv.wit` file. It **does not** know, at dev time, which key-value store is used. All it knows is that it can use a few operations to interact with the key-value store.
+The application code imports the key-value store interface from the `wit/kv_v0.2.0/kv.wit` file. It **does not** know, at build time, which key-value store is used. All it knows is that it can use a few operations to interact with the key-value store.
 
-You may wonder what is the `wit/kv_v0.1.0/kv.wit` file. It is a WIT file that defines the interface of the key-value store. It looks like the following: 
+You may wonder what is the `wit/kv_v0.2.0/kv.wit` file. It is a WIT file that defines the interface of the key-value store. It looks like the following: 
 
 ```go
 // A key-value store interface.
