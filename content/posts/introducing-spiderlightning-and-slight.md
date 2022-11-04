@@ -9,21 +9,21 @@ image: "images/logos/twitter-card.png"
 tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 ---
 
-At DeisLabs, we are researching and developing various WebAssembly tools and systems overtime. We have been working on a new project called SpiderLightning, which is a distributed application interface written in an Interface Definition Language (IDL) called [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md). SpiderLightning is paired with a CLI called slight, which we recently released "0.2.0" version. In this blog post, we will introduce SpiderLightning and slight.
+At DeisLabs, we are researching and developing various WebAssembly tools and infrastructure. We have been working on a new project called SpiderLightning, which is a set of distributed application interfaces intended to provide developers in the WebAssembly ecosystem a way to develop applications easily and quickly. These interfaces are written in an Interface Definition Language (IDL) called [WIT](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md), part of the [WebAssembly Component Model](https://github.com/WebAssembly/component-model) work. SpiderLightning is paired with a CLI called slight, which we recently released "0.2.0" version. In this blog post, we will introduce SpiderLightning and slight.
 
-## Authoring portable distributed applications is hard
+## Problem: Porting distributed applications is hard
 
-Imagine you're a developer working at a consumer-facing company. You built a web app that runs on on-premises data centers and used open-source projects to build data stores and pipelines. At the beginning, there are only a few hundreds of customers, so the web app worked well. However, as the company grows, the number of customers increases rapidly. The web app becomes slow and unstable. This is a classic scaling issue. Now you're tasked to migrate from on-premises data centers to public cloud because they will horizontal scale the application for you.
+Let's set the stage. Imagine you're a developer working at a consumer-facing company. You built a web app that runs on on-premise data centers and used open-source projects to build data stores and pipelines. At the beginning, there are only a few hundreds of customers, so the web app worked well. However, as the company grows, the number of customers increases rapidly. The web app becomes slow and unstable. To get on top of business growth, now you're tasked to migrate the web app to the cloud.
 
-Migrating to the cloud means that you will need to re-write the code to use cloud vendor resources, such as datastores and pipelines. Even worse, the company you are working on strategically decided to use two cloud vendors to reduce the risk of vendor lock-in. Now you need to re-write the code twice and manage two different deployments. This is a common scenario for many companies. The problem is that the code is not portable.
+But there is a catch. Migrating to the cloud means that you will need to re-write the code to use cloud vendor resources, such as their cloud-managed and pipelines. Even worse, the company you are working on strategically decided to use two cloud vendors to reduce the risk of vendor lock-in. Now you need to re-write the code twice and manage two different deployments. This is a common scenario for many companies. The problem is that the code is not **portable** - the code is strongly coupled with the underlying infrastructure that it runs on.
 
-## What is SpiderLightning and slight?
+## Radically Increase Portability with SpiderLightning and Slight
 
-Making code more portable has always been a challenge. Think about POSIX. It is a system interface designed to maintain compatibility between operating systems. The key is to design a system interface that abstracts away specific capabilities into more generically applicable interfaces for those capabilities.
+Let's figure out how to make this challenge much easier. Of course, making code more portable has always been a challenge. Think about POSIX. It is a system interface designed to maintain compatibility between operating systems. The key is to design a system interface that abstracts away specific capabilities into more generically applicable interfaces for those capabilities.
 
-SpiderLightning is a distributed application interface that is designed to make applications portable across hosting providers (cloud, on-premise, IoT, etc).
+With this in mind, SpiderLightning is a set of distributed application interfaces that are designed to make applications portable across hosting providers (cloud, on-premise, IoT, etc). These interfaces are at the application level.
 
-Its interface defines a set of common capabilities that are often needed to build distributed applications. These capabilities include key-value stores, message queue, pub/sub, runtime configuration etc.
+Its interface set defines a list of common capabilities that are often needed to build distributed applications. These capabilities include key-value stores, message queue, pub/sub, runtime configuration etc.
 
 You can think of SpiderLightning as a set of LEGO pieces that can be used to build distributed applications.
 
@@ -134,7 +134,7 @@ fn main() -> Result<()> {
 
 The application code imports the key-value store interface from the `wit/kv_v0.2.0/kv.wit` file. It **does not** know, at build time, which key-value store is used. All it knows is that it can use a few operations to interact with the key-value store.
 
-You may wonder what is the `wit/kv_v0.2.0/kv.wit` file. It is a WIT file that defines the interface of the key-value store. It looks like the following: 
+You may wonder what is the `wit/kv_v0.2.0/kv.wit` file. It is a WIT file that defines the interface of the key-value store. It looks like the following:
 
 ```go
 // A key-value store interface.
