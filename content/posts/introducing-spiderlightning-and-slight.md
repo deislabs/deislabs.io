@@ -5,7 +5,7 @@ date: 2022-11-04 00:00:00 +0000 UTC
 authorname: "Jiaxiao (Joe) Zhou"
 author: "@jiaxiao_zhou"
 authorlink: "https://twitter.com/jiaxiao_zhou"
-image: "images/logos/twitter-card.png"
+image: "images/twitter-card.png"
 tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 ---
 
