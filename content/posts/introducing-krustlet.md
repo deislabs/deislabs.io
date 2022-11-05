@@ -5,7 +5,7 @@ date: 2020-04-06 00:00:00 +0000 UTC
 authorname: "Matthew Fisher"
 author: "@bacongobbler"
 authorlink: "https://twitter.com/bacongobbler"
-image: "images/logos/twitter-card.png"
+image: "images/twitter-card.png"
 tags: ["krustlet"]
 ---
 
