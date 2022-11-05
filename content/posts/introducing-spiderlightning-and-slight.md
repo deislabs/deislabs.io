@@ -4,8 +4,7 @@ description: "Announcing SpiderLightning and slight, a distributed application r
 date: 2022-11-04 00:00:00 +0000 UTC
 authorname: "Jiaxiao (Joe) Zhou"
 author: "@jiaxiao_zhou"
-authorlink: "https://twitter.com/jiaxiao_zhou"
-image: "images/twitter-card.png"
+authorlink: "https://twitter.com/jiaiao_zhou"
 tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 ---
 
