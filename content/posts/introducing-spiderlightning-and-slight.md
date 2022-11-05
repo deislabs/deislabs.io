@@ -50,7 +50,7 @@ After installing slight, you can create your very first slight application by ru
 slight new -n spidey@v0.2.0 rust && cd spidey
 ```
 
-This command will create a new rust project called spidey. The project will use the SpiderLightning interface version 0.2.0. We also support C.
+This command will create a new Rust project called spidey that will use the SpiderLightning interfaces at version 0.2.0. Other than Rust, we also support starting C projects.
 
 Next, you will need to add `wasm32-wasi` target to your rust toolchain. You can do this by running the following command:
 
