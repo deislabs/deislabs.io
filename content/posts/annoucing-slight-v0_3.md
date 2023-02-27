@@ -64,7 +64,7 @@ fn handle_hello(_req: Request) -> Result<Response, HttpError> {
 
 You can use `wit-bindgen` tool to generate guest binding from `http-client.wit` WIT file.
 
-> 💡 The WIT file can be downloaded using `slight add http-client@v0.3.1`
+> 💡 The WIT file can be downloaded using `slight add http-client@v0.3.2`
 
 The `handle_hello` function is responsible for handling incoming HTTP requests. It achieves this by creating a `Request` object from the generated `http_client` module, which is then sent using the `request` function. The `request` function makes an HTTP request to the URI defined in the `Request` struct.
 
@@ -116,7 +116,7 @@ resource sub {
 }
 ```
 
-> 💡 The WIT file can be downloaded using `slight add messaging@v0.3.1`
+> 💡 The WIT file can be downloaded using `slight add messaging@v0.3.2`
 
 A publisher service can target the `pub` resource to send messages to a topic. Similarly, a subscriber service can choose to subscribe to a topic and then pull the broker to receive messages. This way, the publisher and subscriber services can communicate with each other through the broker, without needing to know each other's details.
 
@@ -164,6 +164,8 @@ for _ in 0..3 {
     }
 }
 ```
+
+**⚠️ Important Note:**
 
 One limitation of the current messaging interface and implementation is the lack of support for streaming events. This can be problematic in situations where the receive function is a blocking call that tries to pull the message broker for a new message. If the broker does not have any new messages, the receive function will be blocked, which can cause delays in message delivery. Additionally, the lack of streaming support can limit the scalability of the system, as the blocking call can cause bottlenecks in high-traffic scenarios. To address this limitation, we will be adding `time-to-expire` to the receive function in the near future and will be collaborating with the Wasm Component Model community to land `streams` feature in WIT.
 
@@ -215,7 +217,7 @@ fn main() -> Result<()> {
 }
 ```
 
-> 💡 The WIT file can be downloaded using `slight add sql@v0.3.1`
+> 💡 The WIT file can be downloaded using `slight add sql@v0.3.2`
 
 The SQL interface is paired with a slight configuration file to tell the host which SQL service is needed to provide this capability. Below is a sample `slightfile.toml` using the PostgreSQL database implementation, which is the only service Slight supports right now.
 
