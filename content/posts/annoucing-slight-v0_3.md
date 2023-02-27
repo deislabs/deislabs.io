@@ -8,7 +8,7 @@ authorlink: "https://twitter.com/jiaiao_zhou"
 tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 ---
 
-We are excited to announce the release of `Slight` v0.3, the latest version of our WebAssembly runtime that utilizes SpiderLightning (also known as `wasi-cloud`) capabilities.
+We are excited to announce the release of Slight v0.3, the latest version of our WebAssembly runtime that utilizes SpiderLightning (also known as wasi-cloud) capabilities.
 
 You can download the latest release by running the following command if you are using Linux or macOS:
 
@@ -26,7 +26,7 @@ This release includes several new features, such as the ability to author HTTP c
 
 ### HTTP Client
 
-Previously, `Slight` only supports the ability to serve HTTP requests. You can write applications in Rust or C to handle incoming HTTP requests and compile them to Wasm modules. And now, `Slight` supports the ability to make a outbound HTTP request to a URL. Take the following Rust program as an example:
+Previously, Slight only supports the ability to serve HTTP requests. You can write applications in Rust or C to handle incoming HTTP requests and compile them to Wasm modules. And now, Slight supports the ability to make an outbound HTTP request to a URL. Take the following Rust program as an example:
 
 ```rust
 wit_bindgen_rust::import("wit/http-client.wit");
@@ -52,7 +52,7 @@ fn handle_hello(_req: Request) -> Result<Response, HttpError> {
 }
 ```
 
-You can use `wit-bindgen` tool to generate guest binding from `http-client.wit` WIT file. 
+You can use `wit-bindgen` tool to generate guest binding from `http-client.wit` WIT file.
 
 > 💡 The WIT file can be downloaded using `slight add http-client@v0.3.1`
 
@@ -86,23 +86,23 @@ In short, the new messaging capability interface looks like the following in WIT
 ```go
 // producer interface
 resource pub {
-	/// creates a handle to a pub object
-	static open: func(name: string) -> expected<pub, messaging-error>
+    /// creates a handle to a pub object
+    static open: func(name: string) -> expected<pub, messaging-error>
 
-	/// publish a message to a topic
-	publish: func(msg: list<u8>, topic: string) -> expected<unit, messaging-error> 
+    /// publish a message to a topic
+    publish: func(msg: list<u8>, topic: string) -> expected<unit, messaging-error> 
 }
 
 /// consumer interface
 resource sub {
-	/// creates a handle to a sub object
-	static open: func(name: string) -> expected<sub, messaging-error>
+    /// creates a handle to a sub object
+    static open: func(name: string) -> expected<sub, messaging-error>
 
-	/// subscribe to a topic
-	subscribe: func(topic: string) -> expected<subscription-token, messaging-error> 
+    /// subscribe to a topic
+    subscribe: func(topic: string) -> expected<subscription-token, messaging-error> 
 
-	/// pull-based message delivery
-	receive: func(sub-tok: subscription-token) -> expected<list<u8>, messaging-error>
+    /// pull-based message delivery
+    receive: func(sub-tok: subscription-token) -> expected<list<u8>, messaging-error>
 }
 ```
 
@@ -129,7 +129,7 @@ fn main() -> Result<()> {
 }
 ```
 
-And an example showing how a subscriber service could be authored: 
+And an example showing how a subscriber service could be authored:
 
 ```rust
 let ps = Sub::open("my-messaging")?;
@@ -155,13 +155,13 @@ for _ in 0..3 {
 }
 ```
 
-One limitation of the current messaging interface and implementation is the lack of support for streaming events. This can be problematic in situations where the receive function is a blocking call that tries to pull the message broker for a new message. If the broker does not have any new messages, the receive function will be blocked, which can cause delays in message delivery. Additionally, the lack of streaming support can limit the scalability of the system, as the blocking call can cause bottlenecks in high-traffic scenarios. To address this limitation, we will be adding `time-to-expire` to the receive function in the near future and will be collaborating with the Wasm Component Model community to land `streams` feature in WIT. 
+One limitation of the current messaging interface and implementation is the lack of support for streaming events. This can be problematic in situations where the receive function is a blocking call that tries to pull the message broker for a new message. If the broker does not have any new messages, the receive function will be blocked, which can cause delays in message delivery. Additionally, the lack of streaming support can limit the scalability of the system, as the blocking call can cause bottlenecks in high-traffic scenarios. To address this limitation, we will be adding `time-to-expire` to the receive function in the near future and will be collaborating with the Wasm Component Model community to land `streams` feature in WIT.
 
 ### Using the SQL Capability
 
 The latest release from Slight adds an exciting new capability to its portfolio of capabilities. The newly added SpiderLightning functionality enables WebAssembly programs to safely and generically interact with SQL databases. This capability is not only highly versatile, but also secure, as it includes functions for querying and modifying data using prepared statements, as well as handling errors in a way that ensures data integrity.
 
-Below is an example of using the SQL service in Slight. 
+Below is an example of using the SQL service in Slight.
 
 ```rust
 use sql::*;
@@ -207,7 +207,7 @@ fn main() -> Result<()> {
 
 > 💡 The WIT file can be downloaded using `slight add sql@v0.3.1`
 
-The SQL interface is paired with a slight configuration file to tell the host which SQL service is needed to provide this capability. Below is a sample `slightfile.toml` using the PostgreSQL database implementation, which is the only service `Slight` supports right now.
+The SQL interface is paired with a slight configuration file to tell the host which SQL service is needed to provide this capability. Below is a sample `slightfile.toml` using the PostgreSQL database implementation, which is the only service Slight supports right now.
 
 ```toml
 specversion = "0.2"
@@ -219,8 +219,8 @@ name = "my-db"
     POSTGRES_CONNECTION_URL = "${azapp.POSTGRES_CONNECTION_URL}"
 ```
 
-### Thank you!
+### Thank you
 
-We would like to take this opportunity to express our gratitude to all new contributors who have contributed to Slight! 
+We would like to take this opportunity to express our gratitude to all new contributors who have contributed to Slight!
 
 As we mentioned in our **[Introducing SpiderLightning - A Cloud System Interface with WebAssembly](https://deislabs.io/posts/introducing-spiderlightning-and-slight/)** blog, we are excited for the future of WebAssembly Component Model and WASI. We firmly believe that the work the Bytecode Alliance has done will enable all developers to build more portable and much more secure applications that can run anywhere! Thank you, for all the Bytecode Alliance contributors and maintainers for their work!
