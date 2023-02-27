@@ -77,7 +77,7 @@ resource = "http-client"
 name = "something"
 ```
 
-### Exchange Messaging
+### Sending and Receiving Messages
 
 In this new release, we have combined the `message-queue` and `pub/sub` capabilities into one called `messaging`. The idea behind this move is that we think there are many overlaps and ambiguities to both capabilities and it made a difficult time for developers to choose one over another. Read's Dan's [proposal explaining the design of the new messaging capability](https://github.com/deislabs/spiderlightning/blob/main/proposals/abandoned/pubsub-mq-interfaces-proposal.md) for more details.
 
