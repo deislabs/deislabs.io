@@ -22,11 +22,11 @@ If you are using Windows, you can download the latest release by running this co
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/deislabs/spiderlightning/main/install.ps1'))
 ```
 
-This release includes several new features, such as the ability to author HTTP clients as Wasm modules, publish or receive events, query databases with SQL, and much more. You can find all the example Slight applications in [here](https://github.com/deislabs/spiderlightning/tree/main/examples). Now, let’s dive into it!
+This release includes several new features, such as the ability to author HTTP clients as Wasm modules, publish or receive events, query databases with SQL, and much more. You can find all the [example Slight applications in our repository](https://github.com/deislabs/spiderlightning/tree/main/examples). Now, let’s dive into it!
 
 ### HTTP Client
 
-Previously, `Slight` only supports the ability to serve HTTP requests. You can write applications in Rust or C to handle incoming HTTP requests and compile them to Wasm modules. And now, `Slight` supports the ability to make a outbound HTTP request to a url. Take the following Rust program as an example:
+Previously, `Slight` only supports the ability to serve HTTP requests. You can write applications in Rust or C to handle incoming HTTP requests and compile them to Wasm modules. And now, `Slight` supports the ability to make a outbound HTTP request to a URL. Take the following Rust program as an example:
 
 ```rust
 wit_bindgen_rust::import("wit/http-client.wit");
@@ -79,7 +79,7 @@ name = "something"
 
 ### Exchange Messaging
 
-In this new release, we have combined the `message-queue` and `pub/sub` capabilities into one called `messaging`. The idea behind this move is that we think there are many overlaps and ambiguities to both capabilities and it made a difficult time for developers to choose one over another. If you want to know more about the design of the new messaging capability, please read this [proposal](https://github.com/deislabs/spiderlightning/blob/main/proposals/abandoned/pubsub-mq-interfaces-proposal.md) document that Dan drafted. 
+In this new release, we have combined the `message-queue` and `pub/sub` capabilities into one called `messaging`. The idea behind this move is that we think there are many overlaps and ambiguities to both capabilities and it made a difficult time for developers to choose one over another. Read's Dan's [proposal explaining the design of the new messaging capability](https://github.com/deislabs/spiderlightning/blob/main/proposals/abandoned/pubsub-mq-interfaces-proposal.md) for more details.
 
 In short, the new messaging capability interface looks like the following in WIT.
 
@@ -159,7 +159,7 @@ One limitation of the current messaging interface and implementation is the lack
 
 ### Using the SQL Capability
 
-The latest release from Slight adds an exciting new capability to their already extensive portfolio of capabilities. The newly added SpiderLightning functionality enables WebAssembly programs to safely and generically interact with SQL databases. This capability is not only highly versatile, but also secure, as it includes functions for querying and modifying data using prepared statements, as well as handling errors in a way that ensures data integrity.
+The latest release from Slight adds an exciting new capability to its portfolio of capabilities. The newly added SpiderLightning functionality enables WebAssembly programs to safely and generically interact with SQL databases. This capability is not only highly versatile, but also secure, as it includes functions for querying and modifying data using prepared statements, as well as handling errors in a way that ensures data integrity.
 
 Below is an example of using the SQL service in Slight. 
 
@@ -207,7 +207,7 @@ fn main() -> Result<()> {
 
 > 💡 The WIT file can be downloaded using `slight add sql@v0.3.1`
 
-The SQL interface is, as usual, paired with a slight configuration file to tell the host which SQL service is needed to provide this capability. Below is a sample `slightfile.toml` using the PostgreSQL database implementation, which is the only service `Slight` supports right now.
+The SQL interface is paired with a slight configuration file to tell the host which SQL service is needed to provide this capability. Below is a sample `slightfile.toml` using the PostgreSQL database implementation, which is the only service `Slight` supports right now.
 
 ```toml
 specversion = "0.2"
@@ -223,4 +223,4 @@ name = "my-db"
 
 We would like to take this opportunity to express our gratitude to all new contributors who have contributed to Slight! 
 
-As we mentioned in our ****[Introducing SpiderLightning - A Cloud System Interface with WebAssembly](https://deislabs.io/posts/introducing-spiderlightning-and-slight/)** blog, we are excited for the future of WebAssembly Component Model and WASI. We firmly believe that the work the BytecodeAlliance has done will enable all developers to build more portable and much more secure applications that can run anywhere! Thank you, for all the Bytecode Alliance contributors and maintainers for their work!
+As we mentioned in our **[Introducing SpiderLightning - A Cloud System Interface with WebAssembly](https://deislabs.io/posts/introducing-spiderlightning-and-slight/)** blog, we are excited for the future of WebAssembly Component Model and WASI. We firmly believe that the work the Bytecode Alliance has done will enable all developers to build more portable and much more secure applications that can run anywhere! Thank you, for all the Bytecode Alliance contributors and maintainers for their work!
