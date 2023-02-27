@@ -10,23 +10,33 @@ tags: ["slight", "spiderlightning", "Wasm", "WASI"]
 
 We are excited to announce the release of Slight v0.3, the latest version of our WebAssembly runtime that utilizes SpiderLightning (also known as wasi-cloud) capabilities.
 
-You can download the latest release by running the following command if you are using Linux or macOS:
+This new release includes an array of new features, such as
+
+- HTTP client which allows you to make outbound requests to a URL,
+- A new messaging capability that combines message queue and pub/sub capabilities into one,
+- A SQL capability that allows you to query databases with SQL.
+
+and much more.
+
+Check out our [repository](https://github.com/deislabs/spiderlightning/tree/main/examples) to find example Slight applications and see what you can create. To get started with Slight v0.3, simply download the latest release by running the following command provided below.
+
+If you are using Linux or MacOS, run:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/deislabs/spiderlightning/main/install.sh)"
 ```
 
-If you are using Windows, you can download the latest release by running this command:
+If you are using Windows, run:
 
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/deislabs/spiderlightning/main/install.ps1'))
 ```
 
-This release includes several new features, such as the ability to author HTTP clients as Wasm modules, publish or receive events, query databases with SQL, and much more. You can find all the [example Slight applications in our repository](https://github.com/deislabs/spiderlightning/tree/main/examples). Now, let’s dive into it!
+Now, let’s dive in and see what new features are included in this release!
 
 ### HTTP Client
 
-Previously, Slight only supports the ability to serve HTTP requests. You can write applications in Rust or C to handle incoming HTTP requests and compile them to Wasm modules. And now, Slight supports the ability to make an outbound HTTP request to a URL. Take the following Rust program as an example:
+Previously, Slight only supports the ability to serve HTTP requests. You can write applications in Rust or C to handle incoming HTTP requests and compile them to Wasm modules. With this release, Slight now supports the ability to make an outbound HTTP request to a URL. Take the following Rust program as an example:
 
 ```rust
 wit_bindgen_rust::import("wit/http-client.wit");
@@ -159,7 +169,7 @@ One limitation of the current messaging interface and implementation is the lack
 
 ### Using the SQL Capability
 
-The latest release from Slight adds an exciting new capability to its portfolio of capabilities. The newly added SpiderLightning functionality enables WebAssembly programs to safely and generically interact with SQL databases. This capability is not only highly versatile, but also secure, as it includes functions for querying and modifying data using prepared statements, as well as handling errors in a way that ensures data integrity.
+The latest release from Slight adds an exciting new capability to its portfolio of capabilities. The newly added SpiderLightning functionality enables WebAssembly programs to easily and generically interact with SQL databases. This capability is not only highly versatile, but also secure, as it includes functions for querying and modifying data using prepared statements, as well as handling errors in a way that ensures data integrity.
 
 Below is an example of using the SQL service in Slight.
 
