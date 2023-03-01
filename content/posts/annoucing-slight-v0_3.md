@@ -1,5 +1,5 @@
 ---
-title: "Annoucing Slight v0.3"
+title: "Announcing Slight v0.3"
 description: "Announcing new features and updates on Slight v0.3 release."
 date: 2023-02-25 00:00:00 +0000 UTC
 authorname: "Jiaxiao (Joe) Zhou"
