@@ -137,7 +137,7 @@ disableHugoGeneratorInject = true
     icon = "runwasi"
     text = "Facilitates running Wasm / WASI workloads managed by containerd."
     url = "https://github.com/deislabs/runwasi"
-    badge = "containerd"
+    badge = "cncf"
     badgecolor = "teal"
 
     [[params.section1.tiles]]
