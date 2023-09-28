@@ -45,14 +45,6 @@ disableHugoGeneratorInject = true
     url = "https://github.com/deislabs/bindle"
 
     [[params.section1.tiles]]
-    title = "Brigade"
-    icon = "brigade"
-    text = "Create event-driven workflows and pipelines for your infrastructure, through scriptable, automated tasks."
-    url = "https://brigade.sh"
-    badge = "archived"
-    badgecolor = "gray"
-
-    [[params.section1.tiles]]
     title = "CNAB"
     icon = "cnab"
     text = "CNABs facilitate the bundling, installing and managing of container-native apps — and their coupled services."
@@ -65,28 +57,20 @@ disableHugoGeneratorInject = true
     url = "https://github.com/deislabs/containerd-wasm-shims"
 
     [[params.section1.tiles]]
-    title = "Draft"
-    icon = "draft"
-    text = "A tool to quickly build & run Kubernetes apps, to streamline the dev process."
-    url = "https://draft.sh"
-    badge = "archived"
-    badgecolor = "gray"
+    title = "Copa"
+    icon = "copa"
+    text = "Patch containers directly."
+    url = "https://github.com/project-copacetic/copacetic"
+    badge = "cncf"
+    badgecolor = "teal"
 
     [[params.section1.tiles]]
-    title = "Duffle"
-    icon = "duffle"
-    text = "A tool that installs and manages distributed app bundles (CNABs)."
-    url = "https://duffle.sh"
-    badge = "archived"
-    badgecolor = "gray"
-
-    [[params.section1.tiles]]
-    title = "Go Lua"
-    icon = "golua"
-    text = "A Lua 5.3 engine implemented in Go."
-    url = "https://github.com/Azure/golua"
-    badge = "archived"
-    badgecolor = "gray"
+    title = "Eraser"
+    icon = "eraser"
+    text = "Clean up vulnerable images from Kubernetes nodes."
+    url = "https://github.com/eraser-dev/eraser"
+    badge = "cncf"
+    badgecolor = "teal"
 
     [[params.section1.tiles]]
     title = "Helm"
@@ -133,6 +117,12 @@ disableHugoGeneratorInject = true
     url = "https://github.com/deislabs/mystikos"
 
     [[params.section1.tiles]]
+    title = "Ratify"
+    icon = "ratify"
+    text = "Verify artifact security metadata and enforce compliance."
+    url = "https://github.com/deislabs/ratify"
+
+    [[params.section1.tiles]]
     title = "runwasi"
     icon = "runwasi"
     text = "Facilitates running Wasm / WASI workloads managed by containerd."
@@ -158,6 +148,37 @@ disableHugoGeneratorInject = true
     text = "Write HTTP handlers in WebAssembly with a minimal amount of work."
     url = "https://github.com/deislabs/wagi"
 
+    [[params.section1.tiles]]
+    title = "Brigade"
+    icon = "brigade"
+    text = "Create event-driven workflows and pipelines for your infrastructure, through scriptable, automated tasks."
+    url = "https://brigade.sh"
+    badge = "archived"
+    badgecolor = "gray"
+    
+    [[params.section1.tiles]]
+    title = "Draft"
+    icon = "draft"
+    text = "A tool to quickly build & run Kubernetes apps, to streamline the dev process."
+    url = "https://draft.sh"
+    badge = "archived"
+    badgecolor = "gray"
+
+    [[params.section1.tiles]]
+    title = "Duffle"
+    icon = "duffle"
+    text = "A tool that installs and manages distributed app bundles (CNABs)."
+    url = "https://duffle.sh"
+    badge = "archived"
+    badgecolor = "gray"
+
+    [[params.section1.tiles]]
+    title = "Go Lua"
+    icon = "golua"
+    text = "A Lua 5.3 engine implemented in Go."
+    url = "https://github.com/Azure/golua"
+    badge = "archived"
+    badgecolor = "gray"
 
   [params.footer]
   logo = "deislabs.png"
